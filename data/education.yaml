@@ -1,0 +1,18 @@
+- id: udea-electronics-engineering
+  institution: Universidad de Antioquia
+  degree:
+    en: Bachelor's Degree
+    es: Pregrado
+  field:
+    en: Electronics Engineering
+    es: Ingeniería Electrónica
+  location: Medellín, Colombia
+  start: "2014-08"
+  end: "2023-06"
+  highlights:
+    - en: Developed a strong foundation in software engineering, embedded systems, electronics, mathematics, and computer architecture.
+      es: Desarrollé una base sólida en ingeniería de software, sistemas embebidos, electrónica, matemáticas y arquitectura de computadores.
+    - en: Completed an engineering internship focused on modern web development, TypeScript migration, and reusable component libraries.
+      es: Completé una pasantía de ingeniería enfocada en desarrollo web moderno, migración a TypeScript y librerías de componentes reutilizables.
+    - en: Transitioned academic interests toward software engineering through independent product development and modern web technologies.
+      es: Transicioné mis intereses académicos hacia la ingeniería de software a través del desarrollo independiente de productos y tecnologías web modernas.

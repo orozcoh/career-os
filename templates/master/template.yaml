@@ -1,0 +1,44 @@
+# Master resume — canonical source rendered as a complete resume.
+# Includes every experience, project and skill without role-specific filtering.
+
+id: master
+
+name:
+  en: Complete Resume
+  es: Hoja de Vida Completa
+
+slug: master
+
+description:
+  en: Complete professional record containing every experience, project, skill, and qualification. Serves as the comprehensive reference from which all role-specific resumes are derived.
+  es: Registro profesional completo que reúne toda la experiencia, proyectos, habilidades y formación. Sirve como la referencia integral de la cual se derivan todas las hojas de vida específicas por rol.
+
+title_override: null
+
+summary_override: null
+
+include_tags:
+  - "*"
+
+exclude_tags: []
+
+max_bullets_per_role: null
+
+sections:
+  - summary
+  - experience
+  - projects
+  - skills
+  - education
+  - languages
+
+order: 99
+
+skills:
+  filter_tags: null
+
+show:
+  project_links: true
+  github_links: true
+  website_links: true
+  all_skills: true

@@ -1,0 +1,21 @@
+---
+import { providers } from "../analytics.config";
+
+/**
+ * The analytics boundary component. Included once in the base layout.
+ *
+ * It renders client-side JavaScript ONLY when at least one registered
+ * provider needs a browser runtime. With the default no-op provider this
+ * component emits zero bytes of JS — the site ships no tracking code.
+ */
+const needsRuntime = providers.some((p) => p.name !== "noop");
+---
+
+{
+  needsRuntime && (
+    <script>
+      {/* Future providers hook page_view / resume_view / resume_download /
+          outbound_click signals here via the analytics registry. */}
+    </script>
+  )
+}

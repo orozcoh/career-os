@@ -1,0 +1,68 @@
+# English locale file for Career OS
+# Contains all UI strings, labels, and translations for the English language
+
+# Section titles used in resumes
+sections:
+  summary: Summary
+  experience: Experience
+  projects: Projects
+  skills: Skills
+  education: Education
+  languages: Languages
+
+# Date formatting
+dates:
+  months:
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+  present: Present
+
+# Employment type display labels
+employment_types:
+  full-time: Full-time
+  part-time: Part-time
+  contract: Contract
+  freelance: Freelance
+  internship: Internship
+  self-employed: Self-employed
+
+# Language proficiency display labels
+proficiency_levels:
+  native: Native
+  fluent: Fluent - B2
+  professional: Professional
+  intermediate: Intermediate
+  basic: Basic
+
+# Resume renderer labels
+resume:
+  technologies: Technologies
+  links: Links
+  cv: CV
+  linkedin: LinkedIn
+  github: GitHub
+
+# Website UI strings
+website:
+  title_suffix: Resume
+  meta_fallback: ATS-friendly resumes generated from a single structured data source.
+  hero: >-
+    Choose the resume that best matches your hiring needs. 
+    Each version presents the same engineering experience with an emphasis on the skills, 
+    products, and accomplishments most relevant to the role.
+  view_online: View online
+  download_pdf: Download PDF
+  download_docx: DOCX
+  all_resumes: All resumes
+  generated_from: Generated from structured data
+  version: v

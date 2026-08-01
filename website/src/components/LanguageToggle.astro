@@ -1,0 +1,58 @@
+---
+import { LOCALE_STORAGE_KEY, SUPPORTED_LOCALES } from "@career/core";
+import type { Locale } from "@career/core";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+/** Same page path with the first path segment swapped for `target`. */
+const targetPath = (target: Locale): string => {
+  const rest = currentPath.replace(/^\/[a-z]{2}(?=\/|$)/, "");
+  return `/${target}${rest === "" ? "/" : rest}`;
+};
+---
+
+<div class="no-print flex items-center gap-1.5 text-sm font-medium" aria-label="Language">
+  {
+    SUPPORTED_LOCALES.map((lang, i) => (
+      <>
+        {i > 0 && (
+          <span class="text-faint" aria-hidden="true">
+            /
+          </span>
+        )}
+        {lang === locale ? (
+          <span class="text-ink" aria-current="true">
+            {lang.toUpperCase()}
+          </span>
+        ) : (
+          <a
+            href={targetPath(lang)}
+            data-locale-switch
+            data-locale={lang}
+            data-storage-key={LOCALE_STORAGE_KEY}
+            class="text-muted hover:text-ink"
+          >
+            {lang.toUpperCase()}
+          </a>
+        )}
+      </>
+    ))
+  }
+</div>
+
+<script is:inline>
+  // Persist the visitor's explicit choice before navigating, so the next
+  // page's locale-detection script doesn't bounce them back to their
+  // browser's default language.
+  document.addEventListener("click", (event) => {
+    const link = (event.target as Element | null)?.closest?.("[data-locale-switch]");
+    if (link instanceof HTMLElement && link.dataset.locale && link.dataset.storageKey) {
+      localStorage.setItem(link.dataset.storageKey, link.dataset.locale);
+    }
+  });
+</script>

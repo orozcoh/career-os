@@ -1,0 +1,33 @@
+{
+  "name": "career-os",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Single source of truth for professional identity. YAML data in, resumes (PDF/HTML/DOCX/Markdown) and cv.orozcoh.com out.",
+  "packageManager": "pnpm@11.18.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "build": "pnpm run validate && pnpm run build:site && pnpm run generate && pnpm run generate:pdf",
+    "build:site": "pnpm --filter @career/website run build",
+    "generate": "tsx scripts/generate.ts",
+    "generate:pdf": "tsx scripts/pdf.ts",
+    "dev": "pnpm --filter @career/website run dev",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "clean": "rm -rf generated website/dist website/.astro"
+  },
+  "dependencies": {
+    "@career/analytics": "workspace:*",
+    "@career/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "playwright": "^1.53.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  }
+}

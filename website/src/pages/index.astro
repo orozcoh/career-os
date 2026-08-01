@@ -1,0 +1,15 @@
+---
+// Root entry: the locale-detection script in the Base layout head
+// redirects instantly to the browser's language (first visit) or the
+// stored preference. Without JavaScript this page falls back to /en/.
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Resume" description="Resume" locale="en">
+  <main class="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 text-center">
+    <p class="text-muted">Resume</p>
+    <a href="/en/" class="mt-4 font-medium text-accent hover:text-accent-hover">
+      Continue
+    </a>
+  </main>
+</Base>

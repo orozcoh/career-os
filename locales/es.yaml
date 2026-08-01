@@ -1,0 +1,68 @@
+# Spanish locale file for Career OS
+# Contains all UI strings, labels, and translations for the Spanish language
+
+# Section titles used in resumes
+sections:
+  summary: Perfil Profesional
+  experience: Experiencia
+  projects: Proyectos
+  skills: Habilidades Técnicas
+  education: Educación
+  languages: Idiomas
+
+# Date formatting
+dates:
+  months:
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sep
+    - Oct
+    - Nov
+    - Dic
+  present: Presente
+
+# Employment type display labels
+employment_types:
+  full-time: Tiempo completo
+  part-time: Medio tiempo
+  contract: Contrato
+  freelance: Freelance
+  internship: Pasantía
+  self-employed: Independiente
+
+# Language proficiency display labels
+proficiency_levels:
+  native: Nativo
+  fluent: Fluido - B2
+  professional: Profesional
+  intermediate: Intermedio
+  basic: Básico
+
+# Resume renderer labels
+resume:
+  technologies: Tecnologías
+  links: Enlaces
+  cv: CV
+  linkedin: LinkedIn
+  github: GitHub
+
+# Website UI strings
+website:
+  title_suffix: Currículum
+  meta_fallback: Currículums compatibles con ATS generados desde una única fuente de datos estructurada.
+  hero: >-
+    Elige la hoja de vida que mejor se adapte a tu proceso de selección. 
+    Cada versión presenta la misma experiencia profesional, destacando las habilidades, productos y logros más relevantes para el cargo.
+
+  view_online: Ver en línea
+  download_pdf: Descargar PDF
+  download_docx: DOCX
+  all_resumes: Todos los currículums
+  generated_from: Generado desde datos estructurados
+  version: v

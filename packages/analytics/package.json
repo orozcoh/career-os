@@ -1,0 +1,16 @@
+{
+  "name": "@career/analytics",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Privacy-first analytics boundary for career-os. Interfaces + no-op defaults only; real providers plug in without touching the app.",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  }
+}

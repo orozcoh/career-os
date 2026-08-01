@@ -1,0 +1,70 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renderMarkdown > matches the stored snapshot 1`] = `
+"# Test Person
+
+**Engineer**
+
+Remote · test@example.com · [LinkedIn](https://www.linkedin.com/in/test) · [GitHub](https://github.com/test) · [example.com](https://example.com) · [CV](https://cv.example.com)
+
+## Summary
+
+Default summary.
+
+## Experience
+
+### Senior Engineer — Acme
+
+*Jan 2023 – Present · Remote · Full-time*
+
+- swe bullet
+- frontend bullet
+- shared bullet
+- excluded bullet
+
+### Junior Engineer — Globex
+
+*Jun 2020 – Jan 2021 · Bogotá · Internship*
+
+- fe only
+
+## Projects
+
+### Creative Proj
+
+*art*
+
+A creative project.
+
+- did art
+
+**Technologies:** WebGL
+
+**Links:** [Live](https://example.com/live)
+
+### SWE Proj
+
+*infra*
+
+An infra project.
+
+## Skills
+
+- **Languages:** TypeScript, CSS
+- **Creative:** GLSL
+
+## Education
+
+### B.Sc. Computer Science — Test University
+
+*2015 – 2020 · Bogotá*
+
+- Graduated with honors.
+- Thesis on distributed systems.
+
+## Languages
+
+- English — Fluent
+- Spanish — Native
+"
+`;

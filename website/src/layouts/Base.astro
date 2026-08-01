@@ -1,0 +1,64 @@
+---
+import Analytics from "../components/Analytics.astro";
+import type { Locale } from "@career/core";
+import { LOCALE_STORAGE_KEY, SUPPORTED_LOCALES } from "@career/core";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  locale: Locale;
+}
+
+const { title, description, locale } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="generator" content={Astro.generator} />
+    <script is:inline define:vars={{ supported: SUPPORTED_LOCALES, storageKey: LOCALE_STORAGE_KEY }}>
+      // Language detection: default to the browser's language on first visit,
+      // honor the stored preference afterwards. Explicit locale prefixes in
+      // the URL (deep links) always win. Blocking inline script — runs
+      // before paint, so no flash of content.
+      (() => {
+        const current = window.location.pathname.split("/")[1];
+        const stored = localStorage.getItem(storageKey);
+        const browser = (navigator.language || "en").split("-")[0].toLowerCase();
+        const wants = supported.includes(browser) ? browser : "en";
+        const rest = window.location.pathname.replace(/^\/[a-z]{2}(?=\/|$)/, "");
+
+        let target = null;
+        if (!stored) {
+          localStorage.setItem(storageKey, wants);
+          target = wants;
+        } else if (current && supported.includes(current)) {
+          localStorage.setItem(storageKey, current);
+        } else if (!current) {
+          target = stored; // root path: go to the stored preference
+        }
+
+        if (target && target !== current) {
+          window.location.replace(`/${target}${rest === "" ? "/" : rest}`);
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-white font-sans text-ink antialiased">
+    <slot />
+    <Analytics />
+  </body>
+</html>

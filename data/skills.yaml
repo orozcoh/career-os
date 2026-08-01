@@ -1,0 +1,158 @@
+- category:
+    en: Programming Languages
+    es: Lenguajes de Programación
+  items:
+    - name:
+        en: TypeScript
+        es: TypeScript
+      tags: [swe, frontend, creative]
+
+    - name:
+        en: JavaScript
+        es: JavaScript
+      tags: [swe, frontend, creative]
+
+    - name:
+        en: Python
+        es: Python
+      tags: [swe]
+
+- category:
+    en: Frontend Development
+    es: Desarrollo Frontend
+  items:
+    - name:
+        en: React
+        es: React
+      tags: [frontend]
+
+    - name:
+        en: Progressive Web Apps (PWA)
+        es: Aplicaciones Web Progresivas (PWA)
+      tags: [frontend]
+
+    - name:
+        en: HTML5
+        es: HTML5
+      tags: [frontend]
+
+    - name:
+        en: CSS3
+        es: CSS3
+      tags: [frontend]
+
+    - name:
+        en: Tailwind CSS
+        es: Tailwind CSS
+      tags: [frontend]
+
+- category:
+    en: Cloud & Backend
+    es: Nube y Backend
+  items:
+    - name:
+        en: Cloudflare Workers
+        es: Cloudflare Workers
+      tags: [swe]
+
+    - name:
+        en: Cloudflare KV
+        es: Cloudflare KV
+      tags: [swe]
+
+    - name:
+        en: REST APIs
+        es: APIs REST
+      tags: [swe]
+
+    - name:
+        en: Edge Computing
+        es: Computación en el Edge
+      tags: [swe]
+
+    - name:
+        en: Node.js
+        es: Node.js
+      tags: [swe]
+
+- category:
+    en: Software Engineering
+    es: Ingeniería de Software
+  items:
+    - name:
+        en: Software Architecture
+        es: Arquitectura de Software
+      tags: [swe]
+
+    - name:
+        en: Distributed Systems
+        es: Sistemas Distribuidos
+      tags: [swe]
+
+    - name:
+        en: Authentication
+        es: Autenticación
+      tags: [swe]
+
+    - name:
+        en: Cryptography
+        es: Criptografía
+      tags: [swe]
+
+    - name:
+        en: API Design
+        es: Diseño de APIs
+      tags: [swe]
+
+- category:
+    en: AI & Emerging Technologies
+    es: IA y Tecnologías Emergentes
+  items:
+    - name:
+        en: AI-assisted Development
+        es: Desarrollo Asistido por IA
+      tags: [swe]
+
+    - name:
+        en: Prompt Engineering
+        es: Ingeniería de Prompts
+      tags: [swe]
+
+    - name:
+        en: Generative AI APIs
+        es: APIs de IA Generativa
+      tags: [swe]
+
+    - name:
+        en: Blockchain
+        es: Blockchain
+      tags: [swe]
+
+    - name:
+        en: Passkeys (WebAuthn)
+        es: Passkeys (WebAuthn)
+      tags: [swe]
+
+- category:
+    en: Creative Technology
+    es: Tecnología Creativa
+  items:
+    - name:
+        en: TouchDesigner
+        es: TouchDesigner
+      tags: [creative]
+
+    - name:
+        en: Interactive Installations
+        es: Instalaciones Interactivas
+      tags: [creative]
+
+    - name:
+        en: Licensing Systems
+        es: Sistemas de Licenciamiento
+      tags: [creative]
+
+    - name:
+        en: Telemetry Systems
+        es: Sistemas de Telemetría
+      tags: [creative]

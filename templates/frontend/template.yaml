@@ -1,0 +1,54 @@
+# Frontend Engineer resume — product-focused frontend development.
+
+id: frontend
+
+name:
+  en: Frontend Engineer
+  es: Ingeniero Frontend
+
+slug: frontend
+
+description:
+  en: Frontend engineering focused on building modern web applications, Progressive Web Apps, and intuitive user experiences from concept to deployment.
+  es: Ingeniería frontend enfocada en desarrollar aplicaciones web modernas, Aplicaciones Web Progresivas y experiencias de usuario intuitivas desde la idea hasta el despliegue.
+
+title_override:
+  en: Frontend Engineer
+  es: Ingeniero Frontend
+
+summary_override:
+  en: >-
+    Frontend Engineer with an Electronics Engineering background, experienced in
+    designing and building modern web applications using React, TypeScript, and
+    Progressive Web App technologies. Passionate about creating intuitive user
+    experiences while collaborating across the full product lifecycle—from
+    architecture and implementation to deployment and maintenance.
+
+  es: >-
+    Ingeniero Frontend con formación en Ingeniería Electrónica y experiencia
+    diseñando y desarrollando aplicaciones web modernas utilizando React,
+    TypeScript y tecnologías de Aplicaciones Web Progresivas. Apasionado por
+    crear experiencias de usuario intuitivas participando en todo el ciclo de
+    vida del producto, desde la arquitectura y el desarrollo hasta el despliegue
+    y mantenimiento.
+
+include_tags:
+  - frontend
+
+exclude_tags: []
+
+max_bullets_per_role: 5
+
+sections:
+  - summary
+  - experience
+  - projects
+  - skills
+  - education
+  - languages
+
+order: 2
+
+skills:
+  filter_tags:
+    - frontend

@@ -1,0 +1,118 @@
+- id: anthology
+  name: Anthology
+  tagline:
+    en: Local-first knowledge management platform
+    es: Plataforma local-first para gestión de conocimiento
+  description:
+    en: >-
+      A Progressive Web Application for capturing, organizing, and sharing
+      personal knowledge. Built around local-first principles, with optional
+      blockchain publication and QR-based sharing, allowing users to retain
+      ownership of their data while selectively making content public.
+    es: >-
+      Aplicación Web Progresiva para capturar, organizar y compartir
+      conocimiento personal. Construida bajo principios local-first, con
+      publicación opcional en blockchain y compartición mediante códigos QR,
+      permitiendo a los usuarios mantener el control de sus datos y publicar
+      contenido de forma selectiva.
+  technologies:
+    - React
+    - TypeScript
+    - Progressive Web App
+    - Cloudflare Workers
+    - Blockchain
+  links:
+    - label:
+        en: Live
+        es: Sitio web
+      url: https://memory.inbytes.xyz
+  tags: [swe, frontend]
+  highlights:
+    - text:
+        en: Designed around local-first principles to keep user data available without requiring a centralized backend.
+        es: Diseñada bajo principios local-first para mantener los datos disponibles sin depender de un servidor central.
+      tags: [swe]
+    - text:
+        en: Integrated optional blockchain publication and QR-based sharing while preserving user control over personal knowledge.
+        es: Integró publicación opcional en blockchain y compartición mediante códigos QR manteniendo el control del usuario sobre su conocimiento.
+      tags: [swe]
+
+- id: td-status
+  name: TD Status
+  tagline:
+    en: Cloud licensing and telemetry platform for TouchDesigner
+    es: Plataforma de licenciamiento y telemetría para TouchDesigner
+  description:
+    en: >-
+      Cloud platform for managing software licenses and monitoring TouchDesigner
+      deployments. Provides customer management, heartbeat telemetry, license
+      validation, and operational visibility through Cloudflare Workers and KV.
+    es: >-
+      Plataforma en la nube para administrar licencias y monitorear
+      implementaciones de TouchDesigner. Incluye gestión de clientes,
+      telemetría mediante heartbeats, validación de licencias y visibilidad
+      operativa utilizando Cloudflare Workers y KV.
+  technologies:
+    - React
+    - TypeScript
+    - Cloudflare Workers
+    - Cloudflare KV
+    - REST API
+  links:
+    - label:
+        en: Live
+        es: Sitio web
+      url: https://td-status.inbytes.xyz
+  tags: [swe, creative]
+  highlights:
+    - text:
+        en: Built a cloud-based licensing system supporting customer grouping, license management, and device validation.
+        es: Desarrolló un sistema de licenciamiento en la nube con gestión de clientes, licencias y validación de dispositivos.
+      tags: [swe]
+    - text:
+        en: Implemented heartbeat telemetry for remote monitoring of deployed interactive experiences.
+        es: Implementó telemetría mediante heartbeats para el monitoreo remoto de experiencias interactivas desplegadas.
+      tags: [creative]
+
+- id: prompter
+  name: Prompter
+  tagline:
+    en: AI image generation with crypto micropayments
+    es: Generación de imágenes con IA y micropagos en criptomonedas
+  description:
+    en: >-
+      AI image generation platform that transforms user images using curated
+      prompts while accepting USDC payments through the x402 protocol.
+      Designed without user accounts or traditional payment processing,
+      prioritizing simplicity and privacy.
+    es: >-
+      Plataforma de generación de imágenes con IA que transforma imágenes de
+      los usuarios mediante prompts seleccionados y acepta pagos en USDC usando
+      el protocolo x402. Diseñada sin cuentas de usuario ni procesamiento
+      tradicional de pagos, priorizando simplicidad y privacidad.
+  technologies:
+    - React
+    - TypeScript
+    - Cloudflare Workers
+    - Cloudflare KV
+    - Generative AI
+    - x402
+  links:
+    - label:
+        en: Live
+        es: Sitio web
+      url: https://ai.digitalerror.xyz
+    - label:
+        en: Source
+        es: Código fuente
+      url: https://github.com/orozcoh/prompter
+  tags: [swe, frontend]
+  highlights:
+    - text:
+        en: Integrated x402 to enable USDC micropayments without traditional payment gateways or user accounts.
+        es: Integró x402 para habilitar micropagos en USDC sin pasarelas de pago tradicionales ni cuentas de usuario.
+      tags: [swe]
+    - text:
+        en: Protected proprietary prompts by keeping prompt engineering server-side using Cloudflare Workers and KV.
+        es: Protegió los prompts propietarios manteniendo la ingeniería de prompts del lado del servidor mediante Cloudflare Workers y KV.
+      tags: [swe]

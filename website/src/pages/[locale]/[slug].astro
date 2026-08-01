@@ -1,0 +1,60 @@
+---
+import Base from "../../layouts/Base.astro";
+import Resume from "../../components/Resume.astro";
+import LanguageToggle from "../../components/LanguageToggle.astro";
+import { getResumes, getLocaleFile } from "../../lib/data";
+import type { ResumeData, Locale } from "@career/core";
+import { t, SUPPORTED_LOCALES } from "@career/core";
+
+export async function getStaticPaths() {
+  const resumes = await getResumes();
+  const paths = [];
+  
+  for (const locale of SUPPORTED_LOCALES) {
+    for (const resume of resumes) {
+      paths.push({
+        params: { locale, slug: resume.template.slug },
+        props: { resume, locale },
+      });
+    }
+  }
+  
+  return paths;
+}
+
+interface Props {
+  resume: ResumeData;
+  locale: Locale;
+}
+
+const { resume, locale } = Astro.props;
+const { profile, template } = resume;
+const localeFile = await getLocaleFile(locale);
+
+const title = `${profile.name} — ${t(resume.title, locale)}`;
+const description = t(template.description, locale);
+---
+
+<Base title={title} description={description} locale={locale}>
+  <nav class="no-print mx-auto flex max-w-[46rem] flex-wrap items-center justify-between gap-3 px-6 pt-6 text-sm">
+    <a href={`/${locale}/`} class="font-medium text-muted hover:text-ink">← {localeFile.website.all_resumes}</a>
+    <div class="flex items-center gap-4 font-medium">
+      <LanguageToggle locale={locale} />
+      <span class="text-faint" aria-hidden="true">·</span>
+      <a href={`/${locale}/resumes/${template.slug}.pdf`} download class="text-accent hover:text-accent-hover">
+        {localeFile.website.download_pdf}
+      </a>
+      <a
+        href={`/${locale}/resumes/${template.slug}.docx`}
+        download
+        class="text-muted hover:text-ink"
+      >
+        {localeFile.website.download_docx}
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <Resume resume={resume} locale={localeFile} lang={locale} />
+  </main>
+</Base>

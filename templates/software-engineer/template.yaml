@@ -1,0 +1,56 @@
+# Software Engineer resume — architecture, full-stack and product engineering.
+
+id: software-engineer
+
+name:
+  en: Software Engineer
+  es: Ingeniero de Software
+
+slug: software-engineer
+
+description:
+  en: Full-stack software engineering focused on designing, building, and deploying modern web applications, cloud-native services, and scalable software architectures.
+  es: Ingeniería de software full-stack enfocada en diseñar, desarrollar y desplegar aplicaciones web modernas, servicios cloud-native y arquitecturas de software escalables.
+
+title_override:
+  en: Software Engineer
+  es: Ingeniero de Software
+
+summary_override:
+  en: >-
+    Software Engineer with an Electronics Engineering background, experienced in
+    designing, building, deploying, and maintaining web applications from idea
+    to production. Passionate about software architecture, Progressive Web
+    Applications, distributed systems, cloud technologies, authentication,
+    cryptography, and AI-assisted engineering workflows. Enjoys turning ideas
+    into products while continuously learning through hands-on development.
+
+  es: >-
+    Ingeniero de Software con formación en Ingeniería Electrónica y experiencia
+    diseñando, desarrollando, desplegando y manteniendo aplicaciones web desde
+    la idea hasta producción. Interesado en arquitectura de software,
+    Aplicaciones Web Progresivas, sistemas distribuidos, tecnologías cloud,
+    autenticación, criptografía y flujos de desarrollo asistidos por IA.
+    Disfruta convertir ideas en productos mientras continúa aprendiendo mediante
+    el desarrollo práctico.
+
+include_tags:
+  - swe
+
+exclude_tags: []
+
+max_bullets_per_role: 5
+
+sections:
+  - summary
+  - experience
+  - projects
+  - skills
+  - education
+  - languages
+
+order: 1
+
+skills:
+  filter_tags:
+    - swe

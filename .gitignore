@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output (website/dist is transient; generated/ IS committed — see README)
+website/dist/
+website/.astro/
+
+# Playwright
+playwright-report/
+test-results/
+
+# OS / editor
+.DS_Store
+*.log
+.env
+.env.local
