@@ -19,18 +19,17 @@ title_override:
 summary_override:
   en: >-
     Software Engineer with an Electronics Engineering background, passionate
-    about building technology that connects software with interactive
-    experiences. Experienced in developing web applications, cloud services, and
-    tools for creative workflows, with interests spanning TouchDesigner,
-    interactive installations, telemetry systems, and AI-assisted development.
+    about connecting software with interactive experiences. Experienced in web
+    applications, cloud services, and tools for creative workflows, spanning
+    TouchDesigner, interactive installations, telemetry systems, and
+    AI-assisted development.
 
   es: >-
-    Ingeniero de Software con formación en Ingeniería Electrónica y apasionado
-    por desarrollar tecnología que conecta el software con experiencias
-    interactivas. Experiencia construyendo aplicaciones web, servicios en la
-    nube y herramientas para flujos de trabajo creativos, con interés en
-    TouchDesigner, instalaciones interactivas, sistemas de telemetría y
-    desarrollo asistido por IA.
+    Ingeniero de Software con formación en Ingeniería Electrónica, apasionado
+    por conectar el software con experiencias interactivas. Con experiencia en
+    aplicaciones web, servicios en la nube y herramientas para flujos creativos,
+    abarcando TouchDesigner, instalaciones interactivas, sistemas de telemetría
+    y desarrollo asistido por IA.
 
 include_tags:
   - creative
@@ -38,7 +37,11 @@ include_tags:
 
 exclude_tags: []
 
-max_bullets_per_role: 5
+max_bullets_per_role: 3
+
+project_layout: standard
+
+max_education_highlights: 0
 
 sections:
   - summary

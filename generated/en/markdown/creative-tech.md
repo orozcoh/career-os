@@ -8,7 +8,7 @@ santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub]
 
 ## Summary
 
-Software Engineer with an Electronics Engineering background, passionate about building technology that connects software with interactive experiences. Experienced in developing web applications, cloud services, and tools for creative workflows, with interests spanning TouchDesigner, interactive installations, telemetry systems, and AI-assisted development.
+Software Engineer with an Electronics Engineering background, passionate about connecting software with interactive experiences. Experienced in web applications, cloud services, and tools for creative workflows, spanning TouchDesigner, interactive installations, telemetry systems, and AI-assisted development.
 
 ## Experience
 
@@ -16,12 +16,13 @@ Software Engineer with an Electronics Engineering background, passionate about b
 
 *Jun 2023 – Present · Remote · Self-employed*
 
-- Built Progressive Web Applications (PWAs) with a focus on mobile-first experiences, local-first principles, and maintainable software architecture.
-- Built interactive software experiences integrating TouchDesigner licensing, telemetry collection, and cloud-based license management.
+- Designed, built, and deployed production-ready web applications from concept to deployment.
+- Developed cloud-native applications using React, TypeScript, Progressive Web App technologies, and Cloudflare's edge platform.
+- Built cloud-connected tooling for interactive experiences, including licensing and telemetry systems for TouchDesigner deployments.
 
 ### Software Engineering Intern — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Internship*
+*Oct 2022 – May 2023 · Remote · Internship*
 
 - Migrated a JavaScript UI component library to TypeScript, improving maintainability and type safety.
 - Packaged reusable UI components into an internal npm library for use across multiple projects.
@@ -35,7 +36,7 @@ Software Engineer with an Electronics Engineering background, passionate about b
 
 A Progressive Web Application for capturing, organizing, and sharing personal knowledge. Built around local-first principles, with optional blockchain publication and QR-based sharing, allowing users to retain ownership of their data while selectively making content public.
 
-**Technologies:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
+**Technologies:** React, TypeScript, Cloudflare Workers
 
 **Links:** [Live](https://memory.inbytes.xyz)
 
@@ -45,9 +46,9 @@ A Progressive Web Application for capturing, organizing, and sharing personal kn
 
 Cloud platform for managing software licenses and monitoring TouchDesigner deployments. Provides customer management, heartbeat telemetry, license validation, and operational visibility through Cloudflare Workers and KV.
 
-- Implemented heartbeat telemetry for remote monitoring of deployed interactive experiences.
+- Built a cloud-based licensing system with heartbeat telemetry for monitoring TouchDesigner deployments.
 
-**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
+**Technologies:** React, TypeScript, Cloudflare Workers
 
 **Links:** [Live](https://td-status.inbytes.xyz)
 
@@ -57,7 +58,7 @@ Cloud platform for managing software licenses and monitoring TouchDesigner deplo
 
 AI image generation platform that transforms user images using curated prompts while accepting USDC payments through the x402 protocol. Designed without user accounts or traditional payment processing, prioritizing simplicity and privacy.
 
-**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
+**Technologies:** React, TypeScript, Cloudflare Workers
 
 **Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
 
@@ -72,10 +73,6 @@ AI image generation platform that transforms user images using curated prompts w
 ### Bachelor's Degree Electronics Engineering — Universidad de Antioquia
 
 *Aug 2014 – Jun 2023 · Medellín, Colombia*
-
-- Developed a strong foundation in software engineering, embedded systems, electronics, mathematics, and computer architecture.
-- Completed an engineering internship focused on modern web development, TypeScript migration, and reusable component libraries.
-- Transitioned academic interests toward software engineering through independent product development and modern web technologies.
 
 ## Languages
 

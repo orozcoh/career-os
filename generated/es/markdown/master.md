@@ -12,21 +12,19 @@ Ingeniero de Software con formación en Ingeniería Electrónica y experiencia d
 
 ## Experiencia
 
-### Ingeniero de Software Independiente — Self-employed
+### Ingeniero de Software Independiente
 
-*Jun 2023 – Presente · Remote · Independiente*
+*Jun 2023 – Presente · Remote*
 
-- Diseñé, desarrollé, desplegué y mantuve múltiples aplicaciones web listas para producción desde el concepto hasta el despliegue utilizando tecnologías web modernas.
-- Construí Aplicaciones Web Progresivas (PWAs) con enfoque en experiencias mobile-first, principios local-first y arquitectura de software mantenible.
-- Diseñé soluciones cloud-native utilizando Cloudflare Workers, Cloudflare KV, APIs REST e infraestructura de borde.
-- Desarrollé productos de software explorando autenticación, criptografía, passkeys, tecnologías blockchain, flujos de trabajo asistidos por IA y sistemas distribuidos.
-- Gestioné de forma independiente el ciclo de vida completo de la aplicación, incluyendo arquitectura, implementación, gestión de dominios, configuración DNS, despliegue, monitoreo y mantenimiento continuo.
-- Utilicé flujos de desarrollo asistidos por IA para acelerar la investigación, prototipar soluciones, validar enfoques de implementación y explorar tecnologías desconocidas manteniendo la propiedad de las decisiones de ingeniería.
-- Construí experiencias de software interactivas integrando licenciamiento de TouchDesigner, recolección de telemetría y gestión de licencias basada en la nube.
+- Diseñé, desarrollé y desplegué aplicaciones web listas para producción desde el concepto hasta el despliegue.
+- Desarrollé aplicaciones cloud-native utilizando React, TypeScript, tecnologías de Aplicaciones Web Progresivas y la plataforma de borde de Cloudflare.
+- Construí productos de software explorando autenticación, criptografía, desarrollo asistido por IA y tecnologías blockchain.
+- Construí herramientas conectadas a la nube para experiencias interactivas, incluyendo sistemas de licenciamiento y telemetría para despliegues de TouchDesigner.
+- Diseñé Aplicaciones Web Progresivas centradas en el usuario con principios mobile-first y local-first.
 
 ### Pasante de Ingeniería de Software — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Pasantía*
+*Oct 2022 – May 2023 · Remote · Pasantía*
 
 - Migré una librería de componentes UI de JavaScript a TypeScript, mejorando la mantenibilidad y la seguridad de tipos.
 - Empaqueté componentes UI reutilizables en una librería npm interna para uso en múltiples proyectos.
@@ -41,10 +39,9 @@ Ingeniero de Software con formación en Ingeniería Electrónica y experiencia d
 
 Aplicación Web Progresiva para capturar, organizar y compartir conocimiento personal. Construida bajo principios local-first, con publicación opcional en blockchain y compartición mediante códigos QR, permitiendo a los usuarios mantener el control de sus datos y publicar contenido de forma selectiva.
 
-- Diseñada bajo principios local-first para mantener los datos disponibles sin depender de un servidor central.
-- Integró publicación opcional en blockchain y compartición mediante códigos QR manteniendo el control del usuario sobre su conocimiento.
+- Plataforma de conocimiento local-first con publicación opcional en blockchain y compartición mediante códigos QR.
 
-**Tecnologías:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
+**Tecnologías:** React, TypeScript, Cloudflare Workers
 
 **Enlaces:** [Sitio web](https://memory.inbytes.xyz)
 
@@ -54,10 +51,9 @@ Aplicación Web Progresiva para capturar, organizar y compartir conocimiento per
 
 Plataforma en la nube para administrar licencias y monitorear implementaciones de TouchDesigner. Incluye gestión de clientes, telemetría mediante heartbeats, validación de licencias y visibilidad operativa utilizando Cloudflare Workers y KV.
 
-- Desarrolló un sistema de licenciamiento en la nube con gestión de clientes, licencias y validación de dispositivos.
-- Implementó telemetría mediante heartbeats para el monitoreo remoto de experiencias interactivas desplegadas.
+- Desarrollé un sistema de licenciamiento en la nube con telemetría mediante heartbeats para monitorear implementaciones de TouchDesigner.
 
-**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
+**Tecnologías:** React, TypeScript, Cloudflare Workers
 
 **Enlaces:** [Sitio web](https://td-status.inbytes.xyz)
 
@@ -67,10 +63,9 @@ Plataforma en la nube para administrar licencias y monitorear implementaciones d
 
 Plataforma de generación de imágenes con IA que transforma imágenes de los usuarios mediante prompts seleccionados y acepta pagos en USDC usando el protocolo x402. Diseñada sin cuentas de usuario ni procesamiento tradicional de pagos, priorizando simplicidad y privacidad.
 
-- Integró x402 para habilitar micropagos en USDC sin pasarelas de pago tradicionales ni cuentas de usuario.
-- Protegió los prompts propietarios manteniendo la ingeniería de prompts del lado del servidor mediante Cloudflare Workers y KV.
+- Integré micropagos mediante x402 protegiendo los prompts propietarios con Cloudflare Workers y KV.
 
-**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
+**Tecnologías:** React, TypeScript, Cloudflare Workers
 
 **Enlaces:** [Sitio web](https://ai.digitalerror.xyz) · [Código fuente](https://github.com/orozcoh/prompter)
 

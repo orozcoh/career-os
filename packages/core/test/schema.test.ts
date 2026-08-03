@@ -6,7 +6,7 @@ describe("schema validation", () => {
     const result = roleSchema.safeParse({
       id: "x",
       title: { en: "Engineer", es: "Ingeniero" },
-      company: "Acme",
+      company: { en: "Acme", es: "Acme" },
       employment_type: "full-time",
       location: "Remote",
       start: "2023-03",
@@ -21,7 +21,7 @@ describe("schema validation", () => {
     const base = {
       id: "x",
       title: { en: "Engineer", es: "Ingeniero" },
-      company: "Acme",
+      company: { en: "Acme", es: "Acme" },
       employment_type: "full-time" as const,
       location: "Remote",
       end: null,
@@ -41,7 +41,7 @@ describe("schema validation", () => {
     const result = roleSchema.safeParse({
       id: "x",
       title: { en: "Engineer", es: "Ingeniero" },
-      company: "Acme",
+      company: { en: "Acme", es: "Acme" },
       employment_type: "permanent",
       location: "Remote",
       start: "2023-03",
@@ -106,7 +106,24 @@ describe("schema validation", () => {
     expect(result.summary_override).toBeNull();
     expect(result.exclude_tags).toEqual([]);
     expect(result.max_bullets_per_role).toBeNull();
+    expect(result.project_layout).toBe("complete");
+    expect(result.max_education_highlights).toBeNull();
     expect(result.skills.filter_tags).toBeNull();
+  });
+
+  it("accepts every project layout value and rejects unknown ones", () => {
+    const base = {
+      id: "t",
+      name: { en: "T", es: "T" },
+      slug: "t",
+      description: { en: "d", es: "d" },
+      include_tags: ["*"],
+      sections: ["summary"],
+    };
+    for (const layout of ["compact", "standard", "complete"]) {
+      expect(templateSchema.safeParse({ ...base, project_layout: layout }).success).toBe(true);
+    }
+    expect(templateSchema.safeParse({ ...base, project_layout: "full" }).success).toBe(false);
   });
 
   it("rejects non-kebab-case slugs", () => {

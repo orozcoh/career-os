@@ -8,7 +8,7 @@ santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub]
 
 ## Summary
 
-Software Engineer with an Electronics Engineering background, experienced in designing, building, deploying, and maintaining web applications from idea to production. Passionate about software architecture, Progressive Web Applications, distributed systems, cloud technologies, authentication, cryptography, and AI-assisted engineering workflows. Enjoys turning ideas into products while continuously learning through hands-on development.
+Software Engineer with an Electronics Engineering background, building modern web applications from concept to deployment. Experienced with React, TypeScript, Cloudflare, PWAs, authentication, and AI-assisted development. Passionate about designing practical software products and continuously learning through hands-on engineering.
 
 ## Experience
 
@@ -16,15 +16,13 @@ Software Engineer with an Electronics Engineering background, experienced in des
 
 *Jun 2023 – Present · Remote · Self-employed*
 
-- Designed, developed, deployed, and maintained multiple production-ready web applications from concept to deployment using modern web technologies.
-- Built Progressive Web Applications (PWAs) with a focus on mobile-first experiences, local-first principles, and maintainable software architecture.
-- Designed cloud-native solutions using Cloudflare Workers, Cloudflare KV, REST APIs, and edge infrastructure.
-- Developed software products exploring authentication, cryptography, passkeys, blockchain technologies, AI-assisted workflows, and distributed systems.
-- Independently managed the complete application lifecycle, including architecture, implementation, domain management, DNS configuration, deployment, monitoring, and ongoing maintenance.
+- Designed, built, and deployed production-ready web applications from concept to deployment.
+- Developed cloud-native applications using React, TypeScript, Progressive Web App technologies, and Cloudflare's edge platform.
+- Built software products exploring authentication, cryptography, AI-assisted development, and blockchain technologies.
 
 ### Software Engineering Intern — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Internship*
+*Oct 2022 – May 2023 · Remote · Internship*
 
 - Collaborated with the engineering team to modernize frontend development workflows and reusable component architecture.
 
@@ -34,39 +32,25 @@ Software Engineer with an Electronics Engineering background, experienced in des
 
 *Local-first knowledge management platform*
 
-A Progressive Web Application for capturing, organizing, and sharing personal knowledge. Built around local-first principles, with optional blockchain publication and QR-based sharing, allowing users to retain ownership of their data while selectively making content public.
+- Local-first knowledge platform with optional blockchain publishing and QR sharing.
 
-- Designed around local-first principles to keep user data available without requiring a centralized backend.
-- Integrated optional blockchain publication and QR-based sharing while preserving user control over personal knowledge.
-
-**Technologies:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
-
-**Links:** [Live](https://memory.inbytes.xyz)
+React · TypeScript · Cloudflare Workers
 
 ### TD Status
 
 *Cloud licensing and telemetry platform for TouchDesigner*
 
-Cloud platform for managing software licenses and monitoring TouchDesigner deployments. Provides customer management, heartbeat telemetry, license validation, and operational visibility through Cloudflare Workers and KV.
+- Built a cloud-based licensing system with heartbeat telemetry for monitoring TouchDesigner deployments.
 
-- Built a cloud-based licensing system supporting customer grouping, license management, and device validation.
-
-**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
-
-**Links:** [Live](https://td-status.inbytes.xyz)
+React · TypeScript · Cloudflare Workers
 
 ### Prompter
 
 *AI image generation with crypto micropayments*
 
-AI image generation platform that transforms user images using curated prompts while accepting USDC payments through the x402 protocol. Designed without user accounts or traditional payment processing, prioritizing simplicity and privacy.
+- Integrated x402 micropayments while protecting proprietary prompts using Cloudflare Workers and KV.
 
-- Integrated x402 to enable USDC micropayments without traditional payment gateways or user accounts.
-- Protected proprietary prompts by keeping prompt engineering server-side using Cloudflare Workers and KV.
-
-**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
-
-**Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
+React · TypeScript · Cloudflare Workers
 
 ## Skills
 
@@ -80,10 +64,6 @@ AI image generation platform that transforms user images using curated prompts w
 ### Bachelor's Degree Electronics Engineering — Universidad de Antioquia
 
 *Aug 2014 – Jun 2023 · Medellín, Colombia*
-
-- Developed a strong foundation in software engineering, embedded systems, electronics, mathematics, and computer architecture.
-- Completed an engineering internship focused on modern web development, TypeScript migration, and reusable component libraries.
-- Transitioned academic interests toward software engineering through independent product development and modern web technologies.
 
 ## Languages
 

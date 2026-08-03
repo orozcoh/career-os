@@ -34,7 +34,8 @@ employment_types:
   contract: Contrato
   freelance: Freelance
   internship: Pasantía
-  self-employed: Independiente
+  # The role title already says "Independiente"; the label adds nothing.
+  self-employed: ""
 
 # Language proficiency display labels
 proficiency_levels:

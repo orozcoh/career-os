@@ -8,7 +8,7 @@ santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub]
 
 ## Summary
 
-Frontend Engineer with an Electronics Engineering background, experienced in designing and building modern web applications using React, TypeScript, and Progressive Web App technologies. Passionate about creating intuitive user experiences while collaborating across the full product lifecycle—from architecture and implementation to deployment and maintenance.
+Frontend Engineer with an Electronics Engineering background, building modern web applications using React, TypeScript, and Progressive Web App technologies. Passionate about creating intuitive user experiences across the full product lifecycle—from architecture and implementation to deployment.
 
 ## Experience
 
@@ -16,11 +16,13 @@ Frontend Engineer with an Electronics Engineering background, experienced in des
 
 *Jun 2023 – Present · Remote · Self-employed*
 
-- Built Progressive Web Applications (PWAs) with a focus on mobile-first experiences, local-first principles, and maintainable software architecture.
+- Designed, built, and deployed production-ready web applications from concept to deployment.
+- Developed cloud-native applications using React, TypeScript, Progressive Web App technologies, and Cloudflare's edge platform.
+- Designed user-focused Progressive Web Applications with mobile-first and local-first principles.
 
 ### Software Engineering Intern — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Internship*
+*Oct 2022 – May 2023 · Remote · Internship*
 
 - Migrated a JavaScript UI component library to TypeScript, improving maintainability and type safety.
 - Packaged reusable UI components into an internal npm library for use across multiple projects.
@@ -32,21 +34,13 @@ Frontend Engineer with an Electronics Engineering background, experienced in des
 
 *Local-first knowledge management platform*
 
-A Progressive Web Application for capturing, organizing, and sharing personal knowledge. Built around local-first principles, with optional blockchain publication and QR-based sharing, allowing users to retain ownership of their data while selectively making content public.
-
-**Technologies:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
-
-**Links:** [Live](https://memory.inbytes.xyz)
+React · TypeScript · Cloudflare Workers
 
 ### Prompter
 
 *AI image generation with crypto micropayments*
 
-AI image generation platform that transforms user images using curated prompts while accepting USDC payments through the x402 protocol. Designed without user accounts or traditional payment processing, prioritizing simplicity and privacy.
-
-**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
-
-**Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
+React · TypeScript · Cloudflare Workers
 
 ## Skills
 
@@ -58,10 +52,6 @@ AI image generation platform that transforms user images using curated prompts w
 ### Bachelor's Degree Electronics Engineering — Universidad de Antioquia
 
 *Aug 2014 – Jun 2023 · Medellín, Colombia*
-
-- Developed a strong foundation in software engineering, embedded systems, electronics, mathematics, and computer architecture.
-- Completed an engineering internship focused on modern web development, TypeScript migration, and reusable component libraries.
-- Transitioned academic interests toward software engineering through independent product development and modern web technologies.
 
 ## Languages
 

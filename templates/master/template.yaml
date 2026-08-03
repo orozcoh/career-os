@@ -24,6 +24,10 @@ exclude_tags: []
 
 max_bullets_per_role: null
 
+project_layout: complete
+
+max_education_highlights: null
+
 sections:
   - summary
   - experience
@@ -36,9 +40,3 @@ order: 99
 
 skills:
   filter_tags: null
-
-show:
-  project_links: true
-  github_links: true
-  website_links: true
-  all_skills: true

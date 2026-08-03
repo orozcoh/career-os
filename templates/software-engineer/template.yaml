@@ -18,28 +18,29 @@ title_override:
 
 summary_override:
   en: >-
-    Software Engineer with an Electronics Engineering background, experienced in
-    designing, building, deploying, and maintaining web applications from idea
-    to production. Passionate about software architecture, Progressive Web
-    Applications, distributed systems, cloud technologies, authentication,
-    cryptography, and AI-assisted engineering workflows. Enjoys turning ideas
-    into products while continuously learning through hands-on development.
+    Software Engineer with an Electronics Engineering background, building
+    modern web applications from concept to deployment. Experienced with React,
+    TypeScript, Cloudflare, PWAs, authentication, and AI-assisted development.
+    Passionate about designing practical software products and continuously
+    learning through hands-on engineering.
 
   es: >-
-    Ingeniero de Software con formación en Ingeniería Electrónica y experiencia
-    diseñando, desarrollando, desplegando y manteniendo aplicaciones web desde
-    la idea hasta producción. Interesado en arquitectura de software,
-    Aplicaciones Web Progresivas, sistemas distribuidos, tecnologías cloud,
-    autenticación, criptografía y flujos de desarrollo asistidos por IA.
-    Disfruta convertir ideas en productos mientras continúa aprendiendo mediante
-    el desarrollo práctico.
+    Ingeniero de Software con formación en Ingeniería Electrónica, construyendo
+    aplicaciones web modernas desde el concepto hasta el despliegue. Con
+    experiencia en React, TypeScript, Cloudflare, PWAs, autenticación y
+    desarrollo asistido por IA. Apasionado por diseñar productos de software
+    prácticos y aprender continuamente a través de la ingeniería práctica.
 
 include_tags:
   - swe
 
 exclude_tags: []
 
-max_bullets_per_role: 5
+max_bullets_per_role: 3
+
+project_layout: compact
+
+max_education_highlights: 0
 
 sections:
   - summary

@@ -85,10 +85,16 @@ const sectionIds: Record<SectionId, string> = {
             {resume.experience.map((role) => (
               <div class="avoid-break">
                 <h3 class="text-base font-medium">
-                  {t(role.title, lang)} — {role.company}
+                  {[t(role.title, lang), t(role.company, lang)].filter(Boolean).join(" — ")}
                 </h3>
                 <p class="mt-0.5 text-sm text-muted">
-                  {formatDateRange(role.start, role.end, locale)} · {role.location} · {locale.employment_types[role.employment_type]}
+                  {[
+                    formatDateRange(role.start, role.end, locale),
+                    role.location,
+                    locale.employment_types[role.employment_type],
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")}
                 </p>
                 <ul class="mt-2 list-disc space-y-1 pl-5 leading-7">
                   {role.bullets.map((b) => (
@@ -106,7 +112,9 @@ const sectionIds: Record<SectionId, string> = {
               <div class="avoid-break">
                 <h3 class="text-base font-medium">{project.name}</h3>
                 <p class="mt-0.5 text-sm italic text-muted">{t(project.tagline, lang)}</p>
-                <p class="mt-2 leading-7">{t(project.description, lang)}</p>
+                {resume.template.project_layout !== "compact" && (
+                  <p class="mt-2 leading-7">{t(project.description, lang)}</p>
+                )}
                 {project.highlights.length > 0 && (
                   <ul class="mt-2 list-disc space-y-1 pl-5 leading-7">
                     {project.highlights.map((h) => (
@@ -114,14 +122,22 @@ const sectionIds: Record<SectionId, string> = {
                     ))}
                   </ul>
                 )}
-                {project.technologies.length > 0 && (
-                  <p class="mt-2 text-sm text-muted">
-                    <span class="font-medium text-ink">{locale.resume.technologies}:</span>{" "}
-                    {project.technologies.join(", ")}
-                  </p>
-                )}
-                {project.links.length > 0 && (
-                  <p class="mt-1 text-sm">
+                {project.technologies.length > 0 &&
+                  (resume.template.project_layout === "compact" ? (
+                    <p class="mt-2 text-sm text-muted">{project.technologies.join(" · ")}</p>
+                  ) : (
+                    <p class="mt-2 text-sm text-muted">
+                      <span class="font-medium text-ink">{locale.resume.technologies}:</span>{" "}
+                      {project.technologies.join(", ")}
+                    </p>
+                  ))}
+                {resume.template.project_layout !== "compact" && project.links.length > 0 && (
+                  <p
+                    class:list={[
+                      "mt-1 text-sm",
+                      resume.template.project_layout === "standard" && "project-links",
+                    ]}
+                  >
                     {project.links.map((link, i) => (
                       <>
                         {i > 0 && <span class="text-faint">{" · "}</span>}

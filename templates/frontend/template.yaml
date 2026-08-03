@@ -18,26 +18,29 @@ title_override:
 
 summary_override:
   en: >-
-    Frontend Engineer with an Electronics Engineering background, experienced in
-    designing and building modern web applications using React, TypeScript, and
-    Progressive Web App technologies. Passionate about creating intuitive user
-    experiences while collaborating across the full product lifecycle—from
-    architecture and implementation to deployment and maintenance.
+    Frontend Engineer with an Electronics Engineering background, building
+    modern web applications using React, TypeScript, and Progressive Web App
+    technologies. Passionate about creating intuitive user experiences across
+    the full product lifecycle—from architecture and implementation to
+    deployment.
 
   es: >-
-    Ingeniero Frontend con formación en Ingeniería Electrónica y experiencia
-    diseñando y desarrollando aplicaciones web modernas utilizando React,
-    TypeScript y tecnologías de Aplicaciones Web Progresivas. Apasionado por
-    crear experiencias de usuario intuitivas participando en todo el ciclo de
-    vida del producto, desde la arquitectura y el desarrollo hasta el despliegue
-    y mantenimiento.
+    Ingeniero Frontend con formación en Ingeniería Electrónica, desarrollando
+    aplicaciones web modernas con React, TypeScript y tecnologías de
+    Aplicaciones Web Progresivas. Apasionado por crear experiencias de usuario
+    intuitivas a lo largo de todo el ciclo de vida del producto, desde la
+    arquitectura hasta el despliegue.
 
 include_tags:
   - frontend
 
 exclude_tags: []
 
-max_bullets_per_role: 5
+max_bullets_per_role: 3
+
+project_layout: compact
+
+max_education_highlights: 0
 
 sections:
   - summary
