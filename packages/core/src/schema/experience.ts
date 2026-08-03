@@ -21,7 +21,8 @@ export const taggedBulletSchema = z.object({
 export const roleSchema = z.object({
   id: z.string().min(1),
   title: localizedTextSchema,
-  company: z.string().min(1),
+  /** Localized company name; a locale may be empty when the title already conveys it. */
+  company: localizedTextSchema,
   employment_type: employmentTypeSchema,
   location: z.string().min(1),
   start: monthSchema,

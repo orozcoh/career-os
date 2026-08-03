@@ -41,9 +41,10 @@ async function main(): Promise<void> {
     const docxDir = join(paths.generatedDir, locale, "docx");
     const htmlDir = join(paths.generatedDir, locale, "html");
     const distResumesDir = join(paths.websiteDist, locale, "resumes");
+    const publicResumesDir = join(paths.websitePublic, locale, "resumes");
     
     await Promise.all(
-      [markdownDir, docxDir, htmlDir, distResumesDir].map((dir) =>
+      [markdownDir, docxDir, htmlDir, distResumesDir, publicResumesDir].map((dir) =>
         mkdir(dir, { recursive: true }),
       ),
     );
@@ -56,6 +57,7 @@ async function main(): Promise<void> {
       const docx = await renderDocx(resume, localeFile, locale);
       await writeFile(join(docxDir, `${slug}.docx`), docx);
       await copyFile(join(docxDir, `${slug}.docx`), join(distResumesDir, `${slug}.docx`));
+      await copyFile(join(docxDir, `${slug}.docx`), join(publicResumesDir, `${slug}.docx`));
 
       // The built site page is the single HTML source — archive it verbatim.
       await copyFile(

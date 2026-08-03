@@ -2,7 +2,9 @@
   title:
     en: Independent Software Engineer
     es: Ingeniero de Software Independiente
-  company: Self-employed
+  company:
+    en: Self-employed
+    es: ""
   employment_type: self-employed
   location: Remote
   start: "2023-06"
@@ -10,47 +12,39 @@
   tags: [swe, frontend, creative]
   bullets:
     - text:
-        en: Designed, developed, deployed, and maintained multiple production-ready web applications from concept to deployment using modern web technologies.
-        es: Diseñé, desarrollé, desplegué y mantuve múltiples aplicaciones web listas para producción desde el concepto hasta el despliegue utilizando tecnologías web modernas.
+        en: Designed, built, and deployed production-ready web applications from concept to deployment.
+        es: Diseñé, desarrollé y desplegué aplicaciones web listas para producción desde el concepto hasta el despliegue.
+      tags: [swe, frontend]
+
+    - text:
+        en: Developed cloud-native applications using React, TypeScript, Progressive Web App technologies, and Cloudflare's edge platform.
+        es: Desarrollé aplicaciones cloud-native utilizando React, TypeScript, tecnologías de Aplicaciones Web Progresivas y la plataforma de borde de Cloudflare.
+      tags: [swe, frontend]
+
+    - text:
+        en: Built software products exploring authentication, cryptography, AI-assisted development, and blockchain technologies.
+        es: Construí productos de software explorando autenticación, criptografía, desarrollo asistido por IA y tecnologías blockchain.
       tags: [swe]
 
     - text:
-        en: Built Progressive Web Applications (PWAs) with a focus on mobile-first experiences, local-first principles, and maintainable software architecture.
-        es: Construí Aplicaciones Web Progresivas (PWAs) con enfoque en experiencias mobile-first, principios local-first y arquitectura de software mantenible.
-      tags: [frontend, swe]
-
-    - text:
-        en: Designed cloud-native solutions using Cloudflare Workers, Cloudflare KV, REST APIs, and edge infrastructure.
-        es: Diseñé soluciones cloud-native utilizando Cloudflare Workers, Cloudflare KV, APIs REST e infraestructura de borde.
-      tags: [swe]
-
-    - text:
-        en: Developed software products exploring authentication, cryptography, passkeys, blockchain technologies, AI-assisted workflows, and distributed systems.
-        es: Desarrollé productos de software explorando autenticación, criptografía, passkeys, tecnologías blockchain, flujos de trabajo asistidos por IA y sistemas distribuidos.
-      tags: [swe]
-
-    - text:
-        en: Independently managed the complete application lifecycle, including architecture, implementation, domain management, DNS configuration, deployment, monitoring, and ongoing maintenance.
-        es: Gestioné de forma independiente el ciclo de vida completo de la aplicación, incluyendo arquitectura, implementación, gestión de dominios, configuración DNS, despliegue, monitoreo y mantenimiento continuo.
-      tags: [swe]
-
-    - text:
-        en: Used AI-assisted development workflows to accelerate research, prototype solutions, validate implementation approaches, and explore unfamiliar technologies while maintaining ownership of engineering decisions.
-        es: Utilicé flujos de desarrollo asistidos por IA para acelerar la investigación, prototipar soluciones, validar enfoques de implementación y explorar tecnologías desconocidas manteniendo la propiedad de las decisiones de ingeniería.
-      tags: [swe]
-
-    - text:
-        en: Built interactive software experiences integrating TouchDesigner licensing, telemetry collection, and cloud-based license management.
-        es: Construí experiencias de software interactivas integrando licenciamiento de TouchDesigner, recolección de telemetría y gestión de licencias basada en la nube.
+        en: Built cloud-connected tooling for interactive experiences, including licensing and telemetry systems for TouchDesigner deployments.
+        es: Construí herramientas conectadas a la nube para experiencias interactivas, incluyendo sistemas de licenciamiento y telemetría para despliegues de TouchDesigner.
       tags: [creative]
+
+    - text:
+        en: Designed user-focused Progressive Web Applications with mobile-first and local-first principles.
+        es: Diseñé Aplicaciones Web Progresivas centradas en el usuario con principios mobile-first y local-first.
+      tags: [frontend]
 
 - id: tso-mobile-intern
   title:
     en: Software Engineering Intern
     es: Pasante de Ingeniería de Software
-  company: TSO Mobile Colombia
+  company:
+    en: TSO Mobile Colombia
+    es: TSO Mobile Colombia
   employment_type: internship
-  location: Medellín, Colombia
+  location: Remote
   start: "2022-10"
   end: "2023-05"
   tags: [swe, frontend]

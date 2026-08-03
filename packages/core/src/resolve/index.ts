@@ -75,6 +75,13 @@ export function resolveResume(data: CareerData, template: Template): ResumeData 
     .filter((project) => tagsMatch(project.tags, template))
     .map((project) => ({ ...project, highlights: selectBullets(project.highlights, template) }));
 
+  const maxEducation = template.max_education_highlights;
+  const education = data.education.map((edu) => ({
+    ...edu,
+    highlights:
+      maxEducation === null ? edu.highlights : edu.highlights.slice(0, maxEducation),
+  }));
+
   return {
     template,
     profile: data.profile,
@@ -83,7 +90,7 @@ export function resolveResume(data: CareerData, template: Template): ResumeData 
     experience,
     projects,
     skills: filterSkills(data.skills, template),
-    education: data.education,
+    education,
     languages: data.languages,
   };
 }

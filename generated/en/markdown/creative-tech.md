@@ -2,11 +2,13 @@
 
 **Creative Technologist**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Summary
 
-Engineer and creative technologist building real-time interactive experiences — WebGL renderers, generative systems, and collaborative creative tools with production-grade engineering underneath.
+Software Engineer with an Electronics Engineering background, passionate about connecting software with interactive experiences. Experienced in web applications, cloud services, and tools for creative workflows, spanning TouchDesigner, interactive installations, telemetry systems, and AI-assisted development.
 
 ## Experience
 
@@ -14,12 +16,13 @@ Engineer and creative technologist building real-time interactive experiences �
 
 *Jun 2023 – Present · Remote · Self-employed*
 
-- Built Progressive Web Applications (PWAs) with a focus on mobile-first experiences, local-first principles, and maintainable software architecture.
-- Built interactive software experiences integrating TouchDesigner licensing, telemetry collection, and cloud-based license management.
+- Designed, built, and deployed production-ready web applications from concept to deployment.
+- Developed cloud-native applications using React, TypeScript, Progressive Web App technologies, and Cloudflare's edge platform.
+- Built cloud-connected tooling for interactive experiences, including licensing and telemetry systems for TouchDesigner deployments.
 
 ### Software Engineering Intern — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Internship*
+*Oct 2022 – May 2023 · Remote · Internship*
 
 - Migrated a JavaScript UI component library to TypeScript, improving maintainability and type safety.
 - Packaged reusable UI components into an internal npm library for use across multiple projects.
@@ -27,38 +30,43 @@ Engineer and creative technologist building real-time interactive experiences �
 
 ## Projects
 
-### career-os
+### Anthology
 
-*Resume infrastructure as software*
+*Local-first knowledge management platform*
 
-Single source of truth for professional identity. Structured YAML data compiles into ATS-friendly PDF, HTML, DOCX, and Markdown resumes plus a static website.
+A Progressive Web Application for capturing, organizing, and sharing personal knowledge. Built around local-first principles, with optional blockchain publication and QR-based sharing, allowing users to retain ownership of their data while selectively making content public.
 
-- Headless-Chromium print pipeline produces machine-readable, ATS-parseable PDFs from the same HTML the site serves.
+**Technologies:** React, TypeScript, Cloudflare Workers
 
-**Technologies:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Links:** [Live](https://memory.inbytes.xyz)
 
-**Links:** [Source](https://github.com/orozcoh/career-os)
+### TD Status
 
-### Shader Sketches
+*Cloud licensing and telemetry platform for TouchDesigner*
 
-*Generative art in the browser*
+Cloud platform for managing software licenses and monitoring TouchDesigner deployments. Provides customer management, heartbeat telemetry, license validation, and operational visibility through Cloudflare Workers and KV.
 
-A collection of interactive GLSL sketches exploring noise fields, particle systems, and audio-reactive visuals, packaged as embeddable web components.
+- Built a cloud-based licensing system with heartbeat telemetry for monitoring TouchDesigner deployments.
 
-- 60fps particle systems with 100k+ particles via GPU instancing.
-- Featured in an online generative-art showcase with 20k visitors.
+**Technologies:** React, TypeScript, Cloudflare Workers
 
-**Technologies:** WebGL, GLSL, TypeScript, Vite
+**Links:** [Live](https://td-status.inbytes.xyz)
 
-**Links:** [Live](https://example.com/shaders) · [Source](https://github.com/example/shader-sketches)
+### Prompter
+
+*AI image generation with crypto micropayments*
+
+AI image generation platform that transforms user images using curated prompts while accepting USDC payments through the x402 protocol. Designed without user accounts or traditional payment processing, prioritizing simplicity and privacy.
+
+**Technologies:** React, TypeScript, Cloudflare Workers
+
+**Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
 
 ## Skills
 
-- **Languages:** TypeScript, JavaScript
-- **Frontend:** React, Astro, Tailwind CSS, Accessibility (WCAG)
-- **Backend & Infrastructure:** Node.js, Cloudflare Workers
-- **Creative Technology:** WebGL / GLSL, Canvas 2D, Generative art, Web Audio API
-- **Practices:** Testing (unit, contract, e2e), Technical writing & RFCs
+- **Programming Languages:** TypeScript, JavaScript
+- **Frontend Development:** React, Progressive Web Apps (PWA), HTML5, CSS3, Tailwind CSS
+- **Creative Technology:** TouchDesigner, Interactive Installations, Licensing Systems, Telemetry Systems
 
 ## Education
 
@@ -66,11 +74,7 @@ A collection of interactive GLSL sketches exploring noise fields, particle syste
 
 *Aug 2014 – Jun 2023 · Medellín, Colombia*
 
-- Developed a strong foundation in software engineering, embedded systems, electronics, mathematics, and computer architecture.
-- Completed an engineering internship focused on modern web development, TypeScript migration, and reusable component libraries.
-- Transitioned academic interests toward software engineering through independent product development and modern web technologies.
-
 ## Languages
 
 - Spanish — Native
-- English — Fluent
+- English — Fluent - B2

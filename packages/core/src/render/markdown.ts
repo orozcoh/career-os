@@ -7,14 +7,12 @@ import { visibleSections, type ResumeData } from "../resolve/index";
 
 function contactLine(resume: ResumeData, locale: LocaleFile): string {
   const { profile: p } = resume;
+  const web = (url: string) => `[${url.replace(/^https?:\/\//, "")}](${url})`;
   return [
     p.location,
-    p.email,
-    `[${locale.resume.linkedin}](${p.linkedin})`,
-    `[${locale.resume.github}](${p.github})`,
-    `[${p.website.replace(/^https?:\/\//, "")}](${p.website})`,
-    `[${locale.resume.cv}](${p.cv})`,
-  ].join(" · ");
+    [p.email, `[${locale.resume.linkedin}](${p.linkedin})`, `[${locale.resume.github}](${p.github})`].join(" · "),
+    [web(p.website), `[${locale.resume.cv}](${p.cv})`].join(" · "),
+  ].join("\n");
 }
 
 const sectionRenderers: Record<SectionId, (resume: ResumeData, locale: LocaleFile, lang: Locale) => string> = {
@@ -23,27 +21,36 @@ const sectionRenderers: Record<SectionId, (resume: ResumeData, locale: LocaleFil
   experience: (r, locale, lang) =>
     r.experience
       .map((role) => {
-        const meta = `*${formatDateRange(role.start, role.end, locale)} · ${role.location} · ${locale.employment_types[role.employment_type]}*`;
+        const metaParts = [
+          formatDateRange(role.start, role.end, locale),
+          role.location,
+          locale.employment_types[role.employment_type],
+        ].filter(Boolean);
+        const meta = `*${metaParts.join(" · ")}*`;
         const bullets = role.bullets.map((b) => `- ${t(b.text, lang)}`).join("\n");
-        return [`### ${t(role.title, lang)} — ${role.company}`, meta, bullets]
-          .filter(Boolean)
-          .join("\n\n");
+        const heading = [t(role.title, lang), t(role.company, lang)].filter(Boolean).join(" — ");
+        return [`### ${heading}`, meta, bullets].filter(Boolean).join("\n\n");
       })
       .join("\n\n"),
 
   projects: (r, locale, lang) =>
     r.projects
       .map((project) => {
+        const layout = r.template.project_layout;
         const parts = [
           `### ${project.name}`,
           `*${t(project.tagline, lang)}*`,
-          t(project.description, lang),
+          layout === "compact" ? "" : t(project.description, lang),
           project.highlights.map((h) => `- ${t(h.text, lang)}`).join("\n"),
         ];
         if (project.technologies.length > 0) {
-          parts.push(`**${locale.resume.technologies}:** ${project.technologies.join(", ")}`);
+          parts.push(
+            layout === "compact"
+              ? project.technologies.join(" · ")
+              : `**${locale.resume.technologies}:** ${project.technologies.join(", ")}`,
+          );
         }
-        if (project.links.length > 0) {
+        if (layout !== "compact" && project.links.length > 0) {
           parts.push(
             `**${locale.resume.links}:** ${project.links.map((l) => `[${t(l.label, lang)}](${l.url})`).join(" · ")}`,
           );

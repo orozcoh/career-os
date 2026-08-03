@@ -20,7 +20,7 @@ export const fixtureData: CareerData = {
     {
       id: "role-senior",
       title: { en: "Senior Engineer", es: "Ingeniero Senior" },
-      company: "Acme",
+      company: { en: "Acme", es: "Acme" },
       employment_type: "full-time",
       location: "Remote",
       start: "2023-01",
@@ -36,7 +36,7 @@ export const fixtureData: CareerData = {
     {
       id: "role-junior",
       title: { en: "Junior Engineer", es: "Ingeniero Junior" },
-      company: "Globex",
+      company: { en: "Globex", es: "Globex" },
       employment_type: "internship",
       location: "Bogotá",
       start: "2020-06",
@@ -112,6 +112,8 @@ export function makeTemplate(overrides: Partial<Template> = {}): Template {
     include_tags: ["*"],
     exclude_tags: [],
     max_bullets_per_role: null,
+    project_layout: "complete",
+    max_education_highlights: null,
     sections: ["summary", "experience", "projects", "skills", "education", "languages"],
     order: 100,
     skills: { filter_tags: null },
@@ -163,7 +165,7 @@ export const enLocale: LocaleFile = {
     download_pdf: "Download PDF",
     download_docx: "DOCX",
     all_resumes: "All resumes",
-    generated_from: "Generated from structured data",
+    generated_from: "© 2026 Santiago Orozco Holguín",
     version: "v",
   },
 };
@@ -188,7 +190,7 @@ export const esLocale: LocaleFile = {
     contract: "Contrato",
     freelance: "Freelance",
     internship: "Pasantía",
-    "self-employed": "Independiente",
+    "self-employed": "",
   },
   proficiency_levels: {
     native: "Nativo",
@@ -212,7 +214,7 @@ export const esLocale: LocaleFile = {
     download_pdf: "Descargar PDF",
     download_docx: "DOCX",
     all_resumes: "Todos los currículums",
-    generated_from: "Generado desde datos estructurados",
+    generated_from: "© 2026 Santiago Orozco Holguín",
     version: "v",
   },
 };

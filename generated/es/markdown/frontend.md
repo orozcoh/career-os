@@ -2,23 +2,27 @@
 
 **Ingeniero Frontend**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Perfil Profesional
 
-Ingeniero frontend especializado en React, rendimiento de renderizado y sistemas de diseño. Entrego interfaces accesibles y rápidas junto con las herramientas que las mantienen consistentes entre equipos.
+Ingeniero Frontend con formación en Ingeniería Electrónica, desarrollando aplicaciones web modernas con React, TypeScript y tecnologías de Aplicaciones Web Progresivas. Apasionado por crear experiencias de usuario intuitivas a lo largo de todo el ciclo de vida del producto, desde la arquitectura hasta el despliegue.
 
 ## Experiencia
 
-### Ingeniero de Software Independiente — Self-employed
+### Ingeniero de Software Independiente
 
-*Jun 2023 – Presente · Remote · Independiente*
+*Jun 2023 – Presente · Remote*
 
-- Construí Aplicaciones Web Progresivas (PWAs) con enfoque en experiencias mobile-first, principios local-first y arquitectura de software mantenible.
+- Diseñé, desarrollé y desplegué aplicaciones web listas para producción desde el concepto hasta el despliegue.
+- Desarrollé aplicaciones cloud-native utilizando React, TypeScript, tecnologías de Aplicaciones Web Progresivas y la plataforma de borde de Cloudflare.
+- Diseñé Aplicaciones Web Progresivas centradas en el usuario con principios mobile-first y local-first.
 
 ### Pasante de Ingeniería de Software — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Pasantía*
+*Oct 2022 – May 2023 · Remote · Pasantía*
 
 - Migré una librería de componentes UI de JavaScript a TypeScript, mejorando la mantenibilidad y la seguridad de tipos.
 - Empaqueté componentes UI reutilizables en una librería npm interna para uso en múltiples proyectos.
@@ -26,35 +30,22 @@ Ingeniero frontend especializado en React, rendimiento de renderizado y sistemas
 
 ## Proyectos
 
-### career-os
+### Anthology
 
-*Infraestructura de currículum como software*
+*Plataforma local-first para gestión de conocimiento*
 
-Fuente única de verdad para la identidad profesional. Datos YAML estructurados se compilan en currículums compatibles con ATS en PDF, HTML, DOCX y Markdown más un sitio web estático.
+React · TypeScript · Cloudflare Workers
 
-- Pipeline de impresión con Chromium headless produce PDFs legibles por máquina y compatibles con ATS desde el mismo HTML que sirve el sitio.
+### Prompter
 
-**Tecnologías:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+*Generación de imágenes con IA y micropagos en criptomonedas*
 
-**Enlaces:** [Código fuente](https://github.com/orozcoh/career-os)
-
-### Shader Sketches
-
-*Arte generativo en el navegador*
-
-Una colección de sketches GLSL interactivos que exploran campos de ruido, sistemas de partículas y visuales audio-reactivos, empaquetados como componentes web integrables.
-
-**Tecnologías:** WebGL, GLSL, TypeScript, Vite
-
-**Enlaces:** [En vivo](https://example.com/shaders) · [Código fuente](https://github.com/example/shader-sketches)
+React · TypeScript · Cloudflare Workers
 
 ## Habilidades Técnicas
 
-- **Lenguajes:** TypeScript, JavaScript
-- **Frontend:** React, Astro, Tailwind CSS, Accesibilidad (WCAG)
-- **Backend e Infraestructura:** Node.js, Cloudflare Workers
-- **Tecnología Creativa:** Canvas 2D
-- **Prácticas:** Testing (unitario, de contrato, e2e), Escritura técnica y RFCs
+- **Lenguajes de Programación:** TypeScript, JavaScript
+- **Desarrollo Frontend:** React, Aplicaciones Web Progresivas (PWA), HTML5, CSS3, Tailwind CSS
 
 ## Educación
 
@@ -62,11 +53,7 @@ Una colección de sketches GLSL interactivos que exploran campos de ruido, siste
 
 *Ago 2014 – Jun 2023 · Medellín, Colombia*
 
-- Desarrollé una base sólida en ingeniería de software, sistemas embebidos, electrónica, matemáticas y arquitectura de computadores.
-- Completé una pasantía de ingeniería enfocada en desarrollo web moderno, migración a TypeScript y librerías de componentes reutilizables.
-- Transicioné mis intereses académicos hacia la ingeniería de software a través del desarrollo independiente de productos y tecnologías web modernas.
-
 ## Idiomas
 
 - Español — Nativo
-- Inglés — Fluido
+- Inglés — Fluido - B2

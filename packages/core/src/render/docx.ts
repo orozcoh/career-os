@@ -40,26 +40,37 @@ const sectionBody: Record<SectionId, (r: ResumeData, locale: LocaleFile, lang: L
   summary: (r, _locale, lang) => [body(t(r.summary, lang))],
 
   experience: (r, locale, lang) =>
-    r.experience.flatMap((role) => [
-      heading(`${t(role.title, lang)} — ${role.company}`, HeadingLevel.HEADING_2),
-      body(`${formatDateRange(role.start, role.end, locale)} · ${role.location} · ${locale.employment_types[role.employment_type]}`, {
-        italics: true,
-      }),
-      ...role.bullets.map((b) => bullet(t(b.text, lang))),
-    ]),
+    r.experience.flatMap((role) => {
+      const meta = [
+        formatDateRange(role.start, role.end, locale),
+        role.location,
+        locale.employment_types[role.employment_type],
+      ]
+        .filter(Boolean)
+        .join(" · ");
+      return [
+        heading([t(role.title, lang), t(role.company, lang)].filter(Boolean).join(" — "), HeadingLevel.HEADING_2),
+        body(meta, { italics: true }),
+        ...role.bullets.map((b) => bullet(t(b.text, lang))),
+      ];
+    }),
 
   projects: (r, locale, lang) =>
     r.projects.flatMap((project) => {
-      const paragraphs = [
-        heading(project.name, HeadingLevel.HEADING_2),
-        body(t(project.tagline, lang), { italics: true }),
-        body(t(project.description, lang)),
-        ...project.highlights.map((h) => bullet(t(h.text, lang))),
-      ];
-      if (project.technologies.length > 0) {
-        paragraphs.push(body(`${locale.resume.technologies}: ${project.technologies.join(", ")}`));
+      const layout = r.template.project_layout;
+      const paragraphs = [heading(project.name, HeadingLevel.HEADING_2), body(t(project.tagline, lang), { italics: true })];
+      if (layout !== "compact") {
+        paragraphs.push(body(t(project.description, lang)));
       }
-      if (project.links.length > 0) {
+      paragraphs.push(...project.highlights.map((h) => bullet(t(h.text, lang))));
+      if (project.technologies.length > 0) {
+        paragraphs.push(
+          layout === "compact"
+            ? body(project.technologies.join(" · "))
+            : body(`${locale.resume.technologies}: ${project.technologies.join(", ")}`),
+        );
+      }
+      if (layout !== "compact" && project.links.length > 0) {
         paragraphs.push(body(`${locale.resume.links}: ${project.links.map((l) => `${t(l.label, lang)} (${l.url})`).join(" · ")}`));
       }
       return paragraphs;
@@ -89,10 +100,9 @@ export async function renderDocx(resume: ResumeData, locale: LocaleFile, lang: L
       spacing: { after: 40 },
     }),
     body(t(resume.title, lang)),
-    body(
-      [p.location, p.email, p.linkedin, p.github, p.website, p.cv].join(" · "),
-      { spacingAfter: 200 },
-    ),
+    body(p.location),
+    body([p.email, p.linkedin, p.github].join(" · ")),
+    body([p.website, p.cv].join(" · "), { spacingAfter: 200 }),
   ];
 
   for (const section of visibleSections(resume)) {

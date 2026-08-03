@@ -98,7 +98,8 @@ async function main(): Promise<void> {
 
       const pdfDir = join(paths.generatedDir, locale, "pdf");
       const distResumesDir = join(paths.websiteDist, locale, "resumes");
-      await Promise.all([pdfDir, distResumesDir].map((dir) => mkdir(dir, { recursive: true })));
+      const publicResumesDir = join(paths.websitePublic, locale, "resumes");
+      await Promise.all([pdfDir, distResumesDir, publicResumesDir].map((dir) => mkdir(dir, { recursive: true })));
 
       for (const template of templates) {
         const { slug } = template;
@@ -114,6 +115,7 @@ async function main(): Promise<void> {
 
         // Stage into the built site so download links resolve on deploy.
         await copyFile(out, join(distResumesDir, `${slug}.pdf`));
+        await copyFile(out, join(publicResumesDir, `${slug}.pdf`));
         console.log(`  ✓ ${locale}/${slug}.pdf`);
       }
       await context.close();

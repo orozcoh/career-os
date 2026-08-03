@@ -18,9 +18,7 @@
   technologies:
     - React
     - TypeScript
-    - Progressive Web App
     - Cloudflare Workers
-    - Blockchain
   links:
     - label:
         en: Live
@@ -29,12 +27,8 @@
   tags: [swe, frontend]
   highlights:
     - text:
-        en: Designed around local-first principles to keep user data available without requiring a centralized backend.
-        es: Diseñada bajo principios local-first para mantener los datos disponibles sin depender de un servidor central.
-      tags: [swe]
-    - text:
-        en: Integrated optional blockchain publication and QR-based sharing while preserving user control over personal knowledge.
-        es: Integró publicación opcional en blockchain y compartición mediante códigos QR manteniendo el control del usuario sobre su conocimiento.
+        en: Local-first knowledge platform with optional blockchain publishing and QR sharing.
+        es: Plataforma de conocimiento local-first con publicación opcional en blockchain y compartición mediante códigos QR.
       tags: [swe]
 
 - id: td-status
@@ -56,8 +50,6 @@
     - React
     - TypeScript
     - Cloudflare Workers
-    - Cloudflare KV
-    - REST API
   links:
     - label:
         en: Live
@@ -66,13 +58,9 @@
   tags: [swe, creative]
   highlights:
     - text:
-        en: Built a cloud-based licensing system supporting customer grouping, license management, and device validation.
-        es: Desarrolló un sistema de licenciamiento en la nube con gestión de clientes, licencias y validación de dispositivos.
-      tags: [swe]
-    - text:
-        en: Implemented heartbeat telemetry for remote monitoring of deployed interactive experiences.
-        es: Implementó telemetría mediante heartbeats para el monitoreo remoto de experiencias interactivas desplegadas.
-      tags: [creative]
+        en: Built a cloud-based licensing system with heartbeat telemetry for monitoring TouchDesigner deployments.
+        es: Desarrollé un sistema de licenciamiento en la nube con telemetría mediante heartbeats para monitorear implementaciones de TouchDesigner.
+      tags: [swe, creative]
 
 - id: prompter
   name: Prompter
@@ -94,9 +82,6 @@
     - React
     - TypeScript
     - Cloudflare Workers
-    - Cloudflare KV
-    - Generative AI
-    - x402
   links:
     - label:
         en: Live
@@ -109,10 +94,6 @@
   tags: [swe, frontend]
   highlights:
     - text:
-        en: Integrated x402 to enable USDC micropayments without traditional payment gateways or user accounts.
-        es: Integró x402 para habilitar micropagos en USDC sin pasarelas de pago tradicionales ni cuentas de usuario.
-      tags: [swe]
-    - text:
-        en: Protected proprietary prompts by keeping prompt engineering server-side using Cloudflare Workers and KV.
-        es: Protegió los prompts propietarios manteniendo la ingeniería de prompts del lado del servidor mediante Cloudflare Workers y KV.
+        en: Integrated x402 micropayments while protecting proprietary prompts using Cloudflare Workers and KV.
+        es: Integré micropagos mediante x402 protegiendo los prompts propietarios con Cloudflare Workers y KV.
       tags: [swe]
