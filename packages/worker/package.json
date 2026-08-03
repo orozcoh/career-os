@@ -1,0 +1,20 @@
+{
+  "name": "@career/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker: analytics ingestion + private dashboard API backed by Analytics Engine.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@career/analytics": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250801.0",
+    "typescript": "^5.8.0",
+    "wrangler": "^4.0.0"
+  }
+}

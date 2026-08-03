@@ -4,13 +4,16 @@ import { createAnalytics } from "../src/registry";
 import { clientSignalSchema, trackedEventSchema } from "../src/schema";
 import type { AnalyticsProvider, ClientSignal, EventSink } from "../src/types";
 
+const SESSION = "11111111-2222-3333-4444-555555555555";
+
 const ALL_SIGNALS: ClientSignal[] = [
-  { type: "page_view", path: "/" },
-  { type: "resume_view", resume: "frontend" },
-  { type: "resume_download", resume: "frontend", format: "pdf" },
-  { type: "resume_download", resume: "frontend", format: "docx" },
-  { type: "outbound_click", target: "github", resume: null },
-  { type: "outbound_click", target: "linkedin", resume: "frontend" },
+  { type: "page_view", path: "/", language: "en", session_id: SESSION },
+  { type: "resume_open", resume: "frontend", language: "en", session_id: SESSION },
+  { type: "resume_view", resume: "frontend", language: "en", session_id: SESSION },
+  { type: "resume_download", resume: "frontend", format: "pdf", language: "en", session_id: SESSION },
+  { type: "resume_download", resume: "frontend", format: "docx", language: "es", session_id: SESSION },
+  { type: "outbound_click", target: "github", resume: null, language: "en", session_id: SESSION },
+  { type: "outbound_click", target: "linkedin", resume: "frontend", language: "en", session_id: SESSION },
 ];
 
 describe("no-op provider contract", () => {
@@ -33,8 +36,12 @@ describe("no-op provider contract", () => {
         type: "resume_view",
         resume: "frontend",
         timestamp: new Date().toISOString(),
+        session_id: SESSION,
+        language: "en",
         country: null,
         city: null,
+        region: null,
+        continent: null,
         referrer: null,
         user_agent: null,
         version: "0.0.0-test",
@@ -71,8 +78,12 @@ describe("client signal schema", () => {
 describe("tracked event schema (privacy contract enforcement)", () => {
   const base = {
     timestamp: "2026-07-31T20:15:10.000Z",
+    session_id: SESSION,
+    language: "en" as const,
     country: "Colombia",
     city: "Bogotá",
+    region: "Bogotá D.C.",
+    continent: "South America",
     referrer: "linkedin.com",
     user_agent: "Chrome",
     version: "1.0.2",
@@ -81,6 +92,7 @@ describe("tracked event schema (privacy contract enforcement)", () => {
   it("accepts a well-formed event for each type", () => {
     const events = [
       { ...base, type: "page_view", path: "/", resume: null },
+      { ...base, type: "resume_open", resume: "frontend" },
       { ...base, type: "resume_view", resume: "frontend" },
       { ...base, type: "resume_download", resume: "frontend", format: "pdf" },
       { ...base, type: "outbound_click", target: "github", resume: null },

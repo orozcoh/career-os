@@ -1,0 +1,24 @@
+# Analytics Worker — ingestion + dashboard API for cv.orozcoh.com.
+#
+# Deploy:
+#   wrangler secret put ANALYTICS_KEY          # dashboard access key
+#   wrangler secret put ANALYTICS_API_TOKEN    # Cloudflare API token (Account Analytics Read)
+#   wrangler deploy
+# Then add a Workers Route on the cv.orozcoh.com zone:
+#   cv.orozcoh.com/api/* → cv-analytics
+
+name = "cv-analytics"
+main = "src/index.ts"
+compatibility_date = "2025-08-01"
+
+[vars]
+# Cloudflare account ID (dashboard → Workers). Used to query the
+# Analytics Engine SQL API from the Worker.
+ACCOUNT_ID = "f0825dc7dca5f6831a9beb091e7f585e"
+
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+dataset = "cv-analytics"
+
+workers_dev = false
+preview_urls = false
