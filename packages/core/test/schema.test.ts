@@ -98,6 +98,7 @@ describe("schema validation", () => {
       id: "t",
       name: { en: "T", es: "T" },
       slug: "t",
+      download_name: "t",
       description: { en: "d", es: "d" },
       include_tags: ["*"],
       sections: ["summary"],
@@ -116,6 +117,7 @@ describe("schema validation", () => {
       id: "t",
       name: { en: "T", es: "T" },
       slug: "t",
+      download_name: "t",
       description: { en: "d", es: "d" },
       include_tags: ["*"],
       sections: ["summary"],
@@ -130,6 +132,7 @@ describe("schema validation", () => {
     const base = {
       id: "t",
       name: { en: "T", es: "T" },
+      download_name: "t",
       description: { en: "d", es: "d" },
       include_tags: ["*"],
       sections: ["summary"],

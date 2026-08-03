@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import Resume from "../../components/Resume.astro";
 import LanguageToggle from "../../components/LanguageToggle.astro";
 import { getResumes, getLocaleFile } from "../../lib/data";
+import { downloadFileName } from "../../lib/download";
 import type { ResumeData, Locale } from "@career/core";
 import { t, SUPPORTED_LOCALES } from "@career/core";
 
@@ -41,12 +42,16 @@ const description = t(template.description, locale);
     <div class="flex items-center gap-4 font-medium">
       <LanguageToggle locale={locale} />
       <span class="text-faint" aria-hidden="true">·</span>
-      <a href={`/${locale}/resumes/${template.slug}.pdf`} download class="text-accent hover:text-accent-hover">
+      <a
+        href={`/${locale}/resumes/${template.slug}.pdf`}
+        download={downloadFileName(template, locale, "pdf")}
+        class="text-accent hover:text-accent-hover"
+      >
         {localeFile.website.download_pdf}
       </a>
       <a
         href={`/${locale}/resumes/${template.slug}.docx`}
-        download
+        download={downloadFileName(template, locale, "docx")}
         class="text-muted hover:text-ink"
       >
         {localeFile.website.download_docx}

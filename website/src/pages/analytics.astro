@@ -344,16 +344,16 @@ import Plain from "../layouts/Plain.astro";
 
 <script>
   const KEY_STORAGE = "cv_analytics_key";
-  const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
+  const $ = (id: string): HTMLElement | null => document.getElementById(id);
 
   const statusEl = $("#status");
   const dash = $("#dash");
   const gate = $("#gate");
-  const keyInput = $("#key-input") as HTMLInputElement;
+  const keyInput = $("#key-input");
   const keyError = $("#key-error");
 
   function setStatus(text: string): void {
-    statusEl.textContent = text;
+    if (statusEl) statusEl.textContent = text;
   }
 
   async function api(path: string): Promise<unknown> {
@@ -385,7 +385,7 @@ import Plain from "../layouts/Plain.astro";
   async function load(): Promise<boolean> {
     setStatus("Loading…");
     try {
-      const [summary, funnel, resumes, languages, countries, cities, live] = (await Promise.all([
+      const results = await Promise.all([
         api("/summary"),
         api("/funnel"),
         api("/resumes"),
@@ -393,128 +393,154 @@ import Plain from "../layouts/Plain.astro";
         api("/countries"),
         api("/cities"),
         api("/live"),
-      ])) as Array<Record<string, unknown>>;
+      ]);
 
-      const s = summary as {
-        totals: Record<string, number>;
-        today: Record<string, number>;
-        week: Record<string, number>;
-      };
-      const d = s.totals.downloads ?? 0;
-      const v = s.totals.views ?? 0;
-      const o = s.totals.opens ?? 0;
-      const pv = s.totals.pageViews ?? 0;
+      const summary = results[0] ?? {};
+      const funnel = results[1] ?? {};
+      const resumes = results[2] ?? [];
+      const languages = results[3] ?? [];
+      const countries = results[4] ?? [];
+      const cities = results[5] ?? [];
+      const live = results[6] ?? [];
 
-      $("#s-downloads").textContent = fmt(d);
-      $("#s-downloads-sub").textContent = `${fmt(s.today.downloads ?? 0)} today · ${fmt(s.week.downloads ?? 0)} week`;
-      $("#s-views").textContent = fmt(v);
-      $("#s-views-sub").textContent = `${fmt(s.today.views ?? 0)} today · ${fmt(s.week.views ?? 0)} week`;
-      $("#s-opens").textContent = fmt(o);
-      $("#s-opens-sub").textContent = `${fmt(s.today.opens ?? 0)} today`;
-      $("#s-pageviews").textContent = fmt(pv);
-      $("#s-pageviews-sub").textContent = `${fmt(s.today.pageViews ?? 0)} today`;
+      const totals = summary.totals ?? {};
+      const today = summary.today ?? {};
+      const week = summary.week ?? {};
+      const d = totals.downloads ?? 0;
+      const v = totals.views ?? 0;
+      const o = totals.opens ?? 0;
+      const pv = totals.pageViews ?? 0;
+
+      setText("#s-downloads", fmt(d));
+      setText("#s-downloads-sub", `${fmt(today.downloads ?? 0)} today · ${fmt(week.downloads ?? 0)} week`);
+      setText("#s-views", fmt(v));
+      setText("#s-views-sub", `${fmt(today.views ?? 0)} today · ${fmt(week.views ?? 0)} week`);
+      setText("#s-opens", fmt(o));
+      setText("#s-opens-sub", `${fmt(today.opens ?? 0)} today`);
+      setText("#s-pageviews", fmt(pv));
+      setText("#s-pageviews-sub", `${fmt(today.pageViews ?? 0)} today`);
 
       // Funnel: landing → open → view → download.
-      const f = funnel as { opens: number; views: number; downloads: number };
       const funnelEl = $("#funnel");
-      funnelEl.innerHTML = "";
-      const steps = [
-        { name: "Opens", value: f.opens ?? 0 },
-        { name: "Views", value: f.views ?? 0 },
-        { name: "Downloads", value: f.downloads ?? 0 },
-      ];
-      const max = Math.max(1, steps[0]?.value ?? 1);
-      for (const step of steps) {
-        const row = document.createElement("div");
-        row.className = "fstep";
-        const name = document.createElement("span");
-        name.className = "fname";
-        name.textContent = step.name;
-        const bar = document.createElement("div");
-        bar.className = "fbar";
-        const fill = document.createElement("div");
-        fill.className = "fill";
-        fill.style.width = `${Math.max(2, (step.value / max) * 100)}%`;
-        bar.appendChild(fill);
-        const count = document.createElement("span");
-        count.className = "fcount";
-        count.textContent = fmt(step.value);
-        const p = document.createElement("span");
-        p.className = "fpct";
-        p.textContent = step.name === "Opens" ? "100%" : pct(step.value, steps[0]?.value ?? 0);
-        row.append(name, bar, count, p);
-        funnelEl.appendChild(row);
+      if (funnelEl) {
+        funnelEl.innerHTML = "";
+        const steps = [
+          { name: "Opens", value: funnel.opens ?? 0 },
+          { name: "Views", value: funnel.views ?? 0 },
+          { name: "Downloads", value: funnel.downloads ?? 0 },
+        ];
+        const max = Math.max(1, steps[0]?.value ?? 1);
+        for (const step of steps) {
+          const row = document.createElement("div");
+          row.className = "fstep";
+          const name = document.createElement("span");
+          name.className = "fname";
+          name.textContent = step.name;
+          const bar = document.createElement("div");
+          bar.className = "fbar";
+          const fill = document.createElement("div");
+          fill.className = "fill";
+          fill.style.width = `${Math.max(2, (step.value / max) * 100)}%`;
+          bar.appendChild(fill);
+          const count = document.createElement("span");
+          count.className = "fcount";
+          count.textContent = fmt(step.value);
+          const p = document.createElement("span");
+          p.className = "fpct";
+          p.textContent = step.name === "Opens" ? "100%" : pct(step.value, steps[0]?.value ?? 0);
+          row.append(name, bar, count, p);
+          funnelEl.appendChild(row);
+        }
       }
 
       const resumesBody = $("#t-resumes");
-      resumesBody.innerHTML = "";
-      for (const r of resumes as Array<Record<string, number | string>>) {
-        const tr = document.createElement("tr");
-        tr.append(cell(String(r.resume)), cell(fmt(Number(r.opens)), "num"), cell(fmt(Number(r.views)), "num"), cell(fmt(Number(r.downloads)), "num"));
-        resumesBody.appendChild(tr);
+      if (resumesBody) {
+        resumesBody.innerHTML = "";
+        for (const r of resumes) {
+          const tr = document.createElement("tr");
+          tr.append(
+            cell(String(r.resume)),
+            cell(fmt(Number(r.opens ?? 0)), "num"),
+            cell(fmt(Number(r.views ?? 0)), "num"),
+            cell(fmt(Number(r.downloads ?? 0)), "num"),
+          );
+          resumesBody.appendChild(tr);
+        }
       }
 
       const languagesBody = $("#t-languages");
-      languagesBody.innerHTML = "";
-      for (const l of languages as Array<Record<string, number | string>>) {
-        const tr = document.createElement("tr");
-        tr.append(cell(String(l.language)), cell(fmt(Number(l.views)), "num"), cell(fmt(Number(l.downloads)), "num"));
-        languagesBody.appendChild(tr);
+      if (languagesBody) {
+        languagesBody.innerHTML = "";
+        for (const l of languages) {
+          const tr = document.createElement("tr");
+          tr.append(
+            cell(String(l.language)),
+            cell(fmt(Number(l.views ?? 0)), "num"),
+            cell(fmt(Number(l.downloads ?? 0)), "num"),
+          );
+          languagesBody.appendChild(tr);
+        }
       }
 
       const countriesEl = $("#t-countries");
-      countriesEl.innerHTML = "";
-      for (const c of (countries as Array<Record<string, number | string>>).slice(0, 10)) {
-        const li = document.createElement("li");
-        const name = document.createElement("span");
-        name.className = "name";
-        name.textContent = String(c.name);
-        const count = document.createElement("span");
-        count.className = "count";
-        count.textContent = `${fmt(Number(c.downloads))} downloads`;
-        li.append(name, count);
-        countriesEl.appendChild(li);
+      if (countriesEl) {
+        countriesEl.innerHTML = "";
+        for (const c of countries.slice(0, 10)) {
+          const li = document.createElement("li");
+          const name = document.createElement("span");
+          name.className = "name";
+          name.textContent = String(c.name);
+          const count = document.createElement("span");
+          count.className = "count";
+          count.textContent = `${fmt(Number(c.downloads ?? 0))} downloads`;
+          li.append(name, count);
+          countriesEl.appendChild(li);
+        }
       }
 
       const citiesEl = $("#t-cities");
-      citiesEl.innerHTML = "";
-      for (const c of (cities as Array<Record<string, number | string>>).slice(0, 10)) {
-        const li = document.createElement("li");
-        const name = document.createElement("span");
-        name.className = "name";
-        name.textContent = String(c.name);
-        const count = document.createElement("span");
-        count.className = "count";
-        count.textContent = `${fmt(Number(c.downloads))} downloads`;
-        li.append(name, count);
-        citiesEl.appendChild(li);
+      if (citiesEl) {
+        citiesEl.innerHTML = "";
+        for (const c of cities.slice(0, 10)) {
+          const li = document.createElement("li");
+          const name = document.createElement("span");
+          name.className = "name";
+          name.textContent = String(c.name);
+          const count = document.createElement("span");
+          count.className = "count";
+          count.textContent = `${fmt(Number(c.downloads ?? 0))} downloads`;
+          li.append(name, count);
+          citiesEl.appendChild(li);
+        }
       }
 
       const liveBody = $("#t-live");
-      liveBody.innerHTML = "";
-      const time = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-      for (const ev of live as Array<Record<string, string>>) {
-        const tr = document.createElement("tr");
-        const when = new Date(ev.timestamp);
-        const ago = time.format(-Math.max(0, Math.round((Date.now() - when.getTime()) / 60000)), "minute");
-        tr.className = "live-event";
-        tr.append(
-          cell(ago),
-          cell(ev.event),
-          cell(ev.resume || "—"),
-          cell(ev.format || "—"),
-          cell([ev.city, ev.country].filter(Boolean).join(", ") || "—"),
-          cell(ev.version),
-        );
-        liveBody.appendChild(tr);
+      if (liveBody) {
+        liveBody.innerHTML = "";
+        const time = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+        for (const ev of live) {
+          const tr = document.createElement("tr");
+          const when = new Date(ev.timestamp);
+          const ago = time.format(-Math.max(0, Math.round((Date.now() - when.getTime()) / 60000)), "minute");
+          tr.className = "live-event";
+          tr.append(
+            cell(ago),
+            cell(ev.event),
+            cell(ev.resume || "—"),
+            cell(ev.format || "—"),
+            cell([ev.city, ev.country].filter(Boolean).join(", ") || "—"),
+            cell(ev.version),
+          );
+          liveBody.appendChild(tr);
+        }
       }
 
       setStatus(`Updated ${new Date().toLocaleTimeString()}`);
       return true;
     } catch (error) {
       if (error instanceof Error && error.message === "unauthorized") {
-        gate.classList.remove("hidden");
-        dash.classList.add("hidden");
+        if (gate) gate.classList.remove("hidden");
+        if (dash) dash.classList.add("hidden");
         setStatus("Key required");
       } else {
         setStatus(`Error: ${error instanceof Error ? error.message : "unknown"}`);
@@ -523,33 +549,39 @@ import Plain from "../layouts/Plain.astro";
     }
   }
 
-  $("#key-form").addEventListener("submit", async (event) => {
+  function setText(id: string, text: string): void {
+    const el = $(id);
+    if (el) el.textContent = text;
+  }
+
+  const keyForm = $("#key-form");
+  keyForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const key = keyInput.value.trim();
+    const key = keyInput?.value.trim() ?? "";
     if (!key) return;
     sessionStorage.setItem(KEY_STORAGE, key);
-    keyError.classList.add("hidden");
+    keyError?.classList.add("hidden");
     const ok = await load();
     if (ok) {
-      gate.classList.add("hidden");
+      gate?.classList.add("hidden");
     } else {
       sessionStorage.removeItem(KEY_STORAGE);
-      keyError.classList.remove("hidden");
+      keyError?.classList.remove("hidden");
     }
   });
 
-  $("#refresh").addEventListener("click", () => void load());
+  $("#refresh")?.addEventListener("click", () => void load());
 
   const storedKey = sessionStorage.getItem(KEY_STORAGE);
   if (storedKey) {
-    gate.classList.add("hidden");
+    gate?.classList.add("hidden");
     void load();
   } else {
     setStatus("Key required");
   }
 
   window.setInterval(() => {
-    if (sessionStorage.getItem(KEY_STORAGE) && !dash.classList.contains("hidden")) {
+    if (sessionStorage.getItem(KEY_STORAGE) && !dash?.classList.contains("hidden")) {
       void load();
     }
   }, 60_000);
