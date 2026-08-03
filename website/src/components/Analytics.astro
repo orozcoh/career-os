@@ -5,8 +5,12 @@ import { providers } from "../analytics.config";
  * The analytics boundary component. Included once in the base layout.
  *
  * It renders client-side JavaScript ONLY when at least one registered
- * provider needs a browser runtime. With the default no-op provider this
- * component emits zero bytes of JS — the site ships no tracking code.
+ * provider needs a browser runtime. With the no-op provider this component
+ * emits zero bytes of JS — the site ships no tracking code.
+ *
+ * The tracking script knows nothing about storage: it builds anonymous
+ * ClientSignals (event + resume + language + session id) and hands them to
+ * the provider, which forwards them to the Worker ingest endpoint.
  */
 const needsRuntime = providers.some((p) => p.name !== "noop");
 ---
@@ -14,8 +18,85 @@ const needsRuntime = providers.some((p) => p.name !== "noop");
 {
   needsRuntime && (
     <script>
-      {/* Future providers hook page_view / resume_view / resume_download /
-          outbound_click signals here via the analytics registry. */}
+      import {
+        createCloudflareProvider,
+        getOrCreateSessionId,
+      } from "@career/analytics/providers/cloudflare";
+      import { RELEASE_VERSION } from "../lib/version";
+
+      const RESUME_SLUGS = ["software-engineer", "frontend", "creative-tech", "master"];
+      const RESUME_PATH = new RegExp(`^/(?:en|es)/(${RESUME_SLUGS.join("|")})/?$`);
+
+      const provider = createCloudflareProvider({ version: RELEASE_VERSION });
+      provider.init?.();
+
+      const language = (document.documentElement.lang === "es" ? "es" : "en") as "en" | "es";
+      const path = window.location.pathname;
+      const session_id = getOrCreateSessionId();
+      const base = { language, session_id };
+
+      const slugMatch = path.match(RESUME_PATH);
+      const resume = slugMatch ? slugMatch[1] : null;
+
+      // page_view — every page load.
+      provider.track({ type: "page_view", path, ...base });
+
+      if (resume) {
+        // resume_view — every time a resume detail page loads.
+        provider.track({ type: "resume_view", resume, ...base });
+
+        // resume_open — only when this is an entry into the resume page:
+        // a landing-card click or a direct/external visit. Navigating
+        // between resume pages (locale switch, back-and-forth) does not
+        // re-open the resume.
+        const referrer = document.referrer ? new URL(document.referrer) : null;
+        const referrerIsResume = referrer
+          ? RESUME_PATH.test(referrer.pathname)
+          : false;
+        if (!referrerIsResume) {
+          provider.track({ type: "resume_open", resume, ...base });
+        }
+      }
+
+      document.addEventListener("click", (event) => {
+        const anchor = (event.target as Element | null)?.closest?.("a");
+        if (!anchor) return;
+
+        // resume_download — PDF/DOCX downloads from the resume pages.
+        const downloadMatch = anchor
+          .getAttribute("href")
+          ?.match(/\/resumes\/(software-engineer|frontend|creative-tech|master)\.(pdf|docx)$/);
+        if (downloadMatch && anchor.hasAttribute("download")) {
+          provider.track({
+            type: "resume_download",
+            resume: downloadMatch[1],
+            format: downloadMatch[2] as "pdf" | "docx",
+            ...base,
+          });
+          return;
+        }
+
+        // outbound_click — external links. Target is a coarse label
+        // (hostname or well-known service), never a raw URL.
+        const href = anchor.href;
+        if (href.startsWith("http:") || href.startsWith("https:")) {
+          if (new URL(href).origin === window.location.origin) return;
+          let target = "";
+          try {
+            target = new URL(href).hostname.replace(/^www\./, "");
+          } catch {
+            return;
+          }
+          const known = ["github", "linkedin", "x.com", "twitter", "youtube"];
+          for (const label of known) {
+            if (target.includes(label)) {
+              target = label;
+              break;
+            }
+          }
+          provider.track({ type: "outbound_click", target, resume, ...base });
+        }
+      });
     </script>
   )
 }

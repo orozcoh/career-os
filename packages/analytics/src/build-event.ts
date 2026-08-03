@@ -16,6 +16,26 @@ function countryName(code: string | null | undefined): string | null {
   }
 }
 
+/**
+ * Cloudflare continent codes ("SA", "NA", …) collide with ISO country codes
+ * ("SA" = Saudi Arabia), so Intl region names are wrong here — map explicitly.
+ */
+const CONTINENT_NAMES: Record<string, string> = {
+  AF: "Africa",
+  AN: "Antarctica",
+  AS: "Asia",
+  EU: "Europe",
+  NA: "North America",
+  OC: "Oceania",
+  SA: "South America",
+};
+
+/** "SA" → "South America". Unknown codes → null. */
+function continentName(code: string | null | undefined): string | null {
+  if (!code) return null;
+  return CONTINENT_NAMES[code.toUpperCase()] ?? null;
+}
+
 /** "https://www.linkedin.com/in/x?utm_source=y" → "linkedin.com" */
 export function reduceReferrer(referer: string | null | undefined): string | null {
   if (!referer) return null;
@@ -54,8 +74,12 @@ export function buildEvent(
 ): TrackedEvent {
   const base = {
     timestamp: (edge.now ?? new Date()).toISOString(),
+    session_id: signal.session_id,
+    language: signal.language,
     country: countryName(edge.cfCountry),
     city: edge.cfCity?.trim() || null,
+    region: edge.cfRegion?.trim() || null,
+    continent: continentName(edge.cfContinent),
     referrer: reduceReferrer(edge.refererHeader),
     user_agent: reduceUserAgent(edge.uaHeader),
     version,
@@ -64,11 +88,13 @@ export function buildEvent(
   const event: TrackedEvent =
     signal.type === "page_view"
       ? { ...base, type: "page_view", path: signal.path, resume: null }
-      : signal.type === "resume_view"
-        ? { ...base, type: "resume_view", resume: signal.resume }
-        : signal.type === "resume_download"
-          ? { ...base, type: "resume_download", resume: signal.resume, format: signal.format }
-          : { ...base, type: "outbound_click", target: signal.target, resume: signal.resume };
+      : signal.type === "resume_open"
+        ? { ...base, type: "resume_open", resume: signal.resume }
+        : signal.type === "resume_view"
+          ? { ...base, type: "resume_view", resume: signal.resume }
+          : signal.type === "resume_download"
+            ? { ...base, type: "resume_download", resume: signal.resume, format: signal.format }
+            : { ...base, type: "outbound_click", target: signal.target, resume: signal.resume };
 
   // The schema is strict: any accidental extra field throws here,
   // at the boundary, instead of reaching storage.
