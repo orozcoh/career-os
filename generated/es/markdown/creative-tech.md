@@ -2,11 +2,13 @@
 
 **Tecnólogo Creativo**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Perfil Profesional
 
-Ingeniero y tecnólogo creativo construyendo experiencias interactivas en tiempo real — renderizadores WebGL, sistemas generativos y herramientas creativas colaborativas con ingeniería de grado de producción debajo.
+Ingeniero de Software con formación en Ingeniería Electrónica y apasionado por desarrollar tecnología que conecta el software con experiencias interactivas. Experiencia construyendo aplicaciones web, servicios en la nube y herramientas para flujos de trabajo creativos, con interés en TouchDesigner, instalaciones interactivas, sistemas de telemetría y desarrollo asistido por IA.
 
 ## Experiencia
 
@@ -27,38 +29,43 @@ Ingeniero y tecnólogo creativo construyendo experiencias interactivas en tiempo
 
 ## Proyectos
 
-### career-os
+### Anthology
 
-*Infraestructura de currículum como software*
+*Plataforma local-first para gestión de conocimiento*
 
-Fuente única de verdad para la identidad profesional. Datos YAML estructurados se compilan en currículums compatibles con ATS en PDF, HTML, DOCX y Markdown más un sitio web estático.
+Aplicación Web Progresiva para capturar, organizar y compartir conocimiento personal. Construida bajo principios local-first, con publicación opcional en blockchain y compartición mediante códigos QR, permitiendo a los usuarios mantener el control de sus datos y publicar contenido de forma selectiva.
 
-- Pipeline de impresión con Chromium headless produce PDFs legibles por máquina y compatibles con ATS desde el mismo HTML que sirve el sitio.
+**Tecnologías:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
 
-**Tecnologías:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Enlaces:** [Sitio web](https://memory.inbytes.xyz)
 
-**Enlaces:** [Código fuente](https://github.com/orozcoh/career-os)
+### TD Status
 
-### Shader Sketches
+*Plataforma de licenciamiento y telemetría para TouchDesigner*
 
-*Arte generativo en el navegador*
+Plataforma en la nube para administrar licencias y monitorear implementaciones de TouchDesigner. Incluye gestión de clientes, telemetría mediante heartbeats, validación de licencias y visibilidad operativa utilizando Cloudflare Workers y KV.
 
-Una colección de sketches GLSL interactivos que exploran campos de ruido, sistemas de partículas y visuales audio-reactivos, empaquetados como componentes web integrables.
+- Implementó telemetría mediante heartbeats para el monitoreo remoto de experiencias interactivas desplegadas.
 
-- Sistemas de partículas a 60fps con más de 100k partículas mediante instanciado GPU.
-- Destacado en una exhibición de arte generativo en línea con 20k visitantes.
+**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
 
-**Tecnologías:** WebGL, GLSL, TypeScript, Vite
+**Enlaces:** [Sitio web](https://td-status.inbytes.xyz)
 
-**Enlaces:** [En vivo](https://example.com/shaders) · [Código fuente](https://github.com/example/shader-sketches)
+### Prompter
+
+*Generación de imágenes con IA y micropagos en criptomonedas*
+
+Plataforma de generación de imágenes con IA que transforma imágenes de los usuarios mediante prompts seleccionados y acepta pagos en USDC usando el protocolo x402. Diseñada sin cuentas de usuario ni procesamiento tradicional de pagos, priorizando simplicidad y privacidad.
+
+**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
+
+**Enlaces:** [Sitio web](https://ai.digitalerror.xyz) · [Código fuente](https://github.com/orozcoh/prompter)
 
 ## Habilidades Técnicas
 
-- **Lenguajes:** TypeScript, JavaScript
-- **Frontend:** React, Astro, Tailwind CSS, Accesibilidad (WCAG)
-- **Backend e Infraestructura:** Node.js, Cloudflare Workers
-- **Tecnología Creativa:** WebGL / GLSL, Canvas 2D, Arte generativo, Web Audio API
-- **Prácticas:** Testing (unitario, de contrato, e2e), Escritura técnica y RFCs
+- **Lenguajes de Programación:** TypeScript, JavaScript
+- **Desarrollo Frontend:** React, Aplicaciones Web Progresivas (PWA), HTML5, CSS3, Tailwind CSS
+- **Tecnología Creativa:** TouchDesigner, Instalaciones Interactivas, Sistemas de Licenciamiento, Sistemas de Telemetría
 
 ## Educación
 
@@ -73,4 +80,4 @@ Una colección de sketches GLSL interactivos que exploran campos de ruido, siste
 ## Idiomas
 
 - Español — Nativo
-- Inglés — Fluido
+- Inglés — Fluido - B2

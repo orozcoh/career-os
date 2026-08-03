@@ -2,11 +2,13 @@
 
 **Ingeniero de Software**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Perfil Profesional
 
-Ingeniero de software con más de 6 años construyendo sistemas distribuidos y plataformas web. Profundo en arquitectura orientada a eventos, diseño de APIs y trabajo de rendimiento; cómodo gestionando servicios desde RFC hasta producción.
+Ingeniero de Software con formación en Ingeniería Electrónica y experiencia diseñando, desarrollando, desplegando y manteniendo aplicaciones web desde la idea hasta producción. Interesado en arquitectura de software, Aplicaciones Web Progresivas, sistemas distribuidos, tecnologías cloud, autenticación, criptografía y flujos de desarrollo asistidos por IA. Disfruta convertir ideas en productos mientras continúa aprendiendo mediante el desarrollo práctico.
 
 ## Experiencia
 
@@ -18,6 +20,7 @@ Ingeniero de software con más de 6 años construyendo sistemas distribuidos y p
 - Construí Aplicaciones Web Progresivas (PWAs) con enfoque en experiencias mobile-first, principios local-first y arquitectura de software mantenible.
 - Diseñé soluciones cloud-native utilizando Cloudflare Workers, Cloudflare KV, APIs REST e infraestructura de borde.
 - Desarrollé productos de software explorando autenticación, criptografía, passkeys, tecnologías blockchain, flujos de trabajo asistidos por IA y sistemas distribuidos.
+- Gestioné de forma independiente el ciclo de vida completo de la aplicación, incluyendo arquitectura, implementación, gestión de dominios, configuración DNS, despliegue, monitoreo y mantenimiento continuo.
 
 ### Pasante de Ingeniería de Software — TSO Mobile Colombia
 
@@ -27,23 +30,50 @@ Ingeniero de software con más de 6 años construyendo sistemas distribuidos y p
 
 ## Proyectos
 
-### career-os
+### Anthology
 
-*Infraestructura de currículum como software*
+*Plataforma local-first para gestión de conocimiento*
 
-Fuente única de verdad para la identidad profesional. Datos YAML estructurados se compilan en currículums compatibles con ATS en PDF, HTML, DOCX y Markdown más un sitio web estático.
+Aplicación Web Progresiva para capturar, organizar y compartir conocimiento personal. Construida bajo principios local-first, con publicación opcional en blockchain y compartición mediante códigos QR, permitiendo a los usuarios mantener el control de sus datos y publicar contenido de forma selectiva.
 
-- Sistema de plantillas basado en etiquetas genera cuatro currículums dirigidos desde un único conjunto de datos sin duplicación.
+- Diseñada bajo principios local-first para mantener los datos disponibles sin depender de un servidor central.
+- Integró publicación opcional en blockchain y compartición mediante códigos QR manteniendo el control del usuario sobre su conocimiento.
 
-**Tecnologías:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Tecnologías:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
 
-**Enlaces:** [Código fuente](https://github.com/orozcoh/career-os)
+**Enlaces:** [Sitio web](https://memory.inbytes.xyz)
+
+### TD Status
+
+*Plataforma de licenciamiento y telemetría para TouchDesigner*
+
+Plataforma en la nube para administrar licencias y monitorear implementaciones de TouchDesigner. Incluye gestión de clientes, telemetría mediante heartbeats, validación de licencias y visibilidad operativa utilizando Cloudflare Workers y KV.
+
+- Desarrolló un sistema de licenciamiento en la nube con gestión de clientes, licencias y validación de dispositivos.
+
+**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
+
+**Enlaces:** [Sitio web](https://td-status.inbytes.xyz)
+
+### Prompter
+
+*Generación de imágenes con IA y micropagos en criptomonedas*
+
+Plataforma de generación de imágenes con IA que transforma imágenes de los usuarios mediante prompts seleccionados y acepta pagos en USDC usando el protocolo x402. Diseñada sin cuentas de usuario ni procesamiento tradicional de pagos, priorizando simplicidad y privacidad.
+
+- Integró x402 para habilitar micropagos en USDC sin pasarelas de pago tradicionales ni cuentas de usuario.
+- Protegió los prompts propietarios manteniendo la ingeniería de prompts del lado del servidor mediante Cloudflare Workers y KV.
+
+**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
+
+**Enlaces:** [Sitio web](https://ai.digitalerror.xyz) · [Código fuente](https://github.com/orozcoh/prompter)
 
 ## Habilidades Técnicas
 
-- **Lenguajes:** TypeScript, JavaScript, Python, Go, SQL
-- **Backend e Infraestructura:** Node.js, PostgreSQL, Arquitectura orientada a eventos, Cloudflare Workers, Docker
-- **Prácticas:** Testing (unitario, de contrato, e2e), CI/CD, Escritura técnica y RFCs
+- **Lenguajes de Programación:** TypeScript, JavaScript, Python
+- **Nube y Backend:** Cloudflare Workers, Cloudflare KV, APIs REST, Computación en el Edge, Node.js
+- **Ingeniería de Software:** Arquitectura de Software, Sistemas Distribuidos, Autenticación, Criptografía, Diseño de APIs
+- **IA y Tecnologías Emergentes:** Desarrollo Asistido por IA, Ingeniería de Prompts, APIs de IA Generativa, Blockchain, Passkeys (WebAuthn)
 
 ## Educación
 
@@ -58,4 +88,4 @@ Fuente única de verdad para la identidad profesional. Datos YAML estructurados 
 ## Idiomas
 
 - Español — Nativo
-- Inglés — Fluido
+- Inglés — Fluido - B2

@@ -2,11 +2,13 @@
 
 **Ingeniero Frontend**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Perfil Profesional
 
-Ingeniero frontend especializado en React, rendimiento de renderizado y sistemas de diseño. Entrego interfaces accesibles y rápidas junto con las herramientas que las mantienen consistentes entre equipos.
+Ingeniero Frontend con formación en Ingeniería Electrónica y experiencia diseñando y desarrollando aplicaciones web modernas utilizando React, TypeScript y tecnologías de Aplicaciones Web Progresivas. Apasionado por crear experiencias de usuario intuitivas participando en todo el ciclo de vida del producto, desde la arquitectura y el desarrollo hasta el despliegue y mantenimiento.
 
 ## Experiencia
 
@@ -26,35 +28,30 @@ Ingeniero frontend especializado en React, rendimiento de renderizado y sistemas
 
 ## Proyectos
 
-### career-os
+### Anthology
 
-*Infraestructura de currículum como software*
+*Plataforma local-first para gestión de conocimiento*
 
-Fuente única de verdad para la identidad profesional. Datos YAML estructurados se compilan en currículums compatibles con ATS en PDF, HTML, DOCX y Markdown más un sitio web estático.
+Aplicación Web Progresiva para capturar, organizar y compartir conocimiento personal. Construida bajo principios local-first, con publicación opcional en blockchain y compartición mediante códigos QR, permitiendo a los usuarios mantener el control de sus datos y publicar contenido de forma selectiva.
 
-- Pipeline de impresión con Chromium headless produce PDFs legibles por máquina y compatibles con ATS desde el mismo HTML que sirve el sitio.
+**Tecnologías:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
 
-**Tecnologías:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Enlaces:** [Sitio web](https://memory.inbytes.xyz)
 
-**Enlaces:** [Código fuente](https://github.com/orozcoh/career-os)
+### Prompter
 
-### Shader Sketches
+*Generación de imágenes con IA y micropagos en criptomonedas*
 
-*Arte generativo en el navegador*
+Plataforma de generación de imágenes con IA que transforma imágenes de los usuarios mediante prompts seleccionados y acepta pagos en USDC usando el protocolo x402. Diseñada sin cuentas de usuario ni procesamiento tradicional de pagos, priorizando simplicidad y privacidad.
 
-Una colección de sketches GLSL interactivos que exploran campos de ruido, sistemas de partículas y visuales audio-reactivos, empaquetados como componentes web integrables.
+**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
 
-**Tecnologías:** WebGL, GLSL, TypeScript, Vite
-
-**Enlaces:** [En vivo](https://example.com/shaders) · [Código fuente](https://github.com/example/shader-sketches)
+**Enlaces:** [Sitio web](https://ai.digitalerror.xyz) · [Código fuente](https://github.com/orozcoh/prompter)
 
 ## Habilidades Técnicas
 
-- **Lenguajes:** TypeScript, JavaScript
-- **Frontend:** React, Astro, Tailwind CSS, Accesibilidad (WCAG)
-- **Backend e Infraestructura:** Node.js, Cloudflare Workers
-- **Tecnología Creativa:** Canvas 2D
-- **Prácticas:** Testing (unitario, de contrato, e2e), Escritura técnica y RFCs
+- **Lenguajes de Programación:** TypeScript, JavaScript
+- **Desarrollo Frontend:** React, Aplicaciones Web Progresivas (PWA), HTML5, CSS3, Tailwind CSS
 
 ## Educación
 
@@ -69,4 +66,4 @@ Una colección de sketches GLSL interactivos que exploran campos de ruido, siste
 ## Idiomas
 
 - Español — Nativo
-- Inglés — Fluido
+- Inglés — Fluido - B2

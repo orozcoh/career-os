@@ -2,11 +2,13 @@
 
 **Software Engineer**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Summary
 
-Software engineer with 6+ years building distributed systems and web platforms. Deep in event-driven architecture, API design, and performance work; comfortable owning services from RFC to production.
+Software Engineer with an Electronics Engineering background, experienced in designing, building, deploying, and maintaining web applications from idea to production. Passionate about software architecture, Progressive Web Applications, distributed systems, cloud technologies, authentication, cryptography, and AI-assisted engineering workflows. Enjoys turning ideas into products while continuously learning through hands-on development.
 
 ## Experience
 
@@ -18,6 +20,7 @@ Software engineer with 6+ years building distributed systems and web platforms. 
 - Built Progressive Web Applications (PWAs) with a focus on mobile-first experiences, local-first principles, and maintainable software architecture.
 - Designed cloud-native solutions using Cloudflare Workers, Cloudflare KV, REST APIs, and edge infrastructure.
 - Developed software products exploring authentication, cryptography, passkeys, blockchain technologies, AI-assisted workflows, and distributed systems.
+- Independently managed the complete application lifecycle, including architecture, implementation, domain management, DNS configuration, deployment, monitoring, and ongoing maintenance.
 
 ### Software Engineering Intern — TSO Mobile Colombia
 
@@ -27,23 +30,50 @@ Software engineer with 6+ years building distributed systems and web platforms. 
 
 ## Projects
 
-### career-os
+### Anthology
 
-*Resume infrastructure as software*
+*Local-first knowledge management platform*
 
-Single source of truth for professional identity. Structured YAML data compiles into ATS-friendly PDF, HTML, DOCX, and Markdown resumes plus a static website.
+A Progressive Web Application for capturing, organizing, and sharing personal knowledge. Built around local-first principles, with optional blockchain publication and QR-based sharing, allowing users to retain ownership of their data while selectively making content public.
 
-- Tag-based template system generates four targeted resumes from one dataset with zero duplication.
+- Designed around local-first principles to keep user data available without requiring a centralized backend.
+- Integrated optional blockchain publication and QR-based sharing while preserving user control over personal knowledge.
 
-**Technologies:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Technologies:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
 
-**Links:** [Source](https://github.com/orozcoh/career-os)
+**Links:** [Live](https://memory.inbytes.xyz)
+
+### TD Status
+
+*Cloud licensing and telemetry platform for TouchDesigner*
+
+Cloud platform for managing software licenses and monitoring TouchDesigner deployments. Provides customer management, heartbeat telemetry, license validation, and operational visibility through Cloudflare Workers and KV.
+
+- Built a cloud-based licensing system supporting customer grouping, license management, and device validation.
+
+**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
+
+**Links:** [Live](https://td-status.inbytes.xyz)
+
+### Prompter
+
+*AI image generation with crypto micropayments*
+
+AI image generation platform that transforms user images using curated prompts while accepting USDC payments through the x402 protocol. Designed without user accounts or traditional payment processing, prioritizing simplicity and privacy.
+
+- Integrated x402 to enable USDC micropayments without traditional payment gateways or user accounts.
+- Protected proprietary prompts by keeping prompt engineering server-side using Cloudflare Workers and KV.
+
+**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
+
+**Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
 
 ## Skills
 
-- **Languages:** TypeScript, JavaScript, Python, Go, SQL
-- **Backend & Infrastructure:** Node.js, PostgreSQL, Event-driven architecture, Cloudflare Workers, Docker
-- **Practices:** Testing (unit, contract, e2e), CI/CD, Technical writing & RFCs
+- **Programming Languages:** TypeScript, JavaScript, Python
+- **Cloud & Backend:** Cloudflare Workers, Cloudflare KV, REST APIs, Edge Computing, Node.js
+- **Software Engineering:** Software Architecture, Distributed Systems, Authentication, Cryptography, API Design
+- **AI & Emerging Technologies:** AI-assisted Development, Prompt Engineering, Generative AI APIs, Blockchain, Passkeys (WebAuthn)
 
 ## Education
 
@@ -58,4 +88,4 @@ Single source of truth for professional identity. Structured YAML data compiles 
 ## Languages
 
 - Spanish — Native
-- English — Fluent
+- English — Fluent - B2

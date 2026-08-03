@@ -2,11 +2,13 @@
 
 **Frontend Engineer**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Summary
 
-Frontend engineer specializing in React, rendering performance, and design systems. Ships accessible, fast interfaces and the tooling that keeps them consistent across teams.
+Frontend Engineer with an Electronics Engineering background, experienced in designing and building modern web applications using React, TypeScript, and Progressive Web App technologies. Passionate about creating intuitive user experiences while collaborating across the full product lifecycle—from architecture and implementation to deployment and maintenance.
 
 ## Experience
 
@@ -26,35 +28,30 @@ Frontend engineer specializing in React, rendering performance, and design syste
 
 ## Projects
 
-### career-os
+### Anthology
 
-*Resume infrastructure as software*
+*Local-first knowledge management platform*
 
-Single source of truth for professional identity. Structured YAML data compiles into ATS-friendly PDF, HTML, DOCX, and Markdown resumes plus a static website.
+A Progressive Web Application for capturing, organizing, and sharing personal knowledge. Built around local-first principles, with optional blockchain publication and QR-based sharing, allowing users to retain ownership of their data while selectively making content public.
 
-- Headless-Chromium print pipeline produces machine-readable, ATS-parseable PDFs from the same HTML the site serves.
+**Technologies:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
 
-**Technologies:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Links:** [Live](https://memory.inbytes.xyz)
 
-**Links:** [Source](https://github.com/orozcoh/career-os)
+### Prompter
 
-### Shader Sketches
+*AI image generation with crypto micropayments*
 
-*Generative art in the browser*
+AI image generation platform that transforms user images using curated prompts while accepting USDC payments through the x402 protocol. Designed without user accounts or traditional payment processing, prioritizing simplicity and privacy.
 
-A collection of interactive GLSL sketches exploring noise fields, particle systems, and audio-reactive visuals, packaged as embeddable web components.
+**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
 
-**Technologies:** WebGL, GLSL, TypeScript, Vite
-
-**Links:** [Live](https://example.com/shaders) · [Source](https://github.com/example/shader-sketches)
+**Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
 
 ## Skills
 
-- **Languages:** TypeScript, JavaScript
-- **Frontend:** React, Astro, Tailwind CSS, Accessibility (WCAG)
-- **Backend & Infrastructure:** Node.js, Cloudflare Workers
-- **Creative Technology:** Canvas 2D
-- **Practices:** Testing (unit, contract, e2e), Technical writing & RFCs
+- **Programming Languages:** TypeScript, JavaScript
+- **Frontend Development:** React, Progressive Web Apps (PWA), HTML5, CSS3, Tailwind CSS
 
 ## Education
 
@@ -69,4 +66,4 @@ A collection of interactive GLSL sketches exploring noise fields, particle syste
 ## Languages
 
 - Spanish — Native
-- English — Fluent
+- English — Fluent - B2

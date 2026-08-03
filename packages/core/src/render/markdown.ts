@@ -7,14 +7,12 @@ import { visibleSections, type ResumeData } from "../resolve/index";
 
 function contactLine(resume: ResumeData, locale: LocaleFile): string {
   const { profile: p } = resume;
+  const web = (url: string) => `[${url.replace(/^https?:\/\//, "")}](${url})`;
   return [
     p.location,
-    p.email,
-    `[${locale.resume.linkedin}](${p.linkedin})`,
-    `[${locale.resume.github}](${p.github})`,
-    `[${p.website.replace(/^https?:\/\//, "")}](${p.website})`,
-    `[${locale.resume.cv}](${p.cv})`,
-  ].join(" · ");
+    [p.email, `[${locale.resume.linkedin}](${p.linkedin})`, `[${locale.resume.github}](${p.github})`].join(" · "),
+    [web(p.website), `[${locale.resume.cv}](${p.cv})`].join(" · "),
+  ].join("\n");
 }
 
 const sectionRenderers: Record<SectionId, (resume: ResumeData, locale: LocaleFile, lang: Locale) => string> = {

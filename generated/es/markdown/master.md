@@ -2,7 +2,9 @@
 
 **Ingeniero de Software**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Perfil Profesional
 
@@ -33,39 +35,53 @@ Ingeniero de Software con formación en Ingeniería Electrónica y experiencia d
 
 ## Proyectos
 
-### career-os
+### Anthology
 
-*Infraestructura de currículum como software*
+*Plataforma local-first para gestión de conocimiento*
 
-Fuente única de verdad para la identidad profesional. Datos YAML estructurados se compilan en currículums compatibles con ATS en PDF, HTML, DOCX y Markdown más un sitio web estático.
+Aplicación Web Progresiva para capturar, organizar y compartir conocimiento personal. Construida bajo principios local-first, con publicación opcional en blockchain y compartición mediante códigos QR, permitiendo a los usuarios mantener el control de sus datos y publicar contenido de forma selectiva.
 
-- Sistema de plantillas basado en etiquetas genera cuatro currículums dirigidos desde un único conjunto de datos sin duplicación.
-- Pipeline de impresión con Chromium headless produce PDFs legibles por máquina y compatibles con ATS desde el mismo HTML que sirve el sitio.
+- Diseñada bajo principios local-first para mantener los datos disponibles sin depender de un servidor central.
+- Integró publicación opcional en blockchain y compartición mediante códigos QR manteniendo el control del usuario sobre su conocimiento.
 
-**Tecnologías:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Tecnologías:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
 
-**Enlaces:** [Código fuente](https://github.com/orozcoh/career-os)
+**Enlaces:** [Sitio web](https://memory.inbytes.xyz)
 
-### Shader Sketches
+### TD Status
 
-*Arte generativo en el navegador*
+*Plataforma de licenciamiento y telemetría para TouchDesigner*
 
-Una colección de sketches GLSL interactivos que exploran campos de ruido, sistemas de partículas y visuales audio-reactivos, empaquetados como componentes web integrables.
+Plataforma en la nube para administrar licencias y monitorear implementaciones de TouchDesigner. Incluye gestión de clientes, telemetría mediante heartbeats, validación de licencias y visibilidad operativa utilizando Cloudflare Workers y KV.
 
-- Sistemas de partículas a 60fps con más de 100k partículas mediante instanciado GPU.
-- Destacado en una exhibición de arte generativo en línea con 20k visitantes.
+- Desarrolló un sistema de licenciamiento en la nube con gestión de clientes, licencias y validación de dispositivos.
+- Implementó telemetría mediante heartbeats para el monitoreo remoto de experiencias interactivas desplegadas.
 
-**Tecnologías:** WebGL, GLSL, TypeScript, Vite
+**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
 
-**Enlaces:** [En vivo](https://example.com/shaders) · [Código fuente](https://github.com/example/shader-sketches)
+**Enlaces:** [Sitio web](https://td-status.inbytes.xyz)
+
+### Prompter
+
+*Generación de imágenes con IA y micropagos en criptomonedas*
+
+Plataforma de generación de imágenes con IA que transforma imágenes de los usuarios mediante prompts seleccionados y acepta pagos en USDC usando el protocolo x402. Diseñada sin cuentas de usuario ni procesamiento tradicional de pagos, priorizando simplicidad y privacidad.
+
+- Integró x402 para habilitar micropagos en USDC sin pasarelas de pago tradicionales ni cuentas de usuario.
+- Protegió los prompts propietarios manteniendo la ingeniería de prompts del lado del servidor mediante Cloudflare Workers y KV.
+
+**Tecnologías:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
+
+**Enlaces:** [Sitio web](https://ai.digitalerror.xyz) · [Código fuente](https://github.com/orozcoh/prompter)
 
 ## Habilidades Técnicas
 
-- **Lenguajes:** TypeScript, JavaScript, Python, Go, SQL
-- **Frontend:** React, Astro, Tailwind CSS, Accesibilidad (WCAG)
-- **Backend e Infraestructura:** Node.js, PostgreSQL, Arquitectura orientada a eventos, Cloudflare Workers, Docker
-- **Tecnología Creativa:** WebGL / GLSL, Canvas 2D, Arte generativo, Web Audio API
-- **Prácticas:** Testing (unitario, de contrato, e2e), CI/CD, Escritura técnica y RFCs
+- **Lenguajes de Programación:** TypeScript, JavaScript, Python
+- **Desarrollo Frontend:** React, Aplicaciones Web Progresivas (PWA), HTML5, CSS3, Tailwind CSS
+- **Nube y Backend:** Cloudflare Workers, Cloudflare KV, APIs REST, Computación en el Edge, Node.js
+- **Ingeniería de Software:** Arquitectura de Software, Sistemas Distribuidos, Autenticación, Criptografía, Diseño de APIs
+- **IA y Tecnologías Emergentes:** Desarrollo Asistido por IA, Ingeniería de Prompts, APIs de IA Generativa, Blockchain, Passkeys (WebAuthn)
+- **Tecnología Creativa:** TouchDesigner, Instalaciones Interactivas, Sistemas de Licenciamiento, Sistemas de Telemetría
 
 ## Educación
 
@@ -80,4 +96,4 @@ Una colección de sketches GLSL interactivos que exploran campos de ruido, siste
 ## Idiomas
 
 - Español — Nativo
-- Inglés — Fluido
+- Inglés — Fluido - B2

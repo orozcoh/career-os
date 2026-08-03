@@ -163,7 +163,7 @@ export const enLocale: LocaleFile = {
     download_pdf: "Download PDF",
     download_docx: "DOCX",
     all_resumes: "All resumes",
-    generated_from: "Generated from structured data",
+    generated_from: "© 2026 Santiago Orozco Holguín",
     version: "v",
   },
 };
@@ -212,7 +212,7 @@ export const esLocale: LocaleFile = {
     download_pdf: "Descargar PDF",
     download_docx: "DOCX",
     all_resumes: "Todos los currículums",
-    generated_from: "Generado desde datos estructurados",
+    generated_from: "© 2026 Santiago Orozco Holguín",
     version: "v",
   },
 };

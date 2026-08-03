@@ -2,7 +2,9 @@
 
 **Software Engineer**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Summary
 
@@ -33,39 +35,53 @@ Software Engineer with an Electronics Engineering background and experience desi
 
 ## Projects
 
-### career-os
+### Anthology
 
-*Resume infrastructure as software*
+*Local-first knowledge management platform*
 
-Single source of truth for professional identity. Structured YAML data compiles into ATS-friendly PDF, HTML, DOCX, and Markdown resumes plus a static website.
+A Progressive Web Application for capturing, organizing, and sharing personal knowledge. Built around local-first principles, with optional blockchain publication and QR-based sharing, allowing users to retain ownership of their data while selectively making content public.
 
-- Tag-based template system generates four targeted resumes from one dataset with zero duplication.
-- Headless-Chromium print pipeline produces machine-readable, ATS-parseable PDFs from the same HTML the site serves.
+- Designed around local-first principles to keep user data available without requiring a centralized backend.
+- Integrated optional blockchain publication and QR-based sharing while preserving user control over personal knowledge.
 
-**Technologies:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+**Technologies:** React, TypeScript, Progressive Web App, Cloudflare Workers, Blockchain
 
-**Links:** [Source](https://github.com/orozcoh/career-os)
+**Links:** [Live](https://memory.inbytes.xyz)
 
-### Shader Sketches
+### TD Status
 
-*Generative art in the browser*
+*Cloud licensing and telemetry platform for TouchDesigner*
 
-A collection of interactive GLSL sketches exploring noise fields, particle systems, and audio-reactive visuals, packaged as embeddable web components.
+Cloud platform for managing software licenses and monitoring TouchDesigner deployments. Provides customer management, heartbeat telemetry, license validation, and operational visibility through Cloudflare Workers and KV.
 
-- 60fps particle systems with 100k+ particles via GPU instancing.
-- Featured in an online generative-art showcase with 20k visitors.
+- Built a cloud-based licensing system supporting customer grouping, license management, and device validation.
+- Implemented heartbeat telemetry for remote monitoring of deployed interactive experiences.
 
-**Technologies:** WebGL, GLSL, TypeScript, Vite
+**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, REST API
 
-**Links:** [Live](https://example.com/shaders) · [Source](https://github.com/example/shader-sketches)
+**Links:** [Live](https://td-status.inbytes.xyz)
+
+### Prompter
+
+*AI image generation with crypto micropayments*
+
+AI image generation platform that transforms user images using curated prompts while accepting USDC payments through the x402 protocol. Designed without user accounts or traditional payment processing, prioritizing simplicity and privacy.
+
+- Integrated x402 to enable USDC micropayments without traditional payment gateways or user accounts.
+- Protected proprietary prompts by keeping prompt engineering server-side using Cloudflare Workers and KV.
+
+**Technologies:** React, TypeScript, Cloudflare Workers, Cloudflare KV, Generative AI, x402
+
+**Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
 
 ## Skills
 
-- **Languages:** TypeScript, JavaScript, Python, Go, SQL
-- **Frontend:** React, Astro, Tailwind CSS, Accessibility (WCAG)
-- **Backend & Infrastructure:** Node.js, PostgreSQL, Event-driven architecture, Cloudflare Workers, Docker
-- **Creative Technology:** WebGL / GLSL, Canvas 2D, Generative art, Web Audio API
-- **Practices:** Testing (unit, contract, e2e), CI/CD, Technical writing & RFCs
+- **Programming Languages:** TypeScript, JavaScript, Python
+- **Frontend Development:** React, Progressive Web Apps (PWA), HTML5, CSS3, Tailwind CSS
+- **Cloud & Backend:** Cloudflare Workers, Cloudflare KV, REST APIs, Edge Computing, Node.js
+- **Software Engineering:** Software Architecture, Distributed Systems, Authentication, Cryptography, API Design
+- **AI & Emerging Technologies:** AI-assisted Development, Prompt Engineering, Generative AI APIs, Blockchain, Passkeys (WebAuthn)
+- **Creative Technology:** TouchDesigner, Interactive Installations, Licensing Systems, Telemetry Systems
 
 ## Education
 
@@ -80,4 +96,4 @@ A collection of interactive GLSL sketches exploring noise fields, particle syste
 ## Languages
 
 - Spanish — Native
-- English — Fluent
+- English — Fluent - B2

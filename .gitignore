@@ -5,6 +5,7 @@ node_modules/
 # Build output (website/dist is transient; generated/ IS committed — see README)
 website/dist/
 website/.astro/
+website/public/resumes/
 
 # Playwright
 playwright-report/

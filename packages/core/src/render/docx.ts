@@ -89,10 +89,9 @@ export async function renderDocx(resume: ResumeData, locale: LocaleFile, lang: L
       spacing: { after: 40 },
     }),
     body(t(resume.title, lang)),
-    body(
-      [p.location, p.email, p.linkedin, p.github, p.website, p.cv].join(" · "),
-      { spacingAfter: 200 },
-    ),
+    body(p.location),
+    body([p.email, p.linkedin, p.github].join(" · ")),
+    body([p.website, p.cv].join(" · "), { spacingAfter: 200 }),
   ];
 
   for (const section of visibleSections(resume)) {
