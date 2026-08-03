@@ -2,15 +2,18 @@ import { describe, expect, it } from "vitest";
 import { buildEvent, reduceReferrer, reduceUserAgent } from "../src/build-event";
 
 const NOW = new Date("2026-07-31T20:15:10.000Z");
+const SESSION = "11111111-2222-3333-4444-555555555555";
 
 describe("buildEvent", () => {
   it("maps a signal + edge metadata into the stored payload shape", () => {
     const event = buildEvent(
-      { type: "resume_download", resume: "software-engineer", format: "pdf" },
+      { type: "resume_download", resume: "software-engineer", format: "pdf", language: "en", session_id: SESSION },
       {
         path: "/go/software-engineer.pdf",
         cfCountry: "CO",
         cfCity: "Bogotá",
+        cfRegion: "Bogotá D.C.",
+        cfContinent: "SA",
         refererHeader: "https://www.linkedin.com/in/someone?utm_source=feed",
         uaHeader:
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
@@ -24,17 +27,30 @@ describe("buildEvent", () => {
       resume: "software-engineer",
       format: "pdf",
       timestamp: "2026-07-31T20:15:10.000Z",
+      session_id: SESSION,
+      language: "en",
       country: "Colombia", // full name, mapped from "CO"
       city: "Bogotá",
+      region: "Bogotá D.C.",
+      continent: "South America", // mapped from "SA"
       referrer: "linkedin.com", // hostname only, www stripped, path/query dropped
       user_agent: "Chrome", // family only
       version: "1.0.2",
     });
   });
 
+  it("maps resume_open signals through to the stored event", () => {
+    const event = buildEvent(
+      { type: "resume_open", resume: "frontend", language: "es", session_id: SESSION },
+      { path: "/es/frontend", now: NOW },
+      "1.0.2",
+    );
+    expect(event).toMatchObject({ type: "resume_open", resume: "frontend", language: "es" });
+  });
+
   it("forces resume: null on landing page views", () => {
     const event = buildEvent(
-      { type: "page_view", path: "/" },
+      { type: "page_view", path: "/", language: "en", session_id: SESSION },
       { path: "/", now: NOW },
       "1.0.2",
     );
@@ -43,11 +59,13 @@ describe("buildEvent", () => {
 
   it("nulls out every field that cannot be privacy-safely derived", () => {
     const event = buildEvent(
-      { type: "resume_view", resume: "master" },
+      { type: "resume_view", resume: "master", language: "en", session_id: SESSION },
       {
         path: "/master",
         cfCountry: "XX", // invalid code
         cfCity: "  ", // blank
+        cfRegion: "",
+        cfContinent: "ZZ",
         refererHeader: "not a url",
         uaHeader: "SomeObscureBot/1.0",
         now: NOW,
@@ -57,6 +75,8 @@ describe("buildEvent", () => {
     expect(event).toMatchObject({
       country: null,
       city: null,
+      region: null,
+      continent: null,
       referrer: null,
       user_agent: null,
     });
@@ -64,7 +84,7 @@ describe("buildEvent", () => {
 
   it("uses the injected clock, never client-supplied time", () => {
     const event = buildEvent(
-      { type: "resume_view", resume: "master" },
+      { type: "resume_view", resume: "master", language: "en", session_id: SESSION },
       { path: "/master", now: NOW },
       "1.0.2",
     );

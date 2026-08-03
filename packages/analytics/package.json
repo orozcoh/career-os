@@ -8,6 +8,10 @@
     ".": {
       "types": "./src/index.ts",
       "default": "./src/index.ts"
+    },
+    "./providers/cloudflare": {
+      "types": "./src/providers/cloudflare.ts",
+      "default": "./src/providers/cloudflare.ts"
     }
   },
   "dependencies": {

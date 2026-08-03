@@ -13,15 +13,25 @@ const isoTimestampSchema = z
 
 const baseShape = {
   timestamp: isoTimestampSchema,
+  session_id: z.string().min(8),
+  language: z.enum(["en", "es"]),
   country: z.string().min(1).nullable(),
   city: z.string().min(1).nullable(),
+  region: z.string().min(1).nullable(),
+  continent: z.string().min(1).nullable(),
   referrer: z.string().min(1).nullable(),
   user_agent: z.string().min(1).nullable(),
   version: z.string().min(1),
 };
 
+const signalBase = {
+  language: z.enum(["en", "es"]),
+  session_id: z.string().min(8),
+};
+
 export const trackedEventSchema = z.discriminatedUnion("type", [
   z.object({ ...baseShape, type: z.literal("page_view"), path: z.string().min(1), resume: z.null() }).strict(),
+  z.object({ ...baseShape, type: z.literal("resume_open"), resume: z.string().min(1) }).strict(),
   z.object({ ...baseShape, type: z.literal("resume_view"), resume: z.string().min(1) }).strict(),
   z.object({
     ...baseShape,
@@ -38,14 +48,17 @@ export const trackedEventSchema = z.discriminatedUnion("type", [
 ]);
 
 export const clientSignalSchema = z.discriminatedUnion("type", [
-  z.object({ type: z.literal("page_view"), path: z.string().min(1) }).strict(),
-  z.object({ type: z.literal("resume_view"), resume: z.string().min(1) }).strict(),
+  z.object({ ...signalBase, type: z.literal("page_view"), path: z.string().min(1) }).strict(),
+  z.object({ ...signalBase, type: z.literal("resume_open"), resume: z.string().min(1) }).strict(),
+  z.object({ ...signalBase, type: z.literal("resume_view"), resume: z.string().min(1) }).strict(),
   z.object({
+    ...signalBase,
     type: z.literal("resume_download"),
     resume: z.string().min(1),
     format: z.enum(["pdf", "docx"]),
   }).strict(),
   z.object({
+    ...signalBase,
     type: z.literal("outbound_click"),
     target: z.string().min(1),
     resume: z.string().min(1).nullable(),

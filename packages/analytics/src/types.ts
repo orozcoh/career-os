@@ -19,14 +19,33 @@
 
 // ─── Client side ────────────────────────────────────────────────────────────
 
-export type EventType = "page_view" | "resume_view" | "resume_download" | "outbound_click";
+export type EventType = "page_view" | "resume_open" | "resume_view" | "resume_download" | "outbound_click";
+
+/**
+ * A locale the site ships in. Browsers signal it via <html lang>.
+ */
+export type SiteLocale = "en" | "es";
+
+/**
+ * Anonymous session ID: a random UUID generated in the browser and stored
+ * in localStorage. Exists solely to distinguish repeat visits from unique
+ * visitors within the same browser. Never identifying — no cookies, no
+ * fingerprints, no PII.
+ */
+export type SessionId = string;
+
+interface SignalBase {
+  language: SiteLocale;
+  session_id: SessionId;
+}
 
 export type ClientSignal =
-  | { type: "page_view"; path: string }
-  | { type: "resume_view"; resume: string }
-  | { type: "resume_download"; resume: string; format: "pdf" | "docx" }
+  | ({ type: "page_view"; path: string } & SignalBase)
+  | ({ type: "resume_open"; resume: string } & SignalBase)
+  | ({ type: "resume_view"; resume: string } & SignalBase)
+  | ({ type: "resume_download"; resume: string; format: "pdf" | "docx" } & SignalBase)
   /** target is a coarse label ("github", "linkedin"), never a raw URL. */
-  | { type: "outbound_click"; target: string; resume: string | null };
+  | ({ type: "outbound_click"; target: string; resume: string | null } & SignalBase);
 
 /**
  * A client-side provider receives signals from the browser.
@@ -44,10 +63,18 @@ export interface AnalyticsProvider {
 interface TrackedBase {
   /** ISO 8601 UTC, set by the sink at write time — never by the client. */
   timestamp: string;
+  /** Anonymous session id passed through from the browser signal. */
+  session_id: string;
+  /** Site locale the event fired in ("en" | "es"). */
+  language: SiteLocale;
   /** Full country name ("Colombia"), derived from edge metadata. */
   country: string | null;
   /** City name ("Bogotá"), derived from edge metadata. */
   city: string | null;
+  /** Region / state name ("Antioquia"), derived from edge metadata. */
+  region: string | null;
+  /** Continent name ("South America"), derived from edge metadata. */
+  continent: string | null;
   /** Hostname only ("linkedin.com") — path and query are stripped. */
   referrer: string | null;
   /** Browser family only ("Chrome") — the raw UA string is discarded. */
@@ -59,6 +86,7 @@ interface TrackedBase {
 export type TrackedEvent = TrackedBase &
   (
     | { type: "page_view"; path: string; resume: null }
+    | { type: "resume_open"; resume: string }
     | { type: "resume_view"; resume: string }
     | { type: "resume_download"; resume: string; format: "pdf" | "docx" }
     | { type: "outbound_click"; target: string; resume: string | null }
@@ -84,6 +112,10 @@ export interface EdgeRequestInfo {
   cfCountry?: string | null;
   /** City name from edge metadata, e.g. "Bogotá". */
   cfCity?: string | null;
+  /** Region / state name from edge metadata, e.g. "Antioquia". */
+  cfRegion?: string | null;
+  /** Continent code from edge metadata, e.g. "SA". */
+  cfContinent?: string | null;
   /** Raw Referer header value (reduced to hostname by buildEvent). */
   refererHeader?: string | null;
   /** Raw User-Agent header value (reduced to family by buildEvent). */

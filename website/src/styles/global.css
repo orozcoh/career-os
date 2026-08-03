@@ -33,6 +33,11 @@
     display: none !important;
   }
 
+  /* Standard-layout project links: visible on the web, hidden in PDF. */
+  .project-links {
+    display: none !important;
+  }
+
   a {
     color: inherit !important;
     text-decoration: none !important;

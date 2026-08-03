@@ -26,6 +26,7 @@ export interface RepoPaths {
   templatesDir: string;
   generatedDir: string;
   websiteDist: string;
+  websitePublic: string;
 }
 
 /** Canonical repo layout. Overridable via env for tests and future tooling. */
@@ -36,5 +37,6 @@ export function repoPaths(root: string = findRepoRoot()): RepoPaths {
     templatesDir: process.env["CAREER_TEMPLATES_DIR"] ?? join(root, "templates"),
     generatedDir: join(root, "generated"),
     websiteDist: join(root, "website", "dist"),
+    websitePublic: join(root, "website", "public"),
   };
 }

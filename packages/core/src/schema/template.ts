@@ -11,6 +11,14 @@ export const sectionIdSchema = z.enum([
 ]);
 
 /**
+ * How projects are rendered inside this template.
+ *   compact  — name + tagline + highlights + inline technologies (no description, no links)
+ *   standard — name + tagline + description + highlights + technologies + links (links hidden in print)
+ *   complete — everything, including links in every output format
+ */
+export const projectLayoutSchema = z.enum(["compact", "standard", "complete"]);
+
+/**
  * A template is configuration only: it selects content from the shared data,
  * never defines content of its own (summary_override / title_override are the
  * deliberate exceptions — they tailor framing, not facts).
@@ -29,6 +37,13 @@ export const templateSchema = z.object({
   exclude_tags: z.array(z.string().min(1)).default([]),
   /** null = no limit. Bullets are taken in file order (most important first). */
   max_bullets_per_role: z.number().int().positive().nullable().default(null),
+  /**
+   * How projects are rendered: compact, standard, or complete.
+   * Defaults to "complete" so existing templates keep their current behavior.
+   */
+  project_layout: projectLayoutSchema.default("complete"),
+  /** null = show every education highlight; 0 = none. */
+  max_education_highlights: z.number().int().nonnegative().nullable().default(null),
   /** Section render order. */
   sections: z.array(sectionIdSchema).min(1),
   /** Landing-page card order (ascending). Convention: targeted variants first, master last. */
@@ -42,4 +57,5 @@ export const templateSchema = z.object({
 });
 
 export type SectionId = z.infer<typeof sectionIdSchema>;
+export type ProjectLayout = z.infer<typeof projectLayoutSchema>;
 export type Template = z.infer<typeof templateSchema>;

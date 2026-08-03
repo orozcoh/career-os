@@ -34,7 +34,8 @@ employment_types:
   contract: Contrato
   freelance: Freelance
   internship: Pasantía
-  self-employed: Independiente
+  # The role title already says "Independiente"; the label adds nothing.
+  self-employed: ""
 
 # Language proficiency display labels
 proficiency_levels:
@@ -64,5 +65,5 @@ website:
   download_pdf: Descargar PDF
   download_docx: DOCX
   all_resumes: Todos los currículums
-  generated_from: Generado desde datos estructurados
+  generated_from: © 2026 Santiago Orozco Holguín
   version: v

@@ -82,4 +82,19 @@ describe("resolveResume", () => {
     expect(junior).toBeDefined();
     expect(junior?.bullets).toHaveLength(1);
   });
+
+  it("keeps every education highlight when max_education_highlights is null", () => {
+    const resume = resolveResume(fixtureData, makeTemplate());
+    expect(resume.education[0]?.highlights).toHaveLength(2);
+  });
+
+  it("caps education highlights when max_education_highlights is set", () => {
+    const resume = resolveResume(fixtureData, makeTemplate({ max_education_highlights: 1 }));
+    expect(resume.education[0]?.highlights.map((h) => h.en)).toEqual(["Graduated with honors."]);
+  });
+
+  it("removes all education highlights when max_education_highlights is 0", () => {
+    const resume = resolveResume(fixtureData, makeTemplate({ max_education_highlights: 0 }));
+    expect(resume.education[0]?.highlights).toHaveLength(0);
+  });
 });

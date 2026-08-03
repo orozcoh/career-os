@@ -2,11 +2,13 @@
 
 **Software Engineer**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Summary
 
-Software engineer with 6+ years building distributed systems and web platforms. Deep in event-driven architecture, API design, and performance work; comfortable owning services from RFC to production.
+Software Engineer with an Electronics Engineering background, building modern web applications from concept to deployment. Experienced with React, TypeScript, Cloudflare, PWAs, authentication, and AI-assisted development. Passionate about designing practical software products and continuously learning through hands-on engineering.
 
 ## Experience
 
@@ -14,36 +16,48 @@ Software engineer with 6+ years building distributed systems and web platforms. 
 
 *Jun 2023 – Present · Remote · Self-employed*
 
-- Designed, developed, deployed, and maintained multiple production-ready web applications from concept to deployment using modern web technologies.
-- Built Progressive Web Applications (PWAs) with a focus on mobile-first experiences, local-first principles, and maintainable software architecture.
-- Designed cloud-native solutions using Cloudflare Workers, Cloudflare KV, REST APIs, and edge infrastructure.
-- Developed software products exploring authentication, cryptography, passkeys, blockchain technologies, AI-assisted workflows, and distributed systems.
+- Designed, built, and deployed production-ready web applications from concept to deployment.
+- Developed cloud-native applications using React, TypeScript, Progressive Web App technologies, and Cloudflare's edge platform.
+- Built software products exploring authentication, cryptography, AI-assisted development, and blockchain technologies.
 
 ### Software Engineering Intern — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Internship*
+*Oct 2022 – May 2023 · Remote · Internship*
 
 - Collaborated with the engineering team to modernize frontend development workflows and reusable component architecture.
 
 ## Projects
 
-### career-os
+### Anthology
 
-*Resume infrastructure as software*
+*Local-first knowledge management platform*
 
-Single source of truth for professional identity. Structured YAML data compiles into ATS-friendly PDF, HTML, DOCX, and Markdown resumes plus a static website.
+- Local-first knowledge platform with optional blockchain publishing and QR sharing.
 
-- Tag-based template system generates four targeted resumes from one dataset with zero duplication.
+React · TypeScript · Cloudflare Workers
 
-**Technologies:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+### TD Status
 
-**Links:** [Source](https://github.com/orozcoh/career-os)
+*Cloud licensing and telemetry platform for TouchDesigner*
+
+- Built a cloud-based licensing system with heartbeat telemetry for monitoring TouchDesigner deployments.
+
+React · TypeScript · Cloudflare Workers
+
+### Prompter
+
+*AI image generation with crypto micropayments*
+
+- Integrated x402 micropayments while protecting proprietary prompts using Cloudflare Workers and KV.
+
+React · TypeScript · Cloudflare Workers
 
 ## Skills
 
-- **Languages:** TypeScript, JavaScript, Python, Go, SQL
-- **Backend & Infrastructure:** Node.js, PostgreSQL, Event-driven architecture, Cloudflare Workers, Docker
-- **Practices:** Testing (unit, contract, e2e), CI/CD, Technical writing & RFCs
+- **Programming Languages:** TypeScript, JavaScript, Python
+- **Cloud & Backend:** Cloudflare Workers, Cloudflare KV, REST APIs, Edge Computing, Node.js
+- **Software Engineering:** Software Architecture, Distributed Systems, Authentication, Cryptography, API Design
+- **AI & Emerging Technologies:** AI-assisted Development, Prompt Engineering, Generative AI APIs, Blockchain, Passkeys (WebAuthn)
 
 ## Education
 
@@ -51,11 +65,7 @@ Single source of truth for professional identity. Structured YAML data compiles 
 
 *Aug 2014 – Jun 2023 · Medellín, Colombia*
 
-- Developed a strong foundation in software engineering, embedded systems, electronics, mathematics, and computer architecture.
-- Completed an engineering internship focused on modern web development, TypeScript migration, and reusable component libraries.
-- Transitioned academic interests toward software engineering through independent product development and modern web technologies.
-
 ## Languages
 
 - Spanish — Native
-- English — Fluent
+- English — Fluent - B2

@@ -5,7 +5,9 @@ exports[`renderMarkdown > matches the stored snapshot 1`] = `
 
 **Engineer**
 
-Remote · test@example.com · [LinkedIn](https://www.linkedin.com/in/test) · [GitHub](https://github.com/test) · [example.com](https://example.com) · [CV](https://cv.example.com)
+Remote
+test@example.com · [LinkedIn](https://www.linkedin.com/in/test) · [GitHub](https://github.com/test)
+[example.com](https://example.com) · [CV](https://cv.example.com)
 
 ## Summary
 

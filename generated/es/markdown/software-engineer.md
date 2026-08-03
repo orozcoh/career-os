@@ -2,48 +2,62 @@
 
 **Ingeniero de Software**
 
-Medellín, Colombia + Remote · santiago@orozcoh.com · [LinkedIn](https://www.linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh) · [santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
+Medellín, Colombia + Remote
+santiago@orozcoh.com · [LinkedIn](https://linkedin.com/in/orozcoh/) · [GitHub](https://github.com/orozcoh)
+[santiago.orozcoh.com](https://santiago.orozcoh.com) · [CV](https://cv.orozcoh.com)
 
 ## Perfil Profesional
 
-Ingeniero de software con más de 6 años construyendo sistemas distribuidos y plataformas web. Profundo en arquitectura orientada a eventos, diseño de APIs y trabajo de rendimiento; cómodo gestionando servicios desde RFC hasta producción.
+Ingeniero de Software con formación en Ingeniería Electrónica, construyendo aplicaciones web modernas desde el concepto hasta el despliegue. Con experiencia en React, TypeScript, Cloudflare, PWAs, autenticación y desarrollo asistido por IA. Apasionado por diseñar productos de software prácticos y aprender continuamente a través de la ingeniería práctica.
 
 ## Experiencia
 
-### Ingeniero de Software Independiente — Self-employed
+### Ingeniero de Software Independiente
 
-*Jun 2023 – Presente · Remote · Independiente*
+*Jun 2023 – Presente · Remote*
 
-- Diseñé, desarrollé, desplegué y mantuve múltiples aplicaciones web listas para producción desde el concepto hasta el despliegue utilizando tecnologías web modernas.
-- Construí Aplicaciones Web Progresivas (PWAs) con enfoque en experiencias mobile-first, principios local-first y arquitectura de software mantenible.
-- Diseñé soluciones cloud-native utilizando Cloudflare Workers, Cloudflare KV, APIs REST e infraestructura de borde.
-- Desarrollé productos de software explorando autenticación, criptografía, passkeys, tecnologías blockchain, flujos de trabajo asistidos por IA y sistemas distribuidos.
+- Diseñé, desarrollé y desplegué aplicaciones web listas para producción desde el concepto hasta el despliegue.
+- Desarrollé aplicaciones cloud-native utilizando React, TypeScript, tecnologías de Aplicaciones Web Progresivas y la plataforma de borde de Cloudflare.
+- Construí productos de software explorando autenticación, criptografía, desarrollo asistido por IA y tecnologías blockchain.
 
 ### Pasante de Ingeniería de Software — TSO Mobile Colombia
 
-*Oct 2022 – May 2023 · Medellín, Colombia · Pasantía*
+*Oct 2022 – May 2023 · Remote · Pasantía*
 
 - Colaboré con el equipo de ingeniería para modernizar los flujos de trabajo de desarrollo frontend y la arquitectura de componentes reutilizables.
 
 ## Proyectos
 
-### career-os
+### Anthology
 
-*Infraestructura de currículum como software*
+*Plataforma local-first para gestión de conocimiento*
 
-Fuente única de verdad para la identidad profesional. Datos YAML estructurados se compilan en currículums compatibles con ATS en PDF, HTML, DOCX y Markdown más un sitio web estático.
+- Plataforma de conocimiento local-first con publicación opcional en blockchain y compartición mediante códigos QR.
 
-- Sistema de plantillas basado en etiquetas genera cuatro currículums dirigidos desde un único conjunto de datos sin duplicación.
+React · TypeScript · Cloudflare Workers
 
-**Tecnologías:** Astro, TypeScript, Tailwind CSS, Zod, Playwright, pnpm
+### TD Status
 
-**Enlaces:** [Código fuente](https://github.com/orozcoh/career-os)
+*Plataforma de licenciamiento y telemetría para TouchDesigner*
+
+- Desarrollé un sistema de licenciamiento en la nube con telemetría mediante heartbeats para monitorear implementaciones de TouchDesigner.
+
+React · TypeScript · Cloudflare Workers
+
+### Prompter
+
+*Generación de imágenes con IA y micropagos en criptomonedas*
+
+- Integré micropagos mediante x402 protegiendo los prompts propietarios con Cloudflare Workers y KV.
+
+React · TypeScript · Cloudflare Workers
 
 ## Habilidades Técnicas
 
-- **Lenguajes:** TypeScript, JavaScript, Python, Go, SQL
-- **Backend e Infraestructura:** Node.js, PostgreSQL, Arquitectura orientada a eventos, Cloudflare Workers, Docker
-- **Prácticas:** Testing (unitario, de contrato, e2e), CI/CD, Escritura técnica y RFCs
+- **Lenguajes de Programación:** TypeScript, JavaScript, Python
+- **Nube y Backend:** Cloudflare Workers, Cloudflare KV, APIs REST, Computación en el Edge, Node.js
+- **Ingeniería de Software:** Arquitectura de Software, Sistemas Distribuidos, Autenticación, Criptografía, Diseño de APIs
+- **IA y Tecnologías Emergentes:** Desarrollo Asistido por IA, Ingeniería de Prompts, APIs de IA Generativa, Blockchain, Passkeys (WebAuthn)
 
 ## Educación
 
@@ -51,11 +65,7 @@ Fuente única de verdad para la identidad profesional. Datos YAML estructurados 
 
 *Ago 2014 – Jun 2023 · Medellín, Colombia*
 
-- Desarrollé una base sólida en ingeniería de software, sistemas embebidos, electrónica, matemáticas y arquitectura de computadores.
-- Completé una pasantía de ingeniería enfocada en desarrollo web moderno, migración a TypeScript y librerías de componentes reutilizables.
-- Transicioné mis intereses académicos hacia la ingeniería de software a través del desarrollo independiente de productos y tecnologías web modernas.
-
 ## Idiomas
 
 - Español — Nativo
-- Inglés — Fluido
+- Inglés — Fluido - B2
