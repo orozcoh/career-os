@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import LanguageToggle from "../../components/LanguageToggle.astro";
 import { getResumes, getLocaleFile } from "../../lib/data";
+import { downloadFileName } from "../../lib/download";
 import { RELEASE_VERSION } from "../../lib/version";
 import type { Locale } from "@career/core";
 import { t, SUPPORTED_LOCALES } from "@career/core";
@@ -53,7 +54,7 @@ const description = profile?.summary_short
               </a>
               <a
                 href={`/${locale}/resumes/${resume.template.slug}.pdf`}
-                download
+                download={downloadFileName(resume.template, locale, "pdf")}
                 class="text-accent hover:text-accent-hover"
               >
                 {localeFile.website.download_pdf}

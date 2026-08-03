@@ -38,6 +38,12 @@ export const templateSchema = z.object({
   /** null = no limit. Bullets are taken in file order (most important first). */
   max_bullets_per_role: z.number().int().positive().nullable().default(null),
   /**
+   * File-friendly resume name used in download filenames, e.g.
+   * "frontend-engineer" → santiago-orozcoh-frontend-engineer-en.pdf.
+   * Independent of the URL slug.
+   */
+  download_name: z.string().min(1),
+  /**
    * How projects are rendered: compact, standard, or complete.
    * Defaults to "complete" so existing templates keep their current behavior.
    */

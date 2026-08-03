@@ -106,6 +106,7 @@ export function makeTemplate(overrides: Partial<Template> = {}): Template {
     id: "test",
     name: { en: "Test", es: "Prueba" },
     slug: "test",
+    download_name: "test-engineer",
     description: { en: "Test template.", es: "Plantilla de prueba." },
     title_override: null,
     summary_override: null,

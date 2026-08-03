@@ -30,7 +30,7 @@ const needsRuntime = providers.some((p) => p.name !== "noop");
       const provider = createCloudflareProvider({ version: RELEASE_VERSION });
       provider.init?.();
 
-      const language = (document.documentElement.lang === "es" ? "es" : "en") as "en" | "es";
+      const language = document.documentElement.lang === "es" ? "es" : "en";
       const path = window.location.pathname;
       const session_id = getOrCreateSessionId();
       const base = { language, session_id };
@@ -59,7 +59,11 @@ const needsRuntime = providers.some((p) => p.name !== "noop");
       }
 
       document.addEventListener("click", (event) => {
-        const anchor = (event.target as Element | null)?.closest?.("a");
+        const target = event.target;
+        const anchor =
+          target && typeof target.closest === "function"
+            ? target.closest("a")
+            : null;
         if (!anchor) return;
 
         // resume_download — PDF/DOCX downloads from the resume pages.
@@ -70,7 +74,7 @@ const needsRuntime = providers.some((p) => p.name !== "noop");
           provider.track({
             type: "resume_download",
             resume: downloadMatch[1],
-            format: downloadMatch[2] as "pdf" | "docx",
+            format: downloadMatch[2],
             ...base,
           });
           return;

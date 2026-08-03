@@ -8,6 +8,8 @@ name:
 
 slug: software-engineer
 
+download_name: software-engineer
+
 description:
   en: Full-stack software engineering focused on designing, building, and deploying modern web applications, cloud-native services, and scalable software architectures.
   es: Ingeniería de software full-stack enfocada en diseñar, desarrollar y desplegar aplicaciones web modernas, servicios cloud-native y arquitecturas de software escalables.

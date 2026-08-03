@@ -183,6 +183,7 @@ name:                               # landing card title (localized)
   en: Frontend Engineer
   es: Ingeniero Frontend
 slug: frontend                   # → /en/frontend, en/frontend.pdf, en/frontend.docx
+download_name: frontend-engineer # → santiago-orozcoh-frontend-engineer-en.pdf (save name)
 description:                        # card description (localized)
   en: UI engineering focus — React, rendering performance…
   es: Enfoque en ingeniería UI — React, rendimiento de renderizado…

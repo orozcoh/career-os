@@ -63,13 +63,13 @@ export function createCloudflareProvider(options: CloudflareProviderOptions): An
       };
       const body = JSON.stringify(payload);
       // sendBeacon survives page unload; fetch(keepalive) is the fallback.
-      const beacon = (
-        navigator as Navigator & {
-          sendBeacon?: (url: string, data: string | Blob | ArrayBufferView | FormData | URLSearchParams) => boolean;
-        }
-      ).sendBeacon;
-      if (typeof beacon === "function") {
-        beacon(endpoint, body);
+      // Must be called as a method on navigator — a destructured reference
+      // loses `this` and throws "Illegal invocation".
+      const nav = navigator as Navigator & {
+        sendBeacon?: (url: string, data: string) => boolean;
+      };
+      if (typeof nav.sendBeacon === "function") {
+        nav.sendBeacon(endpoint, body);
       } else {
         fetch(endpoint, { method: "POST", body, keepalive: true }).catch(() => {});
       }
