@@ -564,6 +564,7 @@ import Plain from "../layouts/Plain.astro";
     const ok = await load();
     if (ok) {
       gate?.classList.add("hidden");
+      if (dash) dash.classList.remove("hidden");
     } else {
       sessionStorage.removeItem(KEY_STORAGE);
       keyError?.classList.remove("hidden");
@@ -575,6 +576,7 @@ import Plain from "../layouts/Plain.astro";
   const storedKey = sessionStorage.getItem(KEY_STORAGE);
   if (storedKey) {
     gate?.classList.add("hidden");
+    if (dash) dash.classList.remove("hidden");
     void load();
   } else {
     setStatus("Key required");
