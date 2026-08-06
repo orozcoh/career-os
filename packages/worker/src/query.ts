@@ -8,7 +8,7 @@ import type { Env, QueryResult, QueryRow } from "./types";
 
 const DATASET = "cv-analytics";
 
-const TABLE = (): string => "`" + DATASET + "`";
+const TABLE = (): string => '"' + DATASET + '"';
 
 const EVENT_COLUMN = "blob1";
 const RESUME_COLUMN = "blob2";
@@ -33,7 +33,8 @@ export async function runQuery(env: Env, sql: string): Promise<QueryResult> {
     body: sql,
   });
   if (!response.ok) {
-    throw new Error(`Analytics Engine query failed (${response.status})`);
+    const detail = await response.text();
+    throw new Error(`Analytics Engine query failed (${response.status}): ${detail}`);
   }
   const body = (await response.json()) as { data?: QueryResult };
   return body.data ?? [];
