@@ -342,9 +342,9 @@ import Plain from "../layouts/Plain.astro";
   }
 </style>
 
-<script>
+<script is:inline>
   const KEY_STORAGE = "cv_analytics_key";
-  const $ = (id: string): HTMLElement | null => document.getElementById(id);
+  const $ = (id) => document.getElementById(id);
 
   const statusEl = $("#status");
   const dash = $("#dash");
@@ -352,11 +352,11 @@ import Plain from "../layouts/Plain.astro";
   const keyInput = $("#key-input");
   const keyError = $("#key-error");
 
-  function setStatus(text: string): void {
+  function setStatus(text) {
     if (statusEl) statusEl.textContent = text;
   }
 
-  async function api(path: string): Promise<unknown> {
+  async function api(path) {
     const key = sessionStorage.getItem(KEY_STORAGE);
     const res = await fetch(`/api/admin/analytics${path}`, {
       headers: key ? { "X-Analytics-Key": key } : {},
@@ -366,23 +366,23 @@ import Plain from "../layouts/Plain.astro";
     return res.json();
   }
 
-  function fmt(n: number): string {
+  function fmt(n) {
     return new Intl.NumberFormat("en-US", { notation: n >= 1000 ? "compact" : "standard" }).format(n);
   }
 
-  function pct(part: number, whole: number): string {
+  function pct(part, whole) {
     if (whole === 0) return "—";
     return `${Math.round((part / whole) * 100)}%`;
   }
 
-  function cell(text: string | number, cls = ""): HTMLTableCellElement {
+  function cell(text, cls = "") {
     const td = document.createElement("td");
     td.textContent = String(text);
     if (cls) td.className = cls;
     return td;
   }
 
-  async function load(): Promise<boolean> {
+  async function load() {
     setStatus("Loading…");
     try {
       const results = await Promise.all([
@@ -549,7 +549,7 @@ import Plain from "../layouts/Plain.astro";
     }
   }
 
-  function setText(id: string, text: string): void {
+  function setText(id, text) {
     const el = $(id);
     if (el) el.textContent = text;
   }
