@@ -391,8 +391,14 @@ The site is fully static; `website/dist` is the deployable artifact.
   (Playwright downloads its Chromium during `pnpm install` when no system
   Chrome exists; `scripts/pdf.ts` falls back to it automatically.)
 - **Output directory**: `website/dist`
-- PDF/DOCX downloads are staged into `dist/<locale>/resumes/` by the build,
-  and `public/_headers` marks them `immutable` for caching.
+- PDF/DOCX downloads are staged into `dist/<locale>/resumes/` and
+  `public/<locale>/resumes/` by the `stage-resumes` Astro integration
+  (`website/src/lib/stage-resumes.mjs`), which copies the committed
+  `generated/<locale>/{pdf,docx}/` output on every build. This means a bare
+  `astro build` or `pnpm build:site` already yields a deployable artifact with
+  working downloads — no separate post-build step required — and `pnpm dev`
+  serves them from `public/` too. `public/_headers` marks them `immutable` for
+  caching.
 
 ### 2. Analytics Worker
 
