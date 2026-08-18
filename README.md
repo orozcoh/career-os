@@ -235,7 +235,7 @@ automatically.
 | `pnpm typecheck`   | `tsc --noEmit` across packages and scripts                          |
 | `pnpm clean`       | Remove `generated/` and `website/dist`                              |
 | `pnpm --filter @career/worker dev`    | Run the analytics Worker locally (wrangler dev)      |
-| `pnpm --filter @career/worker deploy` | Deploy the analytics Worker (wrangler deploy)        |
+| `pnpm --filter @career/worker run deploy` | Deploy the analytics Worker (wrangler deploy)    |
 
 ## ATS compatibility
 
