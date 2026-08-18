@@ -119,7 +119,7 @@ describe("dashboard queries", () => {
     ]);
   });
 
-  it("funnel returns raw open/view/download counts", async () => {
+  it("funnel returns raw open/view/download counts (all time by default)", async () => {
     stubApi([
       { event: "resume_open", count: 10 },
       { event: "resume_view", count: 6 },
@@ -127,6 +127,19 @@ describe("dashboard queries", () => {
     ]);
     const funnel = await getFunnel(makeEnv());
     expect(funnel).toEqual({ opens: 10, views: 6, downloads: 3 });
+  });
+
+  it("funnel applies the requested time window to the query", async () => {
+    const fetchMock = vi.fn(async () =>
+      new Response(JSON.stringify({ data: [{ event: "resume_open", count: 2 }] }), { status: 200 }),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    await getFunnel(makeEnv(), "WHERE timestamp >= NOW() - INTERVAL '7' DAY");
+
+    const [url, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+    expect(url).toContain("/analytics_engine/sql");
+    expect(init.body).toContain("WHERE timestamp >= NOW() - INTERVAL '7' DAY");
   });
 
   it("live returns the last events with their dimensions", async () => {

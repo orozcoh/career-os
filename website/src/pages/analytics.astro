@@ -1,5 +1,6 @@
 ---
 import Plain from "../layouts/Plain.astro";
+import "../styles/analytics.css";
 ---
 
 <Plain title="Resume Analytics">
@@ -51,7 +52,17 @@ import Plain from "../layouts/Plain.astro";
       </section>
 
       <section>
-        <h2>Funnel</h2>
+        <div class="funnel-head">
+          <div>
+            <h2>Funnel</h2>
+            <p class="sub" id="funnel-note">conversion from opens · all time</p>
+          </div>
+          <div class="seg" id="funnel-window">
+            <button type="button" data-window="all" class="active">All time</button>
+            <button type="button" data-window="today">Today</button>
+            <button type="button" data-window="week">Last 7 days</button>
+          </div>
+        </div>
         <div class="funnel" id="funnel"></div>
       </section>
 
@@ -155,12 +166,61 @@ import Plain from "../layouts/Plain.astro";
     return td;
   }
 
+  const FUNNEL_WINDOWS = {
+    all: { label: "all time", query: "" },
+    today: { label: "today", query: "?window=today" },
+    week: { label: "last 7 days", query: "?window=week" },
+  };
+  let funnelWindow = "all";
+
+  async function loadFunnel(window = funnelWindow) {
+    const w = FUNNEL_WINDOWS[window] ?? FUNNEL_WINDOWS.all;
+    funnelWindow = window;
+    const note = $("#funnel-note");
+    if (note) note.textContent = `conversion from opens · ${w.label}`;
+    const funnel = await api(`/funnel${w.query}`).catch(() => null);
+    renderFunnel(funnel ?? { opens: 0, views: 0, downloads: 0 });
+  }
+
+  function renderFunnel(funnel) {
+    const funnelEl = $("#funnel");
+    if (!funnelEl) return;
+    funnelEl.innerHTML = "";
+    const opens = Number(funnel.opens ?? 0);
+    const steps = [
+      { name: "Opens", value: opens },
+      { name: "Views", value: Number(funnel.views ?? 0) },
+      { name: "Downloads", value: Number(funnel.downloads ?? 0) },
+    ];
+    const max = Math.max(1, opens);
+    for (const step of steps) {
+      const row = document.createElement("div");
+      row.className = "fstep";
+      const name = document.createElement("span");
+      name.className = "fname";
+      name.textContent = step.name;
+      const bar = document.createElement("div");
+      bar.className = "fbar";
+      const fill = document.createElement("div");
+      fill.className = "fill";
+      fill.style.width = `${Math.max(2, (step.value / max) * 100)}%`;
+      bar.appendChild(fill);
+      const count = document.createElement("span");
+      count.className = "fcount";
+      count.textContent = fmt(step.value);
+      const p = document.createElement("span");
+      p.className = "fpct";
+      p.textContent = step.name === "Opens" ? "100% (baseline)" : `${pct(step.value, opens)} of opens`;
+      row.append(name, bar, count, p);
+      funnelEl.appendChild(row);
+    }
+  }
+
   async function load() {
     setStatus("Loading…");
     try {
       const results = await Promise.all([
         api("/summary"),
-        api("/funnel"),
         api("/resumes"),
         api("/languages"),
         api("/countries"),
@@ -169,12 +229,11 @@ import Plain from "../layouts/Plain.astro";
       ]);
 
       const summary = results[0] ?? {};
-      const funnel = results[1] ?? {};
-      const resumes = results[2] ?? [];
-      const languages = results[3] ?? [];
-      const countries = results[4] ?? [];
-      const cities = results[5] ?? [];
-      const live = results[6] ?? [];
+      const resumes = results[1] ?? [];
+      const languages = results[2] ?? [];
+      const countries = results[3] ?? [];
+      const cities = results[4] ?? [];
+      const live = results[5] ?? [];
 
       const totals = summary.totals ?? {};
       const today = summary.today ?? {};
@@ -193,38 +252,7 @@ import Plain from "../layouts/Plain.astro";
       setText("#s-pageviews", fmt(pv));
       setText("#s-pageviews-sub", `${fmt(today.pageViews ?? 0)} today`);
 
-      // Funnel: landing → open → view → download.
-      const funnelEl = $("#funnel");
-      if (funnelEl) {
-        funnelEl.innerHTML = "";
-        const steps = [
-          { name: "Opens", value: funnel.opens ?? 0 },
-          { name: "Views", value: funnel.views ?? 0 },
-          { name: "Downloads", value: funnel.downloads ?? 0 },
-        ];
-        const max = Math.max(1, steps[0]?.value ?? 1);
-        for (const step of steps) {
-          const row = document.createElement("div");
-          row.className = "fstep";
-          const name = document.createElement("span");
-          name.className = "fname";
-          name.textContent = step.name;
-          const bar = document.createElement("div");
-          bar.className = "fbar";
-          const fill = document.createElement("div");
-          fill.className = "fill";
-          fill.style.width = `${Math.max(2, (step.value / max) * 100)}%`;
-          bar.appendChild(fill);
-          const count = document.createElement("span");
-          count.className = "fcount";
-          count.textContent = fmt(step.value);
-          const p = document.createElement("span");
-          p.className = "fpct";
-          p.textContent = step.name === "Opens" ? "100%" : pct(step.value, steps[0]?.value ?? 0);
-          row.append(name, bar, count, p);
-          funnelEl.appendChild(row);
-        }
-      }
+      await loadFunnel(funnelWindow);
 
       const resumesBody = $("#t-resumes");
       if (resumesBody) {
@@ -346,6 +374,15 @@ import Plain from "../layouts/Plain.astro";
 
   $("#refresh")?.addEventListener("click", () => void load());
 
+  $("#funnel-window")?.addEventListener("click", (event) => {
+    const btn = event.target.closest("button[data-window]");
+    if (!btn || btn.dataset.window === funnelWindow) return;
+    for (const b of document.querySelectorAll("#funnel-window button")) {
+      b.classList.toggle("active", b === btn);
+    }
+    void loadFunnel(btn.dataset.window);
+  });
+
   const storedKey = sessionStorage.getItem(KEY_STORAGE);
   if (storedKey) {
     gate?.classList.add("hidden");
@@ -362,231 +399,4 @@ import Plain from "../layouts/Plain.astro";
   }, 60_000);
 </script>
 </Plain>
-
-<style>
-  :root {
-    color-scheme: dark;
-  }
-  .wrap {
-    max-width: 56rem;
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem 5rem;
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    color: #0a0a0a;
-    line-height: 1.5;
-  }
-  .topbar {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
-  }
-  .muted {
-    color: #6b7280;
-    margin: 0.25rem 0 0;
-    font-size: 0.875rem;
-  }
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .status {
-    font-size: 0.75rem;
-    color: #6b7280;
-  }
-  button {
-    border: 1px solid #e5e7eb;
-    background: #fff;
-    border-radius: 0.5rem;
-    padding: 0.375rem 0.875rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  button:hover {
-    background: #f9fafb;
-  }
-  .gate {
-    margin-top: 3rem;
-    max-width: 24rem;
-  }
-  .gate label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 0.375rem;
-  }
-  .row {
-    display: flex;
-    gap: 0.5rem;
-  }
-  input {
-    flex: 1;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    padding: 0.4375rem 0.75rem;
-    font-size: 0.875rem;
-  }
-  .error {
-    color: #dc2626;
-    font-size: 0.8125rem;
-    margin: 0.5rem 0 0;
-  }
-  .hidden {
-    display: none !important;
-  }
-  section {
-    margin-top: 2.5rem;
-  }
-  h2 {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #6b7280;
-    margin: 0 0 0.75rem;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: 0.75rem;
-  }
-  .card {
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
-    padding: 1rem 1.125rem;
-  }
-  .num {
-    font-size: 1.875rem;
-    font-weight: 600;
-    line-height: 1.1;
-  }
-  .label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-top: 0.25rem;
-  }
-  .sub {
-    font-size: 0.75rem;
-    color: #6b7280;
-    margin-top: 0.25rem;
-  }
-  .funnel {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .fstep {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .fstep .fname {
-    width: 7rem;
-    font-size: 0.875rem;
-    color: #374151;
-    flex-shrink: 0;
-  }
-  .fstep .fbar {
-    flex: 1;
-    height: 1.5rem;
-    background: #f3f4f6;
-    border-radius: 0.375rem;
-    overflow: hidden;
-    display: flex;
-  }
-  .fstep .fbar .fill {
-    height: 100%;
-    background: #2563eb;
-    border-radius: 0.375rem;
-    min-width: 2px;
-  }
-  .fstep .fcount {
-    width: 4rem;
-    text-align: right;
-    font-size: 0.875rem;
-    font-variant-numeric: tabular-nums;
-    color: #111827;
-  }
-  .fstep .fpct {
-    width: 3.5rem;
-    text-align: right;
-    font-size: 0.75rem;
-    color: #6b7280;
-  }
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  @media (max-width: 48rem) {
-    .two-col {
-      grid-template-columns: 1fr;
-    }
-  }
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.875rem;
-  }
-  .table th {
-    text-align: left;
-    font-weight: 500;
-    color: #6b7280;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.375rem 0.5rem;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .table td {
-    padding: 0.4375rem 0.5rem;
-    border-bottom: 1px solid #f3f4f6;
-    font-variant-numeric: tabular-nums;
-  }
-  .table td.num {
-    text-align: right;
-    font-size: inherit;
-  }
-  .rank {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    counter-reset: rank;
-  }
-  .rank li {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    padding: 0.375rem 0;
-    border-bottom: 1px solid #f3f4f6;
-    font-size: 0.875rem;
-    counter-increment: rank;
-  }
-  .rank li::before {
-    content: counter(rank);
-    width: 1.25rem;
-    color: #9ca3af;
-    font-size: 0.75rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .rank .name {
-    flex: 1;
-  }
-  .rank .count {
-    color: #6b7280;
-    font-variant-numeric: tabular-nums;
-  }
-  .live-event {
-    font-variant-numeric: tabular-nums;
-  }
-</style>
-
 

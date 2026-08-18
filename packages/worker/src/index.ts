@@ -8,6 +8,7 @@ import {
   getLive,
   getResumes,
   getSummary,
+  INTERVALS,
   runQuery,
 } from "./query";
 import type { Env } from "./types";
@@ -38,8 +39,13 @@ async function handleAdmin(request: Request, env: Env): Promise<Response> {
         return json(await getCities(env));
       case "/languages":
         return json(await getLanguages(env));
-      case "/funnel":
-        return json(await getFunnel(env));
+      case "/funnel": {
+        const window = url.searchParams.get("window") ?? "all";
+        if (!(window in INTERVALS)) {
+          return json({ error: "invalid_window", valid: Object.keys(INTERVALS) }, 400);
+        }
+        return json(await getFunnel(env, INTERVALS[window as keyof typeof INTERVALS]));
+      }
       case "/live":
         return json(await getLive(env));
       case "/ping":
