@@ -161,8 +161,8 @@ export async function getLanguages(env: Env) {
   return [...byLang.entries()].map(([language, counts]) => ({ language, ...counts }));
 }
 
-export async function getFunnel(env: Env) {
-  const counts = await eventCounts(env, INTERVALS.all);
+export async function getFunnel(env: Env, where: string = INTERVALS.all) {
+  const counts = await eventCounts(env, where);
   return {
     opens: counts["resume_open"] ?? 0,
     views: counts["resume_view"] ?? 0,
