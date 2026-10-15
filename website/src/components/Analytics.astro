@@ -69,12 +69,16 @@ const needsRuntime = providers.some((p) => p.name !== "noop");
         // resume_download — PDF/DOCX downloads from the resume pages.
         const downloadMatch = anchor
           .getAttribute("href")
-          ?.match(/\/resumes\/(software-engineer|frontend|creative-tech|master)\.(pdf|docx)$/);
+          ?.match(/\/resumes\/(software-engineer|frontend|creative-tech|master)(-2col)?\.(pdf|docx)$/);
         if (downloadMatch && anchor.hasAttribute("download")) {
+          const format =
+            downloadMatch[3] === "pdf" && downloadMatch[2] === "-2col"
+              ? "pdf-2col"
+              : (downloadMatch[3] as "pdf" | "docx");
           provider.track({
             type: "resume_download",
             resume: downloadMatch[1],
-            format: downloadMatch[2],
+            format,
             ...base,
           });
           return;

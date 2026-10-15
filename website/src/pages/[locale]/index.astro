@@ -48,17 +48,27 @@ const description = profile?.summary_short
           <section class="flex flex-col rounded-xl border border-line p-6 transition-colors hover:border-faint">
             <h2 class="text-lg font-semibold">{t(resume.template.name, locale)}</h2>
             <p class="mt-2 flex-1 text-sm leading-6 text-muted">{t(resume.template.description, locale)}</p>
-            <div class="mt-6 flex items-center gap-5 text-sm font-medium">
-              <a href={`/${locale}/${resume.template.slug}`} class="text-accent hover:text-accent-hover">
+            <div class="mt-6 flex flex-col gap-2.5 border-t border-line pt-4 text-sm font-medium">
+              <a href={`/${locale}/${resume.template.slug}`} class="w-fit text-accent hover:text-accent-hover">
                 {localeFile.website.view_online} →
               </a>
-              <a
-                href={`/${locale}/resumes/${resume.template.slug}.pdf`}
-                download={downloadFileName(resume.template, locale, "pdf")}
-                class="text-accent hover:text-accent-hover"
-              >
-                {localeFile.website.download_pdf}
-              </a>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
+                <a
+                  href={`/${locale}/resumes/${resume.template.slug}.pdf`}
+                  download={downloadFileName(resume.template, locale, "pdf", 1)}
+                  class="hover:text-accent"
+                >
+                  ↓ {localeFile.website.download_pdf_1col}
+                </a>
+                <span class="text-faint" aria-hidden="true">·</span>
+                <a
+                  href={`/${locale}/resumes/${resume.template.slug}-2col.pdf`}
+                  download={downloadFileName(resume.template, locale, "pdf", 2)}
+                  class="hover:text-accent"
+                >
+                  ↓ {localeFile.website.download_pdf_2col}
+                </a>
+              </div>
             </div>
           </section>
         ))

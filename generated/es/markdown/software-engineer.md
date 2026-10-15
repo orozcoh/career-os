@@ -36,6 +36,8 @@ Ingeniero de Software con formación en Ingeniería Electrónica, construyendo a
 
 React · TypeScript · Cloudflare Workers
 
+**Enlaces:** [Sitio web](https://memory.inbytes.xyz)
+
 ### TD Status
 
 *Plataforma de licenciamiento y telemetría para TouchDesigner*
@@ -43,6 +45,8 @@ React · TypeScript · Cloudflare Workers
 - Desarrollé un sistema de licenciamiento en la nube con telemetría mediante heartbeats para monitorear implementaciones de TouchDesigner.
 
 React · TypeScript · Cloudflare Workers
+
+**Enlaces:** [Sitio web](https://td-status.digitalerror.xyz)
 
 ### Prompter
 
@@ -52,10 +56,12 @@ React · TypeScript · Cloudflare Workers
 
 React · TypeScript · Cloudflare Workers
 
+**Enlaces:** [Sitio web](https://ai.digitalerror.xyz) · [Código fuente](https://github.com/orozcoh/prompter)
+
 ## Habilidades Técnicas
 
 - **Lenguajes de Programación:** TypeScript, JavaScript, Python
-- **Nube y Backend:** Cloudflare Workers, Cloudflare KV, APIs REST, Computación en el Edge, Node.js
+- **Nube y Backend:** Cloudflare Workers, Cloudflare KV, APIs REST, Computación en el Edge, Node.js, AWS
 - **Ingeniería de Software:** Arquitectura de Software, Sistemas Distribuidos, Autenticación, Criptografía, Diseño de APIs
 - **IA y Tecnologías Emergentes:** Desarrollo Asistido por IA, Ingeniería de Prompts, APIs de IA Generativa, Blockchain, Passkeys (WebAuthn)
 

@@ -7,7 +7,7 @@ import type { AnalyticsEngineDataPoint } from "./types";
  *   blob1  = event        (page_view | resume_open | resume_view | resume_download | outbound_click)
  *   blob2  = resume       (slug, "" for page_view)
  *   blob3  = language     (en | es)
- *   blob4  = format       (pdf | docx, "" otherwise)
+ *   blob4  = format       (pdf | pdf-2col | docx, "" otherwise)
  *   blob5  = country      (full name, "" if unknown)
  *   blob6  = city         ("" if unknown)
  *   blob7  = region       ("" if unknown)

@@ -12,8 +12,8 @@ export const sectionIdSchema = z.enum([
 
 /**
  * How projects are rendered inside this template.
- *   compact  — name + tagline + highlights + inline technologies (no description, no links)
- *   standard — name + tagline + description + highlights + technologies + links (links hidden in print)
+ *   compact  — name + tagline + highlights + inline technologies + links (no description)
+ *   standard — name + tagline + description + highlights + technologies + links
  *   complete — everything, including links in every output format
  */
 export const projectLayoutSchema = z.enum(["compact", "standard", "complete"]);

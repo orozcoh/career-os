@@ -33,11 +33,6 @@
     display: none !important;
   }
 
-  /* Standard-layout project links: visible on the web, hidden in PDF. */
-  .project-links {
-    display: none !important;
-  }
-
   a {
     color: inherit !important;
     text-decoration: none !important;
@@ -54,5 +49,104 @@
 
   h2 {
     break-after: avoid;
+  }
+
+  /* ─── 2-Column ATS-Valid Print Layout ───────────────────────────────────
+     Activated during PDF generation via article.resume[data-columns="2"].
+     DOM order remains strictly linear (Header → Main → Sidebar) for Tagged PDF
+     parsers, while a wide 9mm column gap prevents coordinate-based ATS parsers
+     from merging lines across columns. */
+
+  article.resume[data-columns="2"] {
+    font-size: 9.25pt;
+  }
+
+  article.resume[data-columns="2"] .resume-identity h1 {
+    font-size: 20pt;
+    line-height: 1.15;
+  }
+
+  article.resume[data-columns="2"] .resume-identity > p {
+    font-size: 10.5pt;
+    margin-top: 0.75mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-contact {
+    margin-top: 1.75mm !important;
+    font-size: 8.5pt;
+    line-height: 1.35;
+  }
+
+  article.resume[data-columns="2"] .resume-contact > * + * {
+    margin-top: 0.25mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+    column-gap: 9mm;
+    align-items: start;
+    margin-top: 4mm;
+  }
+
+  article.resume[data-columns="2"] .resume-sidebar .resume-section {
+    break-inside: avoid;
+  }
+
+  article.resume[data-columns="2"] .resume-main > .resume-section:first-child,
+  article.resume[data-columns="2"] .resume-sidebar > .resume-section:first-child {
+    margin-top: 0 !important;
+  }
+
+  article.resume[data-columns="2"] .resume-section {
+    margin-top: 3.25mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-section h2 {
+    padding-bottom: 0.75mm !important;
+    font-size: 7.75pt;
+  }
+
+  article.resume[data-columns="2"] .resume-section h3 {
+    font-size: 9.5pt;
+    line-height: 1.25;
+  }
+
+  article.resume[data-columns="2"] .resume-copy,
+  article.resume[data-columns="2"] .resume-entries,
+  article.resume[data-columns="2"] .resume-skills,
+  article.resume[data-columns="2"] .resume-sidebar > .resume-section > ul {
+    margin-top: 1.5mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-copy,
+  article.resume[data-columns="2"] .resume-bullets {
+    line-height: 1.32 !important;
+  }
+
+  article.resume[data-columns="2"] .resume-entries > * + * {
+    margin-top: 2mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-entries p,
+  article.resume[data-columns="2"] .resume-entries ul {
+    margin-top: 0.65mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-bullets > * + * {
+    margin-top: 0.4mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-skills {
+    line-height: 1.38 !important;
+  }
+
+  article.resume[data-columns="2"] .resume-skills > * + * {
+    margin-top: 2.25mm !important;
+  }
+
+  article.resume[data-columns="2"] .resume-sidebar .skill-category {
+    display: block;
+    color: var(--color-ink);
   }
 }

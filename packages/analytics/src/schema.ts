@@ -37,7 +37,7 @@ export const trackedEventSchema = z.discriminatedUnion("type", [
     ...baseShape,
     type: z.literal("resume_download"),
     resume: z.string().min(1),
-    format: z.enum(["pdf", "docx"]),
+    format: z.enum(["pdf", "pdf-2col", "docx"]),
   }).strict(),
   z.object({
     ...baseShape,
@@ -55,7 +55,7 @@ export const clientSignalSchema = z.discriminatedUnion("type", [
     ...signalBase,
     type: z.literal("resume_download"),
     resume: z.string().min(1),
-    format: z.enum(["pdf", "docx"]),
+    format: z.enum(["pdf", "pdf-2col", "docx"]),
   }).strict(),
   z.object({
     ...signalBase,

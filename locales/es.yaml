@@ -63,6 +63,8 @@ website:
 
   view_online: Ver en línea
   download_pdf: Descargar PDF
+  download_pdf_1col: PDF (1 Columna)
+  download_pdf_2col: PDF (2 Columnas)
   download_docx: DOCX
   all_resumes: Todos los currículums
   generated_from: © 2026 Santiago Orozco Holguín

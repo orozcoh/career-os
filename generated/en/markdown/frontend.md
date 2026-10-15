@@ -36,11 +36,15 @@ Frontend Engineer with an Electronics Engineering background, building modern we
 
 React · TypeScript · Cloudflare Workers
 
+**Links:** [Live](https://memory.inbytes.xyz)
+
 ### Prompter
 
 *AI image generation with crypto micropayments*
 
 React · TypeScript · Cloudflare Workers
+
+**Links:** [Live](https://ai.digitalerror.xyz) · [Source](https://github.com/orozcoh/prompter)
 
 ## Skills
 
