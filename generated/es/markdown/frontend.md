@@ -36,11 +36,15 @@ Ingeniero Frontend con formación en Ingeniería Electrónica, desarrollando apl
 
 React · TypeScript · Cloudflare Workers
 
+**Enlaces:** [Sitio web](https://memory.inbytes.xyz)
+
 ### Prompter
 
 *Generación de imágenes con IA y micropagos en criptomonedas*
 
 React · TypeScript · Cloudflare Workers
+
+**Enlaces:** [Sitio web](https://ai.digitalerror.xyz) · [Código fuente](https://github.com/orozcoh/prompter)
 
 ## Habilidades Técnicas
 

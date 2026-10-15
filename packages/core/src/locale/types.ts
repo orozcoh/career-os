@@ -25,6 +25,8 @@ export interface LocaleFile {
     hero: string;
     view_online: string;
     download_pdf: string;
+    download_pdf_1col: string;
+    download_pdf_2col: string;
     download_docx: string;
     all_resumes: string;
     generated_from: string;

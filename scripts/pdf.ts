@@ -105,18 +105,37 @@ async function main(): Promise<void> {
         const { slug } = template;
         await page.goto(`${baseUrl}/${locale}/${slug}`, { waitUntil: "networkidle" });
 
-        const out = join(pdfDir, `${slug}.pdf`);
+        // 1. Standard 1-column ATS PDF
+        const out1Col = join(pdfDir, `${slug}.pdf`);
         await page.pdf({
-          path: out,
+          path: out1Col,
           format: "A4",
           preferCSSPageSize: true, // @page { size: A4 } in the print stylesheet wins
           printBackground: true,
+          tagged: true,
         });
 
-        // Stage into the built site so download links resolve on deploy.
-        await copyFile(out, join(distResumesDir, `${slug}.pdf`));
-        await copyFile(out, join(publicResumesDir, `${slug}.pdf`));
-        console.log(`  ✓ ${locale}/${slug}.pdf`);
+        await copyFile(out1Col, join(distResumesDir, `${slug}.pdf`));
+        await copyFile(out1Col, join(publicResumesDir, `${slug}.pdf`));
+        console.log(`  ✓ ${locale}/${slug}.pdf (1 column)`);
+
+        // 2. ATS-valid 2-column PDF (linear DOM order + CSS Grid print rules)
+        await page.locator("article.resume").evaluate((el) => {
+          el.setAttribute("data-columns", "2");
+        });
+
+        const out2Col = join(pdfDir, `${slug}-2col.pdf`);
+        await page.pdf({
+          path: out2Col,
+          format: "A4",
+          preferCSSPageSize: true,
+          printBackground: true,
+          tagged: true,
+        });
+
+        await copyFile(out2Col, join(distResumesDir, `${slug}-2col.pdf`));
+        await copyFile(out2Col, join(publicResumesDir, `${slug}-2col.pdf`));
+        console.log(`  ✓ ${locale}/${slug}-2col.pdf (2 columns)`);
       }
       await context.close();
     }
@@ -125,7 +144,9 @@ async function main(): Promise<void> {
     server.close();
   }
 
-  console.log(`\nGenerated ${templates.length} PDFs × ${SUPPORTED_LOCALES.length} locales into ${paths.generatedDir}`);
+  console.log(
+    `\nGenerated ${templates.length * 2} PDFs (1-col + 2-col) × ${SUPPORTED_LOCALES.length} locales into ${paths.generatedDir}`,
+  );
 }
 
 main().catch((error: unknown) => {

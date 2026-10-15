@@ -55,7 +55,7 @@ Cloud platform for managing software licenses and monitoring TouchDesigner deplo
 
 **Technologies:** React, TypeScript, Cloudflare Workers
 
-**Links:** [Live](https://td-status.inbytes.xyz)
+**Links:** [Live](https://td-status.digitalerror.xyz)
 
 ### Prompter
 
@@ -73,7 +73,7 @@ AI image generation platform that transforms user images using curated prompts w
 
 - **Programming Languages:** TypeScript, JavaScript, Python
 - **Frontend Development:** React, Progressive Web Apps (PWA), HTML5, CSS3, Tailwind CSS
-- **Cloud & Backend:** Cloudflare Workers, Cloudflare KV, REST APIs, Edge Computing, Node.js
+- **Cloud & Backend:** Cloudflare Workers, Cloudflare KV, REST APIs, Edge Computing, Node.js, AWS
 - **Software Engineering:** Software Architecture, Distributed Systems, Authentication, Cryptography, API Design
 - **AI & Emerging Technologies:** AI-assisted Development, Prompt Engineering, Generative AI APIs, Blockchain, Passkeys (WebAuthn)
 - **Creative Technology:** TouchDesigner, Interactive Installations, Licensing Systems, Telemetry Systems

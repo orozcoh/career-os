@@ -56,7 +56,7 @@ describe("renderMarkdown", () => {
     expect(renderMarkdown(resume, enLocale, "en")).toMatchSnapshot();
   });
 
-  it("renders compact projects without description, links, or technology label", () => {
+  it("renders compact projects without description or technology label, but includes links", () => {
     const resume = resolveResume(
       fixtureData,
       makeTemplate({ project_layout: "compact" }),
@@ -69,7 +69,7 @@ describe("renderMarkdown", () => {
     expect(md).toContain("WebGL");
     expect(md).not.toContain("A creative project.");
     expect(md).not.toContain("**Technologies:**");
-    expect(md).not.toContain("**Links:**");
+    expect(md).toContain("**Links:** [Live](https://example.com/live)");
   });
 
   it("renders standard projects with description and links", () => {

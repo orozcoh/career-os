@@ -55,7 +55,7 @@ Plataforma en la nube para administrar licencias y monitorear implementaciones d
 
 **Tecnologías:** React, TypeScript, Cloudflare Workers
 
-**Enlaces:** [Sitio web](https://td-status.inbytes.xyz)
+**Enlaces:** [Sitio web](https://td-status.digitalerror.xyz)
 
 ### Prompter
 
@@ -73,7 +73,7 @@ Plataforma de generación de imágenes con IA que transforma imágenes de los us
 
 - **Lenguajes de Programación:** TypeScript, JavaScript, Python
 - **Desarrollo Frontend:** React, Aplicaciones Web Progresivas (PWA), HTML5, CSS3, Tailwind CSS
-- **Nube y Backend:** Cloudflare Workers, Cloudflare KV, APIs REST, Computación en el Edge, Node.js
+- **Nube y Backend:** Cloudflare Workers, Cloudflare KV, APIs REST, Computación en el Edge, Node.js, AWS
 - **Ingeniería de Software:** Arquitectura de Software, Sistemas Distribuidos, Autenticación, Criptografía, Diseño de APIs
 - **IA y Tecnologías Emergentes:** Desarrollo Asistido por IA, Ingeniería de Prompts, APIs de IA Generativa, Blockchain, Passkeys (WebAuthn)
 - **Tecnología Creativa:** TouchDesigner, Instalaciones Interactivas, Sistemas de Licenciamiento, Sistemas de Telemetría
