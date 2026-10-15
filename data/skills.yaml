@@ -75,6 +75,11 @@
         es: Node.js
       tags: [swe]
 
+    - name:
+        en: AWS
+        es: AWS
+      tags: [swe]
+
 - category:
     en: Software Engineering
     es: Ingeniería de Software

@@ -70,7 +70,7 @@ const sectionBody: Record<SectionId, (r: ResumeData, locale: LocaleFile, lang: L
             : body(`${locale.resume.technologies}: ${project.technologies.join(", ")}`),
         );
       }
-      if (layout !== "compact" && project.links.length > 0) {
+      if (project.links.length > 0) {
         paragraphs.push(body(`${locale.resume.links}: ${project.links.map((l) => `${t(l.label, lang)} (${l.url})`).join(" · ")}`));
       }
       return paragraphs;

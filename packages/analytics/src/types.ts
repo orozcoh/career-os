@@ -43,7 +43,7 @@ export type ClientSignal =
   | ({ type: "page_view"; path: string } & SignalBase)
   | ({ type: "resume_open"; resume: string } & SignalBase)
   | ({ type: "resume_view"; resume: string } & SignalBase)
-  | ({ type: "resume_download"; resume: string; format: "pdf" | "docx" } & SignalBase)
+  | ({ type: "resume_download"; resume: string; format: "pdf" | "pdf-2col" | "docx" } & SignalBase)
   /** target is a coarse label ("github", "linkedin"), never a raw URL. */
   | ({ type: "outbound_click"; target: string; resume: string | null } & SignalBase);
 
@@ -88,7 +88,7 @@ export type TrackedEvent = TrackedBase &
     | { type: "page_view"; path: string; resume: null }
     | { type: "resume_open"; resume: string }
     | { type: "resume_view"; resume: string }
-    | { type: "resume_download"; resume: string; format: "pdf" | "docx" }
+    | { type: "resume_download"; resume: string; format: "pdf" | "pdf-2col" | "docx" }
     | { type: "outbound_click"; target: string; resume: string | null }
   );
 

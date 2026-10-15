@@ -11,6 +11,7 @@ const ALL_SIGNALS: ClientSignal[] = [
   { type: "resume_open", resume: "frontend", language: "en", session_id: SESSION },
   { type: "resume_view", resume: "frontend", language: "en", session_id: SESSION },
   { type: "resume_download", resume: "frontend", format: "pdf", language: "en", session_id: SESSION },
+  { type: "resume_download", resume: "frontend", format: "pdf-2col", language: "en", session_id: SESSION },
   { type: "resume_download", resume: "frontend", format: "docx", language: "es", session_id: SESSION },
   { type: "outbound_click", target: "github", resume: null, language: "en", session_id: SESSION },
   { type: "outbound_click", target: "linkedin", resume: "frontend", language: "en", session_id: SESSION },

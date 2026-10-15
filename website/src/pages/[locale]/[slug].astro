@@ -39,22 +39,23 @@ const description = t(template.description, locale);
 <Base title={title} description={description} locale={locale}>
   <nav class="no-print mx-auto flex max-w-[46rem] flex-wrap items-center justify-between gap-3 px-6 pt-6 text-sm">
     <a href={`/${locale}/`} class="font-medium text-muted hover:text-ink">← {localeFile.website.all_resumes}</a>
-    <div class="flex items-center gap-4 font-medium">
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 font-medium">
       <LanguageToggle locale={locale} />
       <span class="text-faint" aria-hidden="true">·</span>
       <a
         href={`/${locale}/resumes/${template.slug}.pdf`}
-        download={downloadFileName(template, locale, "pdf")}
+        download={downloadFileName(template, locale, "pdf", 1)}
         class="text-accent hover:text-accent-hover"
       >
-        {localeFile.website.download_pdf}
+        {localeFile.website.download_pdf_1col}
       </a>
+      <span class="text-faint" aria-hidden="true">·</span>
       <a
-        href={`/${locale}/resumes/${template.slug}.docx`}
-        download={downloadFileName(template, locale, "docx")}
-        class="text-muted hover:text-ink"
+        href={`/${locale}/resumes/${template.slug}-2col.pdf`}
+        download={downloadFileName(template, locale, "pdf", 2)}
+        class="text-accent hover:text-accent-hover"
       >
-        {localeFile.website.download_docx}
+        {localeFile.website.download_pdf_2col}
       </a>
     </div>
   </nav>

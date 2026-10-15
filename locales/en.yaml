@@ -62,6 +62,8 @@ website:
     products, and accomplishments most relevant to the role.
   view_online: View online
   download_pdf: Download PDF
+  download_pdf_1col: PDF (1 Column)
+  download_pdf_2col: PDF (2 Columns)
   download_docx: DOCX
   all_resumes: All resumes
   generated_from: © 2026 Santiago Orozco Holguín

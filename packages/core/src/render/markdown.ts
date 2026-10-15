@@ -50,7 +50,7 @@ const sectionRenderers: Record<SectionId, (resume: ResumeData, locale: LocaleFil
               : `**${locale.resume.technologies}:** ${project.technologies.join(", ")}`,
           );
         }
-        if (layout !== "compact" && project.links.length > 0) {
+        if (project.links.length > 0) {
           parts.push(
             `**${locale.resume.links}:** ${project.links.map((l) => `[${t(l.label, lang)}](${l.url})`).join(" · ")}`,
           );

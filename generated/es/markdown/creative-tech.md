@@ -50,7 +50,7 @@ Plataforma en la nube para administrar licencias y monitorear implementaciones d
 
 **Tecnologías:** React, TypeScript, Cloudflare Workers
 
-**Enlaces:** [Sitio web](https://td-status.inbytes.xyz)
+**Enlaces:** [Sitio web](https://td-status.digitalerror.xyz)
 
 ### Prompter
 

@@ -50,7 +50,7 @@ Cloud platform for managing software licenses and monitoring TouchDesigner deplo
 
 **Technologies:** React, TypeScript, Cloudflare Workers
 
-**Links:** [Live](https://td-status.inbytes.xyz)
+**Links:** [Live](https://td-status.digitalerror.xyz)
 
 ### Prompter
 
